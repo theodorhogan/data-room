@@ -31,7 +31,7 @@ This checks every package in `content/`: manifest fields, IDs, file types, prima
 
 ## Add a publication
 
-Make one package (a folder or a ZIP of it) as described in [docs/publication-package.md](docs/publication-package.md). Put it in `incoming/`, a drop-off folder that git ignores (create it if it does not exist), then import it:
+Make one package (a folder or a ZIP of it) as described in [docs/master-spec.md](docs/master-spec.md). Put it in `incoming/`, a drop-off folder that git ignores (create it if it does not exist), then import it:
 
 ```bash
 npm run publication:add -- ./incoming/2026-09-28-my-report.zip
@@ -51,7 +51,7 @@ format: pdf
 primary: paper.pdf
 ```
 
-Give [docs/publication-package.md](docs/publication-package.md) to an AI agent that writes publications. It covers everything the agent needs.
+Give [docs/master-spec.md](docs/master-spec.md) to an AI agent that writes publications. Part 1 is the framework (which output type fits a task, report structure, exhibit choices, required outputs); Part 2 is the exact package format.
 
 ## Build
 
@@ -101,7 +101,7 @@ The site is kept out of search engines: every page has `<meta name="robots" cont
 ```text
 content/<id>/            one folder per publication (the only place content goes)
 incoming/                drop-off folder for ZIPs to import (ignored by git)
-docs/                    the publication package contract
+docs/                    master spec for publishing agents (framework and package format)
 scripts/                 publication-add, publication-validate, generate-pdfs
 src/lib/                 manifest schema, package reader, validator, MDX rules, chart engine, workbook reader, artifact bundler
 src/components/          research components, publication header and lists, PDF/XLSX/JSX viewers
