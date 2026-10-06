@@ -26,7 +26,7 @@ const shortDate = (iso: string) => {
   return `${Number(d)} ${MONTHS[Number(m) - 1]} ${y}`;
 };
 
-/** The topic half of the TYPE — TOPIC kicker: the field (Macro, Equity Research) first, never a tag that repeats the type. */
+/** The topic half of the TYPE | TOPIC kicker: the field (Macro, Equity Research) first, never a tag that repeats the type. */
 function topic(i: LibraryItem): string | undefined {
   const slugs = i.tags.map((t) => t.slug);
   const pick =
@@ -359,7 +359,7 @@ const yearCount = (y: string) => items.filter((i) => i.year === y).length;
               </svg>
               <p class="kicker tile-top">
                 {k.one}
-                {t && <> — {t}</>}
+                {t && <> | {t}</>}
               </p>
               <h2 class="tile-title">
                 <a class="tile-link" href={i.href}>
@@ -1042,7 +1042,7 @@ const yearCount = (y: string) => items.filter((i) => i.year === y).length;
   .tile-top {
     padding-right: 24px;
   }
-  /* Below the full page width some TYPE — TOPIC kickers wrap: reserve two lines on every grid tile so titles in a row share a baseline. */
+  /* Below the full page width some TYPE | TOPIC kickers wrap: reserve two lines on every grid tile so titles in a row share a baseline. */
   @media (min-width: 640px) and (max-width: 1239px) {
     .wall[data-layout='grid'] .tile-top {
       min-height: 2.8em;
