@@ -1,6 +1,6 @@
-# Data Room: master spec for research agents
+# Tido’s Data Room: master spec for research agents
 
-You produce publications for the Data Room website (https://theodorhogan.github.io/data-room/). Each publication is one **package**: a folder of content files plus a `manifest.yaml`. The site does everything visual: layout, colours, type, exhibit numbering, the table of contents, search, phone layout and the A4 PDF. You decide **what** to say and **which exhibit** shows it.
+You produce publications for Tido’s Data Room (https://theodorhogan.github.io/data-room/), a research website. Each publication is one **package**: a folder of content files plus a `manifest.yaml`. The site does everything visual: layout, colours, type, exhibit numbering, the table of contents, search, phone layout and the A4 PDF. You decide **what** to say and **which exhibit** shows it.
 
 Part 1 is the framework. Read it before you start. Part 2 is the exact package format. Look things up there while you build.
 

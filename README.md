@@ -1,4 +1,4 @@
-# Data Room
+# Tido’s Data Room
 
 A static research library built with Astro. Each publication (a research report, PDF, Excel workbook or interactive JSX artifact) is one self-contained package in `content/<id>/` and gets a permanent URL: `/research/<id>/` or `/artifact/<id>/`. Research reports are written in MDX and also published as a generated A4 PDF, unless the package brings its own PDF (manifest `pdf`, such as the authors' original), which is offered instead.
 

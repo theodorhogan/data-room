@@ -1,6 +1,6 @@
 // Site identity and deployment settings. Branding lives in src/styles/tokens.css.
 export const SITE = {
-  title: 'Data Room',
+  title: 'Tido’s Data Room',
   description: 'Equity research, macro notes and financial models.',
   /** Keep every page out of search engines (noindex, nofollow on every page). */
   noindex: true,
