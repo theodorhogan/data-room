@@ -1,0 +1,17 @@
+schema: 1
+
+id: 2024-03-05-eureos-balance-sheet-model
+title: Eureos balance-sheet model
+date: 2024-03-05
+
+kind: artifact
+format: xlsx
+primary: model.xlsx
+
+summary: German-GAAP balance sheets of two Eureos entities, 2016–2021, with a balance check for every year.
+
+authors:
+  - Theodor Hogan
+
+tags:
+  - financial-model

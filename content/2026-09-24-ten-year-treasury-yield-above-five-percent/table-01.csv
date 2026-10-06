@@ -1,0 +1,11 @@
+peak_month,peak_yield_pct,yield_12m_later_pct,change_pts,recession_under_way_at_peak,recession_began_within_18_months
+1966-08,5.22,5.28,0.06,no,no
+1974-08,8.04,8.40,0.36,yes,no
+1981-09,15.32,12.34,-2.98,yes,no
+1984-06,13.56,10.16,-3.40,no,no
+1987-10,9.52,8.80,-0.72,no,no
+1990-09,8.89,7.65,-1.24,yes,no
+1994-11,7.96,5.93,-2.03,no,no
+2000-01,6.66,5.16,-1.50,no,yes
+2007-06,5.10,4.10,-1.00,no,yes
+2023-10,4.80,4.10,-0.70,no,no

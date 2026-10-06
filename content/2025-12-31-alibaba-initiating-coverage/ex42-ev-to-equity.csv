@@ -1,0 +1,8 @@
+step,low,high,amount
+PV of Discrete Period,0.0,815.5,815.5
+PV of Terminal Value,815.5,3311.1,2495.6
+Enterprise Value,0.0,3311.1,3311.1
+Debt,3043.2,3311.1,-267.8
+NCI,2974.7,3043.2,-68.5
+CCE,2974.7,3120.2,145.5
+Equity Value,0.0,3120.2,3120.2

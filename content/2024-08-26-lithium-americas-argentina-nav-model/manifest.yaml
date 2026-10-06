@@ -1,0 +1,25 @@
+schema: 1
+
+id: 2024-08-26-lithium-americas-argentina-nav-model
+title: Lithium Americas (Argentina) NAV model
+date: 2024-08-26
+
+kind: artifact
+format: xlsx
+primary: LAAC-NAV-Model.xlsx
+
+summary: UTM Capital's NAV model of Lithium Americas (Argentina)'s lithium projects, with a US$10.14 price target at consensus lithium prices.
+authors:
+  - Eric Lee
+  - Nina Ricci Lu
+  - Francesco Zita
+  - Christopher Leung
+  - Luca Trozzo
+  - Theodor Hogan
+
+tags:
+  - financial-model
+  - dcf
+
+tickers:
+  - LAAC

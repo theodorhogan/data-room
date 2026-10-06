@@ -1,0 +1,36 @@
+---
+import Toc from './Toc.astro';
+import References from './References.astro';
+import Cite from './Cite.astro';
+import PublicationRef from './PublicationRef.astro';
+import Callout from './Callout.astro';
+import Chart from './Chart.astro';
+import Table from './Table.astro';
+import Figure from './Figure.astro';
+import Mermaid from './Mermaid.astro';
+import MdTable from './MdTable.astro';
+import KeyFigures from './KeyFigures.astro';
+import { loadResearch } from '../../lib/research-modules';
+import type { Publication } from '../../lib/registry';
+
+interface Props {
+  pub: Publication;
+}
+const mod = await loadResearch(Astro.props.pub);
+const { Content } = mod;
+const headings = mod.getHeadings().filter((h) => h.depth === 2 || h.depth === 3);
+if (mod.citations.length) headings.push({ depth: 2, slug: 'publication-references', text: 'References' });
+const components = { Cite, PublicationRef, Callout, Chart, Table, Figure, Mermaid, KeyFigures, table: MdTable };
+---
+
+<div class="wrap research">
+  <Toc headings={headings} variant="desktop" />
+  <div class="research-body">
+    <Toc headings={headings} variant="mobile" />
+    <article class="prose">
+      <Content components={components} />
+    </article>
+    {mod.citations.length > 0 && <References citations={mod.citations} />}
+    <slot />
+  </div>
+</div>

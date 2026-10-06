@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/registry';
+---
+
+<Base title="Not found" noindex>
+  <section class="wrap pub-header">
+    <p class="kicker">404</p>
+    <h1 class="title">Page not found</h1>
+    <p><a class="button" href={url('/')}>Go to the library</a></p>
+  </section>
+</Base>

@@ -1,0 +1,20 @@
+schema: 1
+
+id: 2026-09-24-ten-year-treasury-yield-above-five-percent
+title: "The 10-Year Treasury at 5%: Causes, Consequences and Historical Parallels"
+date: 2026-09-24
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  The 10-year Treasury yield closed at 5.11% on Sept. 23, 2026, its highest since July 2007.
+  The rise is mainly a repricing of real interest rates, driven by an oil shock from the Iran war,
+  a Fed that has resumed hiking and heavy government and corporate borrowing, while market
+  inflation expectations remain anchored. The report compares the episode with ten sell-off
+  peaks since 1966 and sets out scenarios, signposts and a calendar of catalysts.
+
+tags:
+  - deep-research
+  - macro

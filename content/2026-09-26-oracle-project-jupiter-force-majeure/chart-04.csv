@@ -1,0 +1,29 @@
+date,series,change_pct,basis
+2025-12-31,Oracle,0.0,close
+2026-01-30,Oracle,-15.6,close
+2026-02-27,Oracle,-25.4,close
+2026-03-31,Oracle,-24.5,close
+2026-04-30,Oracle,-17.2,close
+2026-05-29,Oracle,15.8,close
+2026-06-30,Oracle,-24.8,close
+2026-07-31,Oracle,-33.4,close
+2026-08-31,Oracle,-23.5,close
+2026-09-25,Oracle,-29.7,close
+2025-12-31,Blue Owl,0.0,close
+2026-01-30,Blue Owl,-8.7,close
+2026-02-27,Blue Owl,-29.4,close
+2026-03-31,Blue Owl,-38.9,close
+2026-04-30,Blue Owl,-34.7,close
+2026-05-29,Blue Owl,-31.2,close
+2026-06-30,Blue Owl,-41.4,close
+2026-07-31,Blue Owl,-36.7,close
+2026-09-25,Blue Owl,-38.2,close
+2025-12-31,S&P 500,0.0,close
+2026-01-30,S&P 500,1.5,close
+2026-02-27,S&P 500,0.6,close
+2026-03-31,S&P 500,-4.6,close
+2026-04-30,S&P 500,5.4,close
+2026-05-29,S&P 500,10.9,close
+2026-06-30,S&P 500,9.5,close
+2026-07-31,S&P 500,9.6,close
+2026-09-25,S&P 500,13.1,estimate

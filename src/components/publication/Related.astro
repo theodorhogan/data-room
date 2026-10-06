@@ -1,0 +1,33 @@
+---
+import { absoluteUrl, relationsOf, url, type Publication } from '../../lib/registry';
+import { formatDate } from '../../lib/format';
+
+interface Props {
+  pub: Publication;
+}
+const { related, referencedIn } = relationsOf(Astro.props.pub);
+const groups = [
+  { title: 'Related publications', items: related },
+  { title: 'Referenced in', items: referencedIn },
+].filter((g) => g.items.length);
+---
+
+{
+  groups.map((g) => (
+    <section class="related" data-pagefind-ignore>
+      <h2 class="section-label">{g.title}</h2>
+      <ul class="related-list">
+        {g.items.map((p) => (
+          <li>
+            <a href={url(p.path)}>
+              <span class="kicker">{p.typeLabel}</span>
+              <span class="related-title">{p.manifest.title}</span>
+              <span class="meta">{formatDate(p.manifest.date)}</span>
+              <span class="print-inline meta">{absoluteUrl(p.path, Astro.site)}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))
+}

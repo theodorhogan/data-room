@@ -1,0 +1,13 @@
+flowchart TD
+    C["Customer<br/>uploads a 3D CAD file<br/>via protolabs.com"] --> T
+    subgraph T["The digital thread (AI layer)"]
+        direction LR
+        D["DFM analysis<br/>18M+ designs learned"] ~~~ Q["Instant quote<br/>AI pricing in minutes"]
+        Q ~~~ V["Toolpath & QC<br/>AI verification"]
+        V ~~~ R["Smart routing<br/>factory or network"]
+    end
+    T --> F["Owned factories<br/>ISO 13485, AS9100, ITAR<br/>78% of revenue · ~49% GM"]
+    T --> N["Partner network<br/>ex-Hubs, vetted partners<br/>22% of revenue · ~31% GM"]
+    F --> S["Parts shipped<br/>as fast as same day<br/>1 to 1,000,000+ units"]
+    N --> S
+    S -.->|"every part trains the models"| T

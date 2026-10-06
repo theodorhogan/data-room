@@ -1,0 +1,1638 @@
+---
+// The library: a ruled tile grid under a single toolbar (kind tabs, topic chips, Company and Year
+// popovers, search) with the latest deep research as a feature tile in the unfiltered view.
+// Filtering runs client-side in src/scripts/library.ts; every control writes one URL state.
+import { libraryItems, libraryFacets, type LibraryItem } from '../../lib/library';
+import { SITE } from '../../site.config';
+
+const items = libraryItems();
+const facets = libraryFacets(items);
+const total = items.length;
+
+type KindSlug = 'report' | 'pdf' | 'workbook' | 'interactive';
+const KINDS: Record<LibraryItem['format'], { slug: KindSlug; one: string; many: string; format: (i: LibraryItem) => string }> = {
+  mdx: { slug: 'report', one: 'Report', many: 'Reports', format: (i) => (i.readingMinutes ? `${i.readingMinutes} min read` : 'Web') },
+  pdf: { slug: 'pdf', one: 'PDF', many: 'PDFs', format: () => 'PDF' },
+  xlsx: { slug: 'workbook', one: 'Workbook', many: 'Workbooks', format: () => 'XLSX' },
+  jsx: { slug: 'interactive', one: 'Interactive', many: 'Interactive', format: () => 'Web app' },
+};
+const kindTabs = (['mdx', 'pdf', 'xlsx', 'jsx'] as const)
+  .map((f) => ({ ...KINDS[f], count: items.filter((i) => i.format === f).length }))
+  .filter((k) => k.count > 0);
+
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const shortDate = (iso: string) => {
+  const [y, m, d] = iso.split('-');
+  return `${Number(d)} ${MONTHS[Number(m) - 1]} ${y}`;
+};
+
+/** The topic half of the TYPE — TOPIC kicker: the field (Macro, Equity Research) first, never a tag that repeats the type. */
+function topic(i: LibraryItem): string | undefined {
+  const slugs = i.tags.map((t) => t.slug);
+  const pick =
+    ['macro', 'equity-research'].find((s) => slugs.includes(s)) ??
+    slugs.find((s) => s !== 'deep-research' && s !== 'report' && !(s === 'financial-model' && i.format === 'xlsx'));
+  return i.tags.find((t) => t.slug === pick)?.label;
+}
+const searchText = (i: LibraryItem) =>
+  [i.title, i.summary ?? '', i.typeLabel, KINDS[i.format].one, ...i.tags.map((t) => t.label), ...i.tickers].join(' ').toLowerCase();
+
+// The newest Deep Research item leads the unfiltered wall.
+const feature = items.find((i) => i.tags.some((t) => t.slug === 'deep-research'));
+const yearSpan = facets.years.length > 1 ? `${facets.years.at(-1)}–${facets.years[0]}` : facets.years[0];
+const yearCount = (y: string) => items.filter((i) => i.year === y).length;
+---
+
+<noscript><style>.library-page .toolbar, .library-page .resbar { display: none !important; }</style></noscript>
+<div class="library-page" data-library data-base={import.meta.env.BASE_URL}>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="lb-g-report" viewBox="0 0 20 20">
+        <rect x="3.75" y="2.75" width="12.5" height="14.5" rx="1" vector-effect="non-scaling-stroke"></rect>
+        <path d="M7 7h6M7 10h6M7 13h4" vector-effect="non-scaling-stroke"></path>
+      </symbol>
+      <symbol id="lb-g-pdf" viewBox="0 0 20 20">
+        <path d="M3.75 2.75h8.5l4 4v10.5H3.75z" vector-effect="non-scaling-stroke"></path>
+        <path d="M12.25 2.75v4h4" vector-effect="non-scaling-stroke"></path>
+      </symbol>
+      <symbol id="lb-g-workbook" viewBox="0 0 20 20">
+        <rect x="2.75" y="2.75" width="14.5" height="14.5" rx="1" vector-effect="non-scaling-stroke"></rect>
+        <path d="M7.58 2.75v14.5M12.42 2.75v14.5M2.75 7.58h14.5M2.75 12.42h14.5" vector-effect="non-scaling-stroke"></path>
+      </symbol>
+      <symbol id="lb-g-interactive" viewBox="0 0 20 20">
+        <path d="M3.25 2.75v14h14" vector-effect="non-scaling-stroke"></path>
+        <path d="M6.25 13l3.25-3.75 2.75 2 4-5.25" vector-effect="non-scaling-stroke"></path>
+      </symbol>
+      <symbol id="lb-i-chevron" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4" vector-effect="non-scaling-stroke"></path></symbol>
+      <symbol id="lb-i-close" viewBox="0 0 20 20"><path d="M6 6l8 8M14 6l-8 8" vector-effect="non-scaling-stroke"></path></symbol>
+    </defs>
+  </svg>
+
+  <header class="wrap head">
+    <div class="head-row">
+      <h1 class="display">{SITE.title}</h1>
+      <p class="meta head-stats">
+        <span><span class="head-n">{total}</span> publications</span>
+        <span>{facets.tickers.length} companies</span>
+        <span>{yearSpan}</span>
+        {items[0] && <span class="head-updated">Updated {shortDate(items[0].date)}</span>}
+      </p>
+    </div>
+    <p class="standfirst head-dek">{SITE.description}</p>
+  </header>
+
+  <section class="wrap lib" aria-label="Publications">
+    <form class="toolbar" role="search" aria-label="Filter publications" autocomplete="off" data-form>
+      <div class="tb-main">
+        <fieldset class="tabs" data-tabs>
+          <legend class="visually-hidden">Kind</legend>
+          <div class="rail" data-rail>
+            <button type="button" class="rail-arrow rail-prev" tabindex="-1" aria-hidden="true" data-rail-prev>
+              <span class="rail-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l-5 5 5 5"></path></svg></span>
+            </button>
+            <div class="rail-scroll tabs-scroll" data-rail-scroll>
+              <label class="tab">
+                <input class="visually-hidden" type="radio" name="kind" value="" checked />
+                <span>All</span><span class="n" data-n>{total}</span>
+              </label>
+              {
+                kindTabs.map((k) => (
+                  <label class="tab">
+                    <input class="visually-hidden" type="radio" name="kind" value={k.slug} />
+                    <span>{k.many}</span>
+                    <span class="n" data-n>
+                      {k.count}
+                    </span>
+                  </label>
+                ))
+              }
+            </div>
+            <button type="button" class="rail-arrow rail-next" tabindex="-1" aria-hidden="true" data-rail-next>
+              <span class="rail-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5l5 5-5 5"></path></svg></span>
+            </button>
+          </div>
+        </fieldset>
+
+        <div class="tb-tools">
+          <details class="pop" data-pop="ticker">
+            <summary class="button button--quiet pop-btn">
+              <span>Company</span>
+              <span class="badge" data-badge hidden><span data-badge-n>0</span><span class="visually-hidden"> selected</span></span>
+              <svg class="chev" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#lb-i-chevron"></use></svg>
+            </summary>
+            <div class="pop-panel" role="group" aria-labelledby="lb-pop-ticker">
+              <div class="pop-head">
+                <span class="section-label" id="lb-pop-ticker">Company</span>
+                <button type="button" class="link-btn" data-pop-clear>Clear</button>
+              </div>
+              <ul class="pop-list">
+                {
+                  facets.tickers.map((t) => (
+                    <li>
+                      <label class="opt">
+                        <input type="checkbox" name="ticker" value={t.ticker} />
+                        <span class="opt-ticker">{t.ticker}</span>
+                        <span class="n" data-n>
+                          {t.count}
+                        </span>
+                      </label>
+                    </li>
+                  ))
+                }
+              </ul>
+              <div class="pop-foot">
+                <button type="button" class="button" data-pop-done>Show {total} results</button>
+              </div>
+            </div>
+          </details>
+
+          <details class="pop" data-pop="year">
+            <summary class="button button--quiet pop-btn">
+              <span>Year</span>
+              <span class="badge" data-badge hidden><span data-badge-n>0</span><span class="visually-hidden"> selected</span></span>
+              <svg class="chev" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><use href="#lb-i-chevron"></use></svg>
+            </summary>
+            <div class="pop-panel" role="group" aria-labelledby="lb-pop-year">
+              <div class="pop-head">
+                <span class="section-label" id="lb-pop-year">Year</span>
+                <button type="button" class="link-btn" data-pop-clear>Clear</button>
+              </div>
+              <ul class="pop-list">
+                {
+                  facets.years.map((y) => (
+                    <li>
+                      <label class="opt">
+                        <input type="checkbox" name="year" value={y} />
+                        <span class="opt-year">{y}</span>
+                        <span class="n" data-n>
+                          {yearCount(y)}
+                        </span>
+                      </label>
+                    </li>
+                  ))
+                }
+              </ul>
+              <div class="pop-foot">
+                <button type="button" class="button" data-pop-done>Show {total} results</button>
+              </div>
+            </div>
+          </details>
+
+          <label class="search">
+            <span class="visually-hidden">Search publications</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.75" cy="8.75" r="5.5"></circle><path d="M13 13l4 4"></path></svg>
+            <input type="search" name="q" placeholder="Search" spellcheck="false" data-search />
+            <kbd class="kbd" aria-hidden="true">/</kbd>
+          </label>
+        </div>
+      </div>
+
+      <div class="tb-topics">
+        <span class="section-label topics-label" id="lb-topics">Topics</span>
+        <div class="rail" data-rail>
+          <button type="button" class="rail-arrow rail-prev" tabindex="-1" aria-hidden="true" data-rail-prev>
+            <span class="rail-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l-5 5 5 5"></path></svg></span>
+          </button>
+          <div class="rail-scroll chips" role="group" aria-labelledby="lb-topics" data-rail-scroll>
+            {
+              facets.tags.map((t) => (
+                <button type="button" class="chip" aria-pressed="false" data-chip={t.slug}>
+                  <span>{t.label}</span>
+                  <span class="n" data-n>
+                    {t.count}
+                  </span>
+                </button>
+              ))
+            }
+          </div>
+          <button type="button" class="rail-arrow rail-next" tabindex="-1" aria-hidden="true" data-rail-next>
+            <span class="rail-ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5l5 5-5 5"></path></svg></span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="resbar">
+      <p class="status" role="status" aria-live="polite" aria-atomic="true">
+        <span data-status-count><span class="status-n" data-status-n>{total}</span> of {total} publications</span>
+        <span class="status-searching" data-status-searching hidden>Searching…</span>
+      </p>
+      <ul class="tokens" aria-label="Active filters" data-tokens hidden>
+        {
+          kindTabs.map((k) => (
+            <li data-token={`kind:${k.slug}`} data-label={k.many} hidden>
+              <button type="button" class="token" data-remove={`kind:${k.slug}`} aria-label={`Remove filter: ${k.many}`}>
+                {k.many}
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+              </button>
+            </li>
+          ))
+        }
+        {
+          /* Links from the earlier library used ?kind=research / ?kind=artifact. */
+          [
+            ['research', 'Research'],
+            ['artifact', 'Artifacts'],
+          ].map(([slug, label]) => (
+            <li data-token={`kind:${slug}`} data-label={label} data-legacy-kind={slug} hidden>
+              <button type="button" class="token" data-remove={`kind:${slug}`} aria-label={`Remove filter: ${label}`}>
+                {label}
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+              </button>
+            </li>
+          ))
+        }
+        {
+          facets.tags.map((t) => (
+            <li data-token={`tag:${t.slug}`} data-label={t.label} hidden>
+              <button type="button" class="token" data-remove={`tag:${t.slug}`} aria-label={`Remove filter: ${t.label}`}>
+                {t.label}
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+              </button>
+            </li>
+          ))
+        }
+        {
+          facets.tickers.map((t) => (
+            <li data-token={`ticker:${t.ticker}`} data-label={t.ticker} hidden>
+              <button type="button" class="token token--ticker" data-remove={`ticker:${t.ticker}`} aria-label={`Remove filter: ${t.ticker}`}>
+                {t.ticker}
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+              </button>
+            </li>
+          ))
+        }
+        {
+          facets.years.map((y) => (
+            <li data-token={`year:${y}`} data-label={y} hidden>
+              <button type="button" class="token token--data" data-remove={`year:${y}`} aria-label={`Remove filter: ${y}`}>
+                {y}
+                <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+              </button>
+            </li>
+          ))
+        }
+        <li data-token="q" data-label="Search" hidden>
+          <button type="button" class="token" data-remove="q" aria-label="Clear search">
+            <span>“<span data-q-text></span>”</span>
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><use href="#lb-i-close"></use></svg>
+          </button>
+        </li>
+      </ul>
+      <button type="button" class="link-btn" data-clear hidden>Clear all</button>
+      <div class="views" role="group" aria-label="Layout" data-views>
+        <button type="button" class="view-btn" aria-pressed="true" data-set-view="grid">
+          <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.25" y="3.25" width="5.5" height="5.5"></rect><rect x="11.25" y="3.25" width="5.5" height="5.5"></rect><rect x="3.25" y="11.25" width="5.5" height="5.5"></rect><rect x="11.25" y="11.25" width="5.5" height="5.5"></rect></svg>
+          <span>Grid</span>
+        </button>
+        <button type="button" class="view-btn" aria-pressed="false" data-set-view="list">
+          <svg viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h14"></path></svg>
+          <span>List</span>
+        </button>
+      </div>
+    </div>
+
+    <ol class="wall" data-wall data-layout="grid">
+      {
+        feature && (
+          <li class="tile tile--feature" data-feature data-id={feature.id}>
+            {/* A Midnight cover panel takes the dark column for everything inside it (spec, colour section). */}
+            <div class="cover" data-theme="dark">
+              <div class="cover-top">
+                <p class="kicker">Latest deep research</p>
+                <span class="cover-mark" aria-hidden="true" />
+              </div>
+              <div class="cover-main">
+                <h2 class="cover-title">
+                  <a class="tile-link" href={feature.href}>
+                    {feature.title}
+                  </a>
+                </h2>
+                {feature.tickers.length > 0 && (
+                  <ul class="tickers cover-tickers" aria-label="Companies">
+                    {feature.tickers.map((t) => (
+                      <li>
+                        <button type="button" class="tk" aria-pressed="false" data-ticker={t} aria-label={`Filter by ${t}`}>
+                          {t}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
+            <div class="feature-body">
+              {feature.summary && <p class="feature-summary">{feature.summary}</p>}
+              <div class="tile-foot">
+                <p class="tile-format meta">
+                  <svg class="glyph" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <use href={`#lb-g-${KINDS[feature.format].slug}`} />
+                  </svg>
+                  <span>{KINDS[feature.format].format(feature)}</span>
+                  <span class="sep" aria-hidden="true">·</span>
+                  <time datetime={feature.date}>{shortDate(feature.date)}</time>
+                </p>
+              </div>
+            </div>
+          </li>
+        )
+      }
+      {
+        items.map((i) => {
+          const k = KINDS[i.format];
+          const t = topic(i);
+          return (
+            <li
+              class="tile"
+              data-item
+              data-id={i.id}
+              data-kind={k.slug}
+              data-pub-kind={i.kind}
+              hidden={feature?.id === i.id}
+              data-year={i.year}
+              data-tags={i.tags.map((x) => x.slug).join(' ')}
+              data-tickers={i.tickers.join(' ')}
+              data-text={searchText(i)}
+            >
+              <svg class="tile-glyph" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <use href={`#lb-g-${k.slug}`} />
+              </svg>
+              <p class="kicker tile-top">
+                {k.one}
+                {t && <> — {t}</>}
+              </p>
+              <h2 class="tile-title">
+                <a class="tile-link" href={i.href}>
+                  {i.title}
+                </a>
+              </h2>
+              {i.summary && <p class="tile-summary" data-summary>{i.summary}</p>}
+              <div class="tile-foot">
+                {i.tickers.length > 0 && (
+                  <ul class="tickers" aria-label="Companies">
+                    {i.tickers.map((x) => (
+                      <li>
+                        <button type="button" class="tk" aria-pressed="false" data-ticker={x} aria-label={`Filter by ${x}`}>
+                          {x}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                <ul class="tile-tags" aria-label="Topics">
+                  {i.tags.map((x) => (
+                    <li>{x.label}</li>
+                  ))}
+                </ul>
+                <p class="tile-format meta">
+                  <svg class="glyph" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <use href={`#lb-g-${k.slug}`} />
+                  </svg>
+                  <span>{k.format(i)}</span>
+                  <span class="sep" aria-hidden="true">·</span>
+                  <time datetime={i.date}>{shortDate(i.date)}</time>
+                </p>
+              </div>
+            </li>
+          );
+        })
+      }
+      <li class="tile tile--blank" aria-hidden="true" data-blank hidden></li>
+      <li class="tile tile--blank" aria-hidden="true" data-blank hidden></li>
+    </ol>
+
+    <div class="empty" data-empty hidden>
+      <p class="section-label">No results</p>
+      <p class="empty-title" data-empty-title>Nothing matches these filters</p>
+      <p class="empty-hint">Remove a filter or clear them all. The counts in the toolbar show what each choice returns.</p>
+      <div class="empty-actions">
+        <button type="button" class="button button--quiet" data-undo>Remove the last filter</button>
+        <button type="button" class="button" data-clear>Clear all</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  import '../../scripts/library';
+</script>
+
+<style>
+  /* ------------------------------------------------------------ base */
+  .library-page {
+    padding-bottom: 8px;
+  }
+  .library-page :is(button, summary, label, a) {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .n {
+    font-size: 12px;
+    font-weight: 400;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+    color: var(--slate);
+  }
+  .link-btn {
+    padding: 4px 2px;
+    border: 0;
+    background: none;
+    color: var(--text-kicker);
+    font: inherit;
+    font-size: 13px;
+    font-stretch: var(--width-meta);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    cursor: pointer;
+  }
+  .link-btn:hover {
+    color: var(--text-heading);
+  }
+  .link-btn:disabled {
+    color: var(--slate);
+    text-decoration: none;
+    cursor: default;
+  }
+
+  /* ------------------------------------------------------------ header */
+  .head {
+    display: grid;
+    gap: 16px;
+    padding-block: 56px 36px;
+  }
+  .head-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 24px;
+  }
+  .head-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 0;
+  }
+  .head-stats > span + span::before {
+    content: '·';
+    padding-inline: 8px;
+  }
+  .head-n {
+    color: var(--ink);
+    font-weight: 600;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+  }
+  .head-dek {
+    max-width: var(--measure);
+  }
+
+  /* ------------------------------------------------------------ toolbar */
+  .toolbar {
+    border-top: 2px solid var(--text-heading);
+    border-bottom: 1px solid var(--rule);
+  }
+  .tb-main {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0 32px;
+    border-bottom: 1px solid var(--grid);
+  }
+  .tabs {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .tabs .rail {
+    height: 100%;
+  }
+  .tabs-scroll {
+    gap: 28px;
+    height: 100%;
+  }
+  .tab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 60px;
+    color: var(--ink-soft);
+    /* the control role (.button): 14px / 600 */
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: inset 0 -2px 0 transparent;
+  }
+  .tab:hover {
+    color: var(--text-heading);
+  }
+  .tab:has(input:checked) {
+    color: var(--text-heading);
+    box-shadow: inset 0 -2px 0 var(--text-heading);
+  }
+  .tab:has(input:checked) .n {
+    color: var(--ink);
+  }
+  /* disabled (zero results): slate text, no underline */
+  .tab:has(input:disabled),
+  .tab:has(input:disabled):hover {
+    color: var(--slate);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .tab:has(input:focus-visible) {
+    outline: 2px solid var(--text-kicker);
+    outline-offset: -2px;
+  }
+  .tb-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-block: 10px;
+  }
+
+  /* popovers (Company, Year) */
+  .pop {
+    position: relative;
+  }
+  .pop-btn {
+    list-style: none;
+    gap: 8px;
+    padding-inline: 14px 10px;
+    font-stretch: 100%;
+    user-select: none;
+  }
+  .pop-btn::-webkit-details-marker {
+    display: none;
+  }
+  .pop[open] > .pop-btn {
+    border-color: var(--text-heading);
+    background: var(--mist);
+  }
+  .chev {
+    width: 16px;
+    height: 16px;
+    color: var(--slate);
+  }
+  .pop[open] .chev {
+    transform: rotate(180deg);
+  }
+  .badge {
+    display: inline-grid;
+    place-items: center;
+    min-width: 18px;
+    height: 18px;
+    padding-inline: 5px;
+    border-radius: 9px;
+    background: var(--text-heading);
+    color: var(--paper);
+    font-size: 11px;
+    font-weight: 700;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .pop-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 30;
+    min-width: 240px;
+    padding: 14px 0 8px;
+    border: 1px solid var(--rule);
+    border-top: 2px solid var(--text-heading);
+    background: var(--surface);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--navy-900) 16%, transparent);
+  }
+  .pop-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 16px 8px;
+  }
+  .pop-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .opt {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+    padding-inline: 16px;
+    cursor: pointer;
+  }
+  .opt:hover {
+    background: var(--mist);
+  }
+  .opt input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--text-heading);
+    cursor: inherit;
+  }
+  .opt:has(input:disabled) {
+    color: var(--slate);
+    cursor: not-allowed;
+  }
+  .opt:has(input:disabled):hover {
+    background: none;
+  }
+  .opt:has(input:disabled) .opt-ticker {
+    border-style: dashed;
+    border-color: var(--rule);
+    color: var(--slate);
+  }
+  .opt-ticker {
+    justify-self: start;
+    padding: 1px 6px;
+    border: 1px solid var(--text-heading);
+    border-radius: 2px;
+    color: var(--text-heading);
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+  .opt-year {
+    font-size: 14px;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+  }
+  .pop-foot {
+    display: none;
+  }
+
+  /* search */
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 280px;
+    height: 40px;
+    padding: 0 8px 0 12px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--surface);
+    cursor: text;
+  }
+  .search:hover {
+    border-color: var(--slate);
+  }
+  .search:focus-within {
+    border-color: var(--text-kicker);
+    outline: 2px solid var(--text-kicker);
+    outline-offset: -1px;
+  }
+  .search svg {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    color: var(--slate);
+  }
+  .search input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 15px;
+  }
+  .search input:focus,
+  .search input:focus-visible {
+    outline: none;
+  }
+  .search input::placeholder {
+    color: var(--slate);
+    opacity: 1;
+  }
+  /* the “q” token already clears the search; the native button draws in a non-token blue */
+  .search input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+  .kbd {
+    flex: none;
+    min-width: 20px;
+    padding: 0 6px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--slate);
+    font: inherit;
+    font-size: 12px;
+    font-stretch: var(--width-data);
+    line-height: 18px;
+    text-align: center;
+  }
+  .search:focus-within .kbd,
+  .search:has(input:not(:placeholder-shown)) .kbd {
+    display: none;
+  }
+
+  /* topic chips */
+  .tb-topics {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-block: 12px;
+  }
+  .topics-label {
+    flex: none;
+  }
+  .tb-topics .rail {
+    flex: 1;
+  }
+  .chips {
+    gap: 8px;
+  }
+  .chip {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 14px;
+    border: 1px solid var(--rule);
+    border-radius: 17px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    /* topic tags use the meta role: 13px / 400 / 90% */
+    font-size: 13px;
+    font-stretch: var(--width-meta);
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .chip:hover {
+    border-color: var(--text-heading);
+  }
+  .chip[aria-pressed='true'] {
+    border-color: var(--text-heading);
+    background: var(--text-heading);
+    color: var(--paper);
+  }
+  .chip[aria-pressed='true'] .n {
+    color: var(--paper);
+  }
+  .chip[aria-disabled='true'] {
+    border-style: dashed;
+    border-color: var(--rule);
+    color: var(--slate);
+    cursor: not-allowed;
+  }
+
+  /* sideways rails (kind tabs on narrow screens, topic chips) */
+  .rail {
+    position: relative;
+    /* keeps the scroller's negative margins (room for focus rings) from collapsing through the rail */
+    display: flow-root;
+    min-width: 0;
+  }
+  .rail-scroll {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* room for focus rings inside the scroll box */
+    padding: 3px;
+    margin: -3px;
+  }
+  .rail-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .rail-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+    align-items: center;
+    width: 56px;
+    padding: 0;
+    border: 0;
+    color: var(--text-heading);
+    cursor: pointer;
+  }
+  .rail-prev {
+    left: 0;
+    justify-content: flex-start;
+    background: linear-gradient(to left, transparent, var(--paper) 55%);
+  }
+  .rail-next {
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(to right, transparent, var(--paper) 55%);
+  }
+  .rail[data-more-start] > .rail-prev,
+  .rail[data-more-end] > .rail-next {
+    display: flex;
+  }
+  .rail-ico {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .rail-arrow:hover .rail-ico {
+    border-color: var(--text-heading);
+  }
+  .rail-ico svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ------------------------------------------------------------ results bar */
+  .resbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    padding-block: 18px 16px;
+  }
+  .status {
+    color: var(--slate);
+    font-size: 14px;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .status-n {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .tokens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .token {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 28px;
+    padding: 0 6px 0 10px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    background: var(--mist);
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    font-stretch: var(--width-meta);
+    line-height: 1;
+    cursor: pointer;
+  }
+  .token:hover {
+    border-color: var(--text-heading);
+  }
+  .token svg {
+    width: 16px;
+    height: 16px;
+    color: var(--slate);
+  }
+  .token--ticker,
+  .token--data {
+    font-weight: 600;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+  .views {
+    display: inline-flex;
+    margin-left: auto;
+    padding: 2px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+  .view-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 1px;
+    background: transparent;
+    color: var(--slate);
+    font: inherit;
+    font-size: 13px;
+    font-stretch: var(--width-meta);
+    cursor: pointer;
+  }
+  .view-btn:hover {
+    color: var(--text-heading);
+  }
+  .view-btn[aria-pressed='true'] {
+    background: var(--mist);
+    color: var(--text-heading);
+  }
+  .view-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* ------------------------------------------------------------ the wall: a ruled sheet */
+  /* Every cell draws all four rules and overlaps its neighbours by 1px, so shared rules stay 1px and a hovered cell can redraw its whole frame. */
+  .wall {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 0;
+    padding: 0 1px 1px 0;
+    list-style: none;
+  }
+  .tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 272px;
+    margin: 0 -1px -1px 0;
+    padding: 24px;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .tile:not(.tile--blank):hover {
+    z-index: 2;
+    border-color: var(--text-kicker);
+  }
+  .tile:has(.tile-link:focus-visible) {
+    z-index: 3;
+    outline: 2px solid var(--text-kicker);
+    outline-offset: 0;
+  }
+  .tile-link {
+    color: inherit;
+    text-decoration: none;
+  }
+  .tile-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  /* the tile draws the ring for its link */
+  .library-page .tile-link:focus-visible {
+    outline: none;
+  }
+  .tile:hover .tile-link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.14em;
+  }
+
+  /* Kind sets the treatment, with rules and grounds rather than colour. */
+  .tile[data-kind='report'] {
+    padding-top: 23px;
+    border-top: 2px solid var(--text-heading);
+  }
+  .tile[data-kind='report']:hover {
+    border-top-color: var(--text-heading);
+  }
+  .tile[data-kind='workbook'] {
+    background: var(--mist);
+  }
+  .tile[data-kind='pdf']::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(225deg, var(--paper) 50%, var(--rule) 50%);
+  }
+  .tile-glyph {
+    display: none;
+    flex: none;
+    color: var(--text-kicker);
+  }
+  /* Interactive tiles carry the chart glyph at preview size, top right (no screenshot exists yet). */
+  .wall[data-layout='grid'] .tile[data-kind='interactive'] .tile-glyph {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .tile-top {
+    padding-right: 24px;
+  }
+  /* Below the full page width some TYPE — TOPIC kickers wrap: reserve two lines on every grid tile so titles in a row share a baseline. */
+  @media (min-width: 640px) and (max-width: 1239px) {
+    .wall[data-layout='grid'] .tile-top {
+      min-height: 2.8em;
+    }
+  }
+  .tile-title {
+    display: -webkit-box;
+    margin-top: 14px;
+    overflow: hidden;
+    color: var(--text-heading);
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+  .tile-summary {
+    display: -webkit-box;
+    margin-top: auto;
+    padding-top: 20px;
+    overflow: hidden;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  .tile-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+    min-height: 44px;
+    margin-top: auto;
+    padding-top: 18px;
+  }
+  .tile-summary ~ .tile-foot {
+    margin-top: 0;
+  }
+  /* A full-text hit shows its matching passage in the summary slot while searching. */
+  .tile-summary.is-excerpt {
+    color: var(--slate);
+    font-size: 14px;
+  }
+  .tile-summary.is-excerpt :global(mark) {
+    background: var(--highlight-fill);
+    color: var(--ink);
+    padding: 0 2px;
+  }
+  .tile-tags {
+    display: none;
+  }
+  .tile-format {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .tile-format .sep {
+    margin-inline: -1px;
+  }
+  .glyph {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    color: var(--text-kicker);
+  }
+  .tickers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tk {
+    position: relative;
+    z-index: 2;
+    padding: 1px 6px;
+    border: 1px solid var(--text-heading);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--text-heading);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: var(--width-data);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    line-height: 1.45;
+    cursor: pointer;
+  }
+  .tk:hover,
+  .tk[aria-pressed='true'] {
+    background: var(--text-heading);
+    color: var(--paper);
+  }
+
+  /* feature tile: a generated Midnight cover with a Copper signature square. The cover carries
+     data-theme="dark", so the tokens inside it (kicker, heading, ticker boxes, accent, focus ring) resolve to the dark column. */
+  .tile--feature {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 0;
+    /* leads with the same heavy top rule as the reports */
+    border-top: 2px solid var(--text-heading);
+  }
+  .tile.tile--feature:hover {
+    border-top-color: var(--text-heading);
+  }
+  .cover {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 300px;
+    padding: 28px 32px 32px;
+    background: var(--navy-900);
+    color: var(--slate);
+  }
+  /* On the dark page a Midnight ground sinks below the Workbook mist cells; Band lifts it above them. */
+  @media screen {
+    :global([data-theme='dark']) .cover {
+      background: var(--band);
+    }
+  }
+  .cover-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .cover-mark {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+  }
+  .cover-title {
+    max-width: 18em;
+    color: var(--text-heading);
+    font-size: 40px;
+    line-height: 1.06;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+  }
+  .cover-tickers {
+    margin-top: 20px;
+  }
+  .feature-body {
+    display: grid;
+    gap: 18px;
+    padding: 24px 32px;
+  }
+  .feature-summary {
+    display: -webkit-box;
+    max-width: 62ch;
+    overflow: hidden;
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .feature-body .tile-foot {
+    padding-top: 0;
+  }
+
+  /* ------------------------------------------------------------ list layout (rows, spec-table rules) */
+  .wall[data-layout='list'] {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0;
+    border-top: 2px solid var(--text-heading);
+    border-bottom: 1px solid var(--text-heading);
+  }
+  .wall[data-layout='list'] .tile {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr) minmax(200px, 280px);
+    /* the last row absorbs a tall side column so kicker, title and summary stay together */
+    grid-template-rows: auto auto auto 1fr;
+    grid-template-areas:
+      'glyph top side'
+      'glyph title side'
+      'glyph summary side'
+      'glyph . side';
+    align-content: start;
+    column-gap: 20px;
+    min-height: 0;
+    margin: 0;
+    padding: 20px 4px;
+    border: 0;
+    border-bottom: 1px solid var(--grid);
+    background: none;
+  }
+  .wall[data-layout='list'] .tile:has(~ .tile:not([hidden])) {
+    border-bottom: 1px solid var(--grid);
+  }
+  .wall[data-layout='list'] .tile:not(:has(~ .tile:not([hidden]))) {
+    border-bottom: 0;
+  }
+  .wall[data-layout='list'] .tile::before {
+    display: none;
+  }
+  .wall[data-layout='list'] .tile:has(.tile-link:focus-visible) {
+    outline-offset: -2px;
+  }
+  .wall[data-layout='list'] .tile-glyph {
+    display: block;
+    grid-area: glyph;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+  .wall[data-layout='list'] .tile-top {
+    grid-area: top;
+    padding-right: 0;
+  }
+  .wall[data-layout='list'] .tile-title {
+    grid-area: title;
+    margin-top: 6px;
+    font-size: 22px;
+    -webkit-line-clamp: 2;
+  }
+  .wall[data-layout='list'] .tile-summary {
+    grid-area: summary;
+    margin-top: 6px;
+    padding-top: 0;
+    -webkit-line-clamp: 1;
+  }
+  .wall[data-layout='list'] .tile-foot {
+    grid-area: side;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+  .wall[data-layout='list'] .tile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tile-tags li {
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--mist);
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-stretch: var(--width-meta);
+    line-height: 1.4;
+  }
+  .wall[data-layout='list'] .tile-format {
+    order: -1;
+    margin-left: 0;
+  }
+  .wall[data-layout='list'] .tile-format .glyph {
+    display: none;
+  }
+
+  /* ------------------------------------------------------------ empty state: one wide ruled cell */
+  .empty {
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 12px;
+    min-height: 272px;
+    padding: 48px 40px;
+    border: 1px solid var(--rule);
+    border-top: 2px solid var(--text-heading);
+  }
+  .empty-title {
+    max-width: var(--measure-title);
+    color: var(--text-heading);
+    font-size: 32px;
+    line-height: 1.12;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .empty-hint {
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .empty-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  /* ------------------------------------------------------------ motion */
+  @media (prefers-reduced-motion: no-preference) {
+    .tile,
+    .chip,
+    .tk,
+    .token,
+    .tab,
+    .search,
+    .view-btn {
+      transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+    .chev {
+      transition: transform 0.15s ease;
+    }
+  }
+
+  /* ------------------------------------------------------------ responsive */
+  /* The kind tabs and the tools share one row only when both fit, Company and Year badges included. */
+  @media (max-width: 1099px) {
+    .tb-main {
+      flex-wrap: wrap;
+    }
+    .tabs {
+      flex: 1 1 100%;
+      border-bottom: 1px solid var(--grid);
+    }
+    .tb-tools {
+      flex: 1 1 100%;
+      min-width: 0;
+    }
+    .search {
+      flex: 1;
+      width: auto;
+      min-width: 0;
+    }
+    /* the tools now start at the left gutter: open the popovers to the right of their buttons */
+    .pop-panel {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  @media (max-width: 999px) {
+    .wall {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .tile--feature {
+      grid-row: auto;
+    }
+    .cover {
+      min-height: 260px;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .head {
+      padding-block: 36px 24px;
+      gap: 12px;
+    }
+    .head-row {
+      display: grid;
+    }
+    .head-stats > .head-updated {
+      flex-basis: 100%;
+    }
+    .head-stats > span + span.head-updated::before {
+      content: none;
+    }
+    .tabs .rail,
+    .tb-topics .rail {
+      margin-inline: calc(var(--gutter) * -1);
+    }
+    .tabs .rail-scroll,
+    .tb-topics .rail-scroll {
+      margin-block: -3px;
+      margin-inline: 0;
+      padding-inline: var(--gutter);
+      scroll-padding-inline: var(--gutter);
+    }
+    .tabs-scroll {
+      gap: 22px;
+    }
+    .tab {
+      min-height: 52px;
+    }
+    .tb-tools {
+      gap: 6px;
+    }
+    .pop-btn {
+      padding-inline: 12px 8px;
+    }
+    .search .kbd {
+      display: none;
+    }
+    .tb-topics {
+      display: block;
+      padding-block: 10px;
+    }
+    .topics-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* Company and Year open as bottom sheets; the page behind stays still while one is open */
+    :global(html:has(.library-page .pop[open])) {
+      overflow: hidden;
+    }
+    .pop[open] > .pop-btn::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      background: color-mix(in srgb, var(--navy-900) 45%, transparent);
+      cursor: default;
+    }
+    .pop-panel {
+      position: fixed;
+      inset: auto 0 0;
+      z-index: 41;
+      min-width: 0;
+      max-height: min(75vh, 560px);
+      overflow-y: auto;
+      padding: 18px 0 calc(16px + env(safe-area-inset-bottom));
+      border: 0;
+      border-top: 2px solid var(--text-heading);
+    }
+    .pop-head {
+      padding-inline: var(--gutter);
+    }
+    .opt {
+      min-height: 48px;
+      padding-inline: var(--gutter);
+    }
+    .pop-foot {
+      display: block;
+      padding: 14px var(--gutter) 0;
+    }
+    .pop-foot .button {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .resbar {
+      gap: 10px 12px;
+    }
+    .view-btn span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* one column, full bleed; each tile keeps only a top rule */
+    .wall,
+    .wall[data-layout='list'] {
+      grid-template-columns: minmax(0, 1fr);
+      margin-inline: calc(var(--gutter) * -1);
+      padding: 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .tile {
+      min-height: 0;
+      margin: 0;
+      padding: 22px var(--gutter) 20px;
+      border: 0;
+      border-top: 1px solid var(--rule);
+    }
+    .tile:not(.tile--blank):hover {
+      border-color: var(--rule);
+    }
+    .tile[data-kind='report'] {
+      padding-top: 21px;
+      border-top: 2px solid var(--text-heading);
+    }
+    .tile[data-kind='report']:hover,
+    .tile.tile--feature:hover {
+      border-top-color: var(--text-heading);
+    }
+    .tile:has(.tile-link:focus-visible) {
+      outline-offset: -2px;
+    }
+    .tile[data-kind='pdf']::before {
+      right: 0;
+    }
+    .tile-title {
+      font-size: 22px;
+    }
+    .tile-summary {
+      padding-top: 12px;
+    }
+    .tile-foot {
+      padding-top: 14px;
+    }
+    .tile--feature {
+      grid-column: auto;
+      padding: 0;
+      border-top: 2px solid var(--text-heading);
+    }
+    .cover {
+      gap: 24px;
+      min-height: 200px;
+      padding: 20px var(--gutter) 24px;
+    }
+    .cover-title {
+      font-size: 30px;
+      line-height: 1.08;
+    }
+    .cover-tickers {
+      margin-top: 16px;
+    }
+    .feature-body {
+      padding: 18px var(--gutter) 22px;
+      gap: 14px;
+    }
+    .feature-summary {
+      font-size: 16px;
+    }
+    .wall[data-layout='list'] {
+      border-top: 2px solid var(--text-heading);
+    }
+    .wall[data-layout='list'] .tile {
+      grid-template-columns: 20px minmax(0, 1fr);
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        'glyph top'
+        'glyph title'
+        'glyph side';
+      column-gap: 14px;
+      padding: 16px var(--gutter);
+    }
+    .wall[data-layout='list'] .tile-title {
+      font-size: 20px;
+    }
+    .wall[data-layout='list'] .tile-summary:not(.is-excerpt),
+    .wall[data-layout='list'] .tile-tags,
+    .wall[data-layout='list'] .tile-format {
+      display: none;
+    }
+    .wall[data-layout='list'] .tile-summary.is-excerpt {
+      grid-area: side;
+      margin-top: 6px;
+    }
+    .wall[data-layout='list'] .tile-foot {
+      align-items: flex-start;
+      min-height: 0;
+      margin-top: 10px;
+    }
+    /* rows without tickers end on the title */
+    .wall[data-layout='list'] .tile-foot:not(:has(.tickers)) {
+      display: none;
+    }
+    .empty {
+      margin-inline: calc(var(--gutter) * -1);
+      padding: 36px var(--gutter);
+      border-inline: 0;
+    }
+    .empty-title {
+      font-size: 26px;
+    }
+  }
+
+  /* Without JavaScript the filters cannot work, so only the publications are shown (see the noscript block). */
+  .status-searching {
+    color: var(--slate);
+  }
+  [data-status-count]:not([hidden]) + .status-searching::before {
+    content: '· ';
+  }
+  @media print {
+    .toolbar,
+    .resbar,
+    .views,
+    .rail-arrow,
+    .tile--blank,
+    .empty-actions {
+      display: none !important;
+    }
+    .tile {
+      break-inside: avoid;
+    }
+  }
+</style>

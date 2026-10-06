@@ -1,0 +1,83 @@
+---
+import '@fontsource-variable/archivo/wdth.css';
+import '@fontsource-variable/archivo/wdth-italic.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import { SITE } from '../site.config';
+import { url } from '../lib/registry';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Keep the page out of the search index. */
+  noindex?: boolean;
+}
+
+const { title, description = SITE.description, noindex = false } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.title}` : SITE.title;
+// A page that is itself not meant to exist (the 404 page) has no canonical URL.
+const canonical = Astro.site && !noindex ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const home = url('/');
+const isHome = Astro.url.pathname === home;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    {(SITE.noindex || noindex) && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title ?? SITE.title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <script is:inline>
+      (() => {
+        // Light by default; dark only when the reader chose it with the toggle.
+        let theme = 'light';
+        try {
+          if (localStorage.getItem('data-room:theme') === 'dark') theme = 'dark';
+        } catch {}
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href={home}>
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">{SITE.title}</span>
+        </a>
+        <nav class="site-nav" aria-label="Site">
+          <a href={home} aria-current={isHome ? 'page' : undefined}>Library</a>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap meta">
+        <span>{SITE.title}</span>
+      </div>
+    </footer>
+    <button class="to-top" type="button" data-to-top aria-label="Back to top" title="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg>
+    </button>
+    <script>
+      import '../scripts/theme';
+      import '../scripts/to-top';
+    </script>
+  </body>
+</html>

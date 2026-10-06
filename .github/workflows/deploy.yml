@@ -1,0 +1,78 @@
+name: Validate, build and deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: read
+
+# Superseded pull-request runs are cancelled; a deploy that is already running on main is allowed to finish.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Validate publication packages
+        run: npm run publication:validate
+
+      - name: Test the publication contract
+        run: npm test
+
+      - name: Type-check
+        run: npm run check
+
+      - name: Read GitHub Pages URL
+        id: pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/configure-pages@v6
+
+      # The PDF step launches Playwright's headless shell; the full Chromium is not needed.
+      - name: Install Chromium for PDF generation
+        run: npx playwright install --with-deps --only-shell chromium
+
+      # Astro build, Pagefind index and A4 PDFs; SITE_URL/BASE_PATH make the build work
+      # for the user site (https://user.github.io/), a project URL (.../repo/) or a custom domain.
+      - name: Build site
+        run: npm run build
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        with:
+          path: dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

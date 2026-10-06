@@ -1,0 +1,22 @@
+node_modules/
+dist/
+.astro/
+*.log
+.DS_Store
+Thumbs.db
+# left behind only if an import is interrupted
+content/.incoming-*/
+
+# drop-off folder for publication packages to import (npm run publication:add)
+incoming/
+
+# Office lock and temp files, OS and editor files, local settings
+~$*
+.~lock.*#
+*.tmp
+desktop.ini
+.env
+.env.*
+.vscode/
+.idea/
+.claude/settings.local.json

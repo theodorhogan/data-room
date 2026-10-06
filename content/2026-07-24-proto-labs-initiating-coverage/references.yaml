@@ -1,0 +1,70 @@
+prlb-quarterly-releases:
+  title: Quarterly earnings releases, Q1 2012 – Q1 2026
+  publisher: Proto Labs, Inc.
+  note: All 57 releases, extracted and reconciled by AMSA (revenue, margins, EPS, customer metrics, guidance).
+prlb-10k-filings:
+  title: Annual reports on Form 10-K, FY2012 – FY2025
+  publisher: Proto Labs, Inc. (SEC filings)
+prlb-earnings-calls:
+  title: Earnings call transcripts, 2025 – 2026
+  publisher: Proto Labs, Inc., via FactSet
+factset-news-log:
+  title: PRLB news screen, July 2023 – July 2026
+  publisher: FactSet
+stockanalysis-prlb:
+  title: Stock prices, statistics and multiples for PRLB and its peers
+  publisher: stockanalysis.com
+  date: 2026-07-24
+  url: https://stockanalysis.com/
+macrotrends-prlb:
+  title: Proto Labs (PRLB) stock price history
+  publisher: Macrotrends
+  date: 2026-07-24
+sipri-milex-2026:
+  title: SIPRI Military Expenditure Database
+  publisher: Stockholm International Peace Research Institute
+  date: 2026-04
+  url: https://www.sipri.org/databases/milex
+mordor-rapid-prototyping:
+  title: Rapid prototyping market size and share analysis
+  publisher: Mordor Intelligence
+grandview-additive-2025:
+  title: Additive manufacturing market size report
+  publisher: Grand View Research
+  date: 2025
+reshoring-initiative-2025:
+  title: Reshoring Initiative annual data report
+  publisher: Reshoring Initiative
+  date: 2025
+  url: https://reshorenow.org
+ism-pmi-2026-06:
+  title: Manufacturing PMI report, June 2026
+  publisher: Institute for Supply Management
+  date: 2026-07
+damodaran-erp-2026-07:
+  title: Implied equity risk premium, July 2026
+  publisher: Aswath Damodaran, NYU Stern
+  date: 2026-07
+  url: https://pages.stern.nyu.edu/~adamodar/
+kroll-size-premium:
+  title: Cost of capital navigator, size premium (decile 6)
+  publisher: Kroll
+needham-prlb-2026-05:
+  title: Proto Labs research note (FY26–27 non-GAAP EPS estimates, $64 target, Hold)
+  publisher: Needham & Company
+  date: 2026-05-01
+street-targets-2026:
+  title: Street estimates and price targets for PRLB (consensus; Benchmark, Craig-Hallum)
+  publisher: FactSet news screen and broker notes
+  date: 2026-07
+lseg-comparables:
+  title: Comparable company analysis (team CCA)
+  publisher: AMSA, using LSEG data
+amsa-model-v2:
+  title: Proto Labs Model V2 (DCF, Monte Carlo, scenario and forecast workbook)
+  publisher: AMSA
+  date: 2026-07
+time-best-companies-2026:
+  title: America's Best Companies 2026
+  publisher: TIME
+  date: 2026-07

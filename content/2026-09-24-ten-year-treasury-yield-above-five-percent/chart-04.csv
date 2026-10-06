@@ -1,0 +1,11 @@
+component,period,yoy_pct,source_ids
+Gasoline,Aug 2025,-6.6,bls-cpi-2025-08
+Gasoline,Aug 2026,27.4,bls-cpi-2026-08
+Energy,Aug 2025,0.2,bls-cpi-2025-08
+Energy,Aug 2026,16.3,bls-cpi-2026-08
+Shelter,Aug 2025,3.6,bls-cpi-2025-08
+Shelter,Aug 2026,3.0,bls-cpi-2026-08
+Food,Aug 2025,3.2,bls-cpi-2025-08
+Food,Aug 2026,2.7,bls-cpi-2026-08
+Used cars and trucks,Aug 2025,6.0,bls-cpi-2025-08
+Used cars and trucks,Aug 2026,-2.3,bls-cpi-2026-08

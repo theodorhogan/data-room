@@ -1,0 +1,35 @@
+---
+// Brand exhibit stack: label, action title, unit line; content; source line; note.
+interface Props {
+  exhibit: string;
+  title?: string;
+  unit?: string;
+  caption?: string;
+  sourceRefs?: string;
+}
+const { exhibit, title, unit, caption, sourceRefs } = Astro.props;
+const sources: { id: string; n: number; label: string; publisher: string }[] = JSON.parse(sourceRefs || '[]');
+---
+
+<figure class="exhibit" id={`exhibit-${exhibit}`}>
+  <figcaption class="exhibit-head">
+    <span class="exhibit-label">Exhibit {exhibit}</span>{' '}
+    {title && <span class="exhibit-title">{title}</span>}{' '}
+    {unit && <span class="exhibit-unit">{unit}</span>}
+  </figcaption>
+  <slot />
+  {
+    (sources.length > 0 || caption) && (
+      <div class="exhibit-foot">
+        {sources.length > 0 && (
+          <p class="exhibit-source">
+            {sources.length > 1 ? 'Sources' : 'Source'}:{' '}
+            {sources.map((s, i) => <>{i > 0 && '; '}{s.publisher}<sup class="cite"><a href={`#ref-${s.id}`} title={s.label}>{s.n}</a></sup></>)}
+          </p>
+        )}
+        {caption && <p class="exhibit-note">{caption}</p>}
+      </div>
+    )
+  }
+  <slot name="tools" />
+</figure>

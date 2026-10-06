@@ -1,0 +1,760 @@
+trading_day,path,price
+0,90th percentile,128.10
+1,90th percentile,133.70
+2,90th percentile,135.80
+3,90th percentile,137.90
+4,90th percentile,139.43
+5,90th percentile,141.01
+6,90th percentile,142.38
+7,90th percentile,143.42
+8,90th percentile,144.92
+9,90th percentile,146.00
+10,90th percentile,147.13
+11,90th percentile,148.20
+12,90th percentile,149.11
+13,90th percentile,150.21
+14,90th percentile,150.99
+15,90th percentile,151.46
+16,90th percentile,153.37
+17,90th percentile,153.71
+18,90th percentile,154.75
+19,90th percentile,155.67
+20,90th percentile,156.35
+21,90th percentile,157.08
+22,90th percentile,158.24
+23,90th percentile,158.42
+24,90th percentile,159.23
+25,90th percentile,159.68
+26,90th percentile,160.81
+27,90th percentile,160.76
+28,90th percentile,161.80
+29,90th percentile,163.03
+30,90th percentile,163.62
+31,90th percentile,164.55
+32,90th percentile,166.07
+33,90th percentile,166.47
+34,90th percentile,167.30
+35,90th percentile,168.36
+36,90th percentile,168.51
+37,90th percentile,169.12
+38,90th percentile,169.95
+39,90th percentile,170.33
+40,90th percentile,170.99
+41,90th percentile,171.00
+42,90th percentile,171.85
+43,90th percentile,171.63
+44,90th percentile,173.29
+45,90th percentile,173.75
+46,90th percentile,174.72
+47,90th percentile,175.60
+48,90th percentile,176.19
+49,90th percentile,176.31
+50,90th percentile,176.97
+51,90th percentile,178.05
+52,90th percentile,178.66
+53,90th percentile,179.69
+54,90th percentile,180.35
+55,90th percentile,180.88
+56,90th percentile,180.82
+57,90th percentile,181.58
+58,90th percentile,182.95
+59,90th percentile,183.68
+60,90th percentile,184.84
+61,90th percentile,184.43
+62,90th percentile,184.74
+63,90th percentile,185.74
+64,90th percentile,186.34
+65,90th percentile,186.94
+66,90th percentile,187.62
+67,90th percentile,187.56
+68,90th percentile,188.59
+69,90th percentile,189.61
+70,90th percentile,191.19
+71,90th percentile,191.61
+72,90th percentile,191.74
+73,90th percentile,193.09
+74,90th percentile,192.57
+75,90th percentile,194.18
+76,90th percentile,194.57
+77,90th percentile,195.09
+78,90th percentile,196.05
+79,90th percentile,195.85
+80,90th percentile,196.77
+81,90th percentile,197.99
+82,90th percentile,198.48
+83,90th percentile,199.31
+84,90th percentile,199.69
+85,90th percentile,199.75
+86,90th percentile,201.95
+87,90th percentile,202.33
+88,90th percentile,202.46
+89,90th percentile,203.16
+90,90th percentile,203.19
+91,90th percentile,203.00
+92,90th percentile,203.84
+93,90th percentile,204.24
+94,90th percentile,204.63
+95,90th percentile,205.93
+96,90th percentile,205.76
+97,90th percentile,207.08
+98,90th percentile,208.62
+99,90th percentile,209.03
+100,90th percentile,208.82
+101,90th percentile,210.25
+102,90th percentile,210.76
+103,90th percentile,211.12
+104,90th percentile,211.11
+105,90th percentile,211.29
+106,90th percentile,212.51
+107,90th percentile,211.70
+108,90th percentile,212.26
+109,90th percentile,213.92
+110,90th percentile,213.75
+111,90th percentile,214.54
+112,90th percentile,215.17
+113,90th percentile,215.13
+114,90th percentile,216.55
+115,90th percentile,216.59
+116,90th percentile,218.07
+117,90th percentile,217.42
+118,90th percentile,219.87
+119,90th percentile,219.25
+120,90th percentile,220.33
+121,90th percentile,221.08
+122,90th percentile,221.21
+123,90th percentile,221.96
+124,90th percentile,221.51
+125,90th percentile,220.96
+126,90th percentile,220.87
+127,90th percentile,221.66
+128,90th percentile,222.71
+129,90th percentile,223.90
+130,90th percentile,225.34
+131,90th percentile,226.27
+132,90th percentile,226.87
+133,90th percentile,227.54
+134,90th percentile,227.81
+135,90th percentile,228.70
+136,90th percentile,228.68
+137,90th percentile,227.48
+138,90th percentile,229.01
+139,90th percentile,231.07
+140,90th percentile,231.81
+141,90th percentile,232.38
+142,90th percentile,233.18
+143,90th percentile,233.26
+144,90th percentile,233.36
+145,90th percentile,234.37
+146,90th percentile,234.17
+147,90th percentile,235.31
+148,90th percentile,237.06
+149,90th percentile,237.58
+150,90th percentile,238.44
+151,90th percentile,239.75
+152,90th percentile,239.51
+153,90th percentile,239.83
+154,90th percentile,241.62
+155,90th percentile,240.98
+156,90th percentile,239.95
+157,90th percentile,241.51
+158,90th percentile,241.82
+159,90th percentile,242.11
+160,90th percentile,242.65
+161,90th percentile,243.90
+162,90th percentile,243.62
+163,90th percentile,245.37
+164,90th percentile,245.73
+165,90th percentile,245.35
+166,90th percentile,245.62
+167,90th percentile,248.25
+168,90th percentile,247.89
+169,90th percentile,247.84
+170,90th percentile,248.37
+171,90th percentile,249.40
+172,90th percentile,251.31
+173,90th percentile,252.44
+174,90th percentile,251.60
+175,90th percentile,250.77
+176,90th percentile,252.65
+177,90th percentile,251.93
+178,90th percentile,251.74
+179,90th percentile,253.21
+180,90th percentile,254.08
+181,90th percentile,256.03
+182,90th percentile,255.08
+183,90th percentile,254.98
+184,90th percentile,254.51
+185,90th percentile,255.68
+186,90th percentile,256.06
+187,90th percentile,256.98
+188,90th percentile,258.10
+189,90th percentile,259.20
+190,90th percentile,260.90
+191,90th percentile,261.23
+192,90th percentile,260.82
+193,90th percentile,260.10
+194,90th percentile,262.43
+195,90th percentile,262.75
+196,90th percentile,263.74
+197,90th percentile,264.37
+198,90th percentile,263.99
+199,90th percentile,264.95
+200,90th percentile,265.41
+201,90th percentile,266.27
+202,90th percentile,267.09
+203,90th percentile,267.95
+204,90th percentile,267.52
+205,90th percentile,269.63
+206,90th percentile,270.45
+207,90th percentile,270.85
+208,90th percentile,272.17
+209,90th percentile,272.04
+210,90th percentile,272.58
+211,90th percentile,273.81
+212,90th percentile,274.39
+213,90th percentile,274.76
+214,90th percentile,275.01
+215,90th percentile,276.45
+216,90th percentile,275.93
+217,90th percentile,276.69
+218,90th percentile,278.04
+219,90th percentile,277.53
+220,90th percentile,278.99
+221,90th percentile,280.08
+222,90th percentile,279.74
+223,90th percentile,280.31
+224,90th percentile,281.04
+225,90th percentile,280.64
+226,90th percentile,281.48
+227,90th percentile,281.80
+228,90th percentile,282.81
+229,90th percentile,284.17
+230,90th percentile,284.78
+231,90th percentile,285.17
+232,90th percentile,286.89
+233,90th percentile,288.05
+234,90th percentile,288.55
+235,90th percentile,289.71
+236,90th percentile,290.41
+237,90th percentile,291.92
+238,90th percentile,290.54
+239,90th percentile,290.00
+240,90th percentile,290.51
+241,90th percentile,292.58
+242,90th percentile,290.72
+243,90th percentile,291.18
+244,90th percentile,294.34
+245,90th percentile,296.09
+246,90th percentile,298.01
+247,90th percentile,297.88
+248,90th percentile,299.56
+249,90th percentile,297.67
+250,90th percentile,298.79
+251,90th percentile,301.10
+252,90th percentile,300.17
+0,Median,128.10
+1,Median,128.31
+2,Median,128.20
+3,Median,128.23
+4,Median,128.46
+5,Median,128.57
+6,Median,128.69
+7,Median,128.86
+8,Median,128.86
+9,Median,128.87
+10,Median,129.07
+11,Median,129.06
+12,Median,129.13
+13,Median,129.15
+14,Median,129.16
+15,Median,129.42
+16,Median,129.44
+17,Median,129.44
+18,Median,129.47
+19,Median,129.66
+20,Median,129.84
+21,Median,129.78
+22,Median,129.86
+23,Median,129.92
+24,Median,130.25
+25,Median,130.46
+26,Median,130.23
+27,Median,130.64
+28,Median,130.26
+29,Median,130.71
+30,Median,130.89
+31,Median,130.97
+32,Median,131.25
+33,Median,131.39
+34,Median,131.00
+35,Median,130.99
+36,Median,131.00
+37,Median,131.25
+38,Median,131.46
+39,Median,131.37
+40,Median,131.63
+41,Median,131.87
+42,Median,131.96
+43,Median,131.81
+44,Median,131.47
+45,Median,131.97
+46,Median,132.02
+47,Median,132.53
+48,Median,132.70
+49,Median,132.49
+50,Median,132.71
+51,Median,132.88
+52,Median,132.97
+53,Median,132.79
+54,Median,132.76
+55,Median,132.73
+56,Median,132.83
+57,Median,132.66
+58,Median,133.35
+59,Median,133.73
+60,Median,133.40
+61,Median,133.77
+62,Median,133.70
+63,Median,133.88
+64,Median,134.29
+65,Median,134.68
+66,Median,134.28
+67,Median,134.40
+68,Median,134.09
+69,Median,134.50
+70,Median,134.77
+71,Median,135.15
+72,Median,134.88
+73,Median,134.72
+74,Median,134.74
+75,Median,134.74
+76,Median,134.92
+77,Median,134.70
+78,Median,135.35
+79,Median,135.25
+80,Median,135.48
+81,Median,135.82
+82,Median,136.21
+83,Median,136.06
+84,Median,135.87
+85,Median,136.25
+86,Median,136.07
+87,Median,136.31
+88,Median,136.42
+89,Median,136.86
+90,Median,136.86
+91,Median,136.92
+92,Median,136.84
+93,Median,137.25
+94,Median,137.66
+95,Median,137.77
+96,Median,138.00
+97,Median,137.80
+98,Median,138.01
+99,Median,137.82
+100,Median,137.85
+101,Median,138.40
+102,Median,138.44
+103,Median,138.45
+104,Median,138.65
+105,Median,138.39
+106,Median,138.87
+107,Median,138.86
+108,Median,138.80
+109,Median,138.56
+110,Median,138.67
+111,Median,138.74
+112,Median,138.98
+113,Median,139.32
+114,Median,138.86
+115,Median,139.34
+116,Median,139.20
+117,Median,139.42
+118,Median,139.86
+119,Median,140.00
+120,Median,140.36
+121,Median,140.08
+122,Median,140.42
+123,Median,140.59
+124,Median,140.95
+125,Median,140.75
+126,Median,140.53
+127,Median,140.84
+128,Median,140.68
+129,Median,140.64
+130,Median,141.23
+131,Median,141.02
+132,Median,140.42
+133,Median,140.89
+134,Median,141.22
+135,Median,141.03
+136,Median,141.20
+137,Median,141.58
+138,Median,141.43
+139,Median,141.46
+140,Median,141.80
+141,Median,141.71
+142,Median,141.90
+143,Median,141.90
+144,Median,142.26
+145,Median,142.28
+146,Median,142.74
+147,Median,142.93
+148,Median,143.18
+149,Median,143.48
+150,Median,143.36
+151,Median,143.62
+152,Median,144.02
+153,Median,143.77
+154,Median,143.25
+155,Median,142.92
+156,Median,143.71
+157,Median,143.34
+158,Median,143.62
+159,Median,143.83
+160,Median,143.69
+161,Median,143.72
+162,Median,143.89
+163,Median,144.17
+164,Median,144.34
+165,Median,144.31
+166,Median,144.17
+167,Median,144.44
+168,Median,144.51
+169,Median,144.42
+170,Median,144.22
+171,Median,144.30
+172,Median,144.86
+173,Median,145.45
+174,Median,145.37
+175,Median,145.58
+176,Median,145.74
+177,Median,145.65
+178,Median,145.65
+179,Median,146.04
+180,Median,145.84
+181,Median,146.18
+182,Median,146.66
+183,Median,147.18
+184,Median,146.88
+185,Median,146.98
+186,Median,146.76
+187,Median,146.96
+188,Median,146.73
+189,Median,147.12
+190,Median,147.34
+191,Median,147.17
+192,Median,147.86
+193,Median,148.21
+194,Median,148.63
+195,Median,148.03
+196,Median,148.45
+197,Median,149.04
+198,Median,149.13
+199,Median,149.18
+200,Median,149.22
+201,Median,149.35
+202,Median,149.22
+203,Median,148.56
+204,Median,148.83
+205,Median,149.61
+206,Median,149.96
+207,Median,149.25
+208,Median,150.10
+209,Median,150.51
+210,Median,150.67
+211,Median,150.96
+212,Median,151.09
+213,Median,151.18
+214,Median,151.39
+215,Median,150.70
+216,Median,151.09
+217,Median,151.30
+218,Median,151.61
+219,Median,152.30
+220,Median,151.81
+221,Median,151.54
+222,Median,151.73
+223,Median,152.12
+224,Median,152.25
+225,Median,152.45
+226,Median,152.13
+227,Median,152.11
+228,Median,152.16
+229,Median,152.29
+230,Median,152.95
+231,Median,153.50
+232,Median,153.36
+233,Median,152.82
+234,Median,153.01
+235,Median,153.35
+236,Median,153.49
+237,Median,153.67
+238,Median,153.84
+239,Median,153.75
+240,Median,153.47
+241,Median,153.41
+242,Median,154.03
+243,Median,153.49
+244,Median,153.28
+245,Median,154.50
+246,Median,154.39
+247,Median,154.61
+248,Median,154.42
+249,Median,154.05
+250,Median,154.52
+251,Median,154.44
+252,Median,154.24
+0,10th percentile,128.10
+1,10th percentile,122.98
+2,10th percentile,121.04
+3,10th percentile,119.74
+4,10th percentile,118.55
+5,10th percentile,117.61
+6,10th percentile,116.97
+7,10th percentile,115.86
+8,10th percentile,115.09
+9,10th percentile,114.29
+10,10th percentile,113.93
+11,10th percentile,113.11
+12,10th percentile,112.43
+13,10th percentile,111.44
+14,10th percentile,111.08
+15,10th percentile,110.81
+16,10th percentile,110.18
+17,10th percentile,109.63
+18,10th percentile,109.06
+19,10th percentile,108.43
+20,10th percentile,107.95
+21,10th percentile,107.77
+22,10th percentile,107.18
+23,10th percentile,106.66
+24,10th percentile,106.92
+25,10th percentile,106.22
+26,10th percentile,105.77
+27,10th percentile,105.42
+28,10th percentile,105.00
+29,10th percentile,105.12
+30,10th percentile,104.80
+31,10th percentile,104.42
+32,10th percentile,104.31
+33,10th percentile,104.05
+34,10th percentile,103.82
+35,10th percentile,103.29
+36,10th percentile,103.25
+37,10th percentile,102.93
+38,10th percentile,102.14
+39,10th percentile,102.14
+40,10th percentile,101.67
+41,10th percentile,101.33
+42,10th percentile,101.09
+43,10th percentile,101.04
+44,10th percentile,100.85
+45,10th percentile,100.60
+46,10th percentile,99.92
+47,10th percentile,100.47
+48,10th percentile,100.14
+49,10th percentile,99.78
+50,10th percentile,99.21
+51,10th percentile,99.38
+52,10th percentile,98.97
+53,10th percentile,98.58
+54,10th percentile,98.81
+55,10th percentile,98.47
+56,10th percentile,98.28
+57,10th percentile,98.23
+58,10th percentile,97.84
+59,10th percentile,97.97
+60,10th percentile,98.10
+61,10th percentile,98.06
+62,10th percentile,97.36
+63,10th percentile,97.43
+64,10th percentile,97.28
+65,10th percentile,97.04
+66,10th percentile,97.08
+67,10th percentile,96.75
+68,10th percentile,96.79
+69,10th percentile,96.23
+70,10th percentile,96.03
+71,10th percentile,96.07
+72,10th percentile,95.71
+73,10th percentile,95.62
+74,10th percentile,95.45
+75,10th percentile,95.36
+76,10th percentile,95.06
+77,10th percentile,94.85
+78,10th percentile,94.79
+79,10th percentile,94.80
+80,10th percentile,94.43
+81,10th percentile,94.10
+82,10th percentile,94.06
+83,10th percentile,93.57
+84,10th percentile,93.16
+85,10th percentile,93.01
+86,10th percentile,92.86
+87,10th percentile,92.77
+88,10th percentile,93.22
+89,10th percentile,92.59
+90,10th percentile,92.41
+91,10th percentile,92.42
+92,10th percentile,91.91
+93,10th percentile,91.96
+94,10th percentile,91.61
+95,10th percentile,91.87
+96,10th percentile,91.80
+97,10th percentile,90.75
+98,10th percentile,90.89
+99,10th percentile,90.78
+100,10th percentile,91.03
+101,10th percentile,90.43
+102,10th percentile,90.67
+103,10th percentile,90.68
+104,10th percentile,90.42
+105,10th percentile,90.52
+106,10th percentile,90.33
+107,10th percentile,90.43
+108,10th percentile,89.87
+109,10th percentile,89.69
+110,10th percentile,89.92
+111,10th percentile,89.66
+112,10th percentile,89.48
+113,10th percentile,89.34
+114,10th percentile,89.40
+115,10th percentile,89.17
+116,10th percentile,89.43
+117,10th percentile,89.29
+118,10th percentile,89.12
+119,10th percentile,89.22
+120,10th percentile,88.68
+121,10th percentile,88.87
+122,10th percentile,87.97
+123,10th percentile,87.89
+124,10th percentile,87.97
+125,10th percentile,87.97
+126,10th percentile,87.98
+127,10th percentile,87.94
+128,10th percentile,87.93
+129,10th percentile,87.92
+130,10th percentile,87.95
+131,10th percentile,87.35
+132,10th percentile,87.61
+133,10th percentile,87.04
+134,10th percentile,87.17
+135,10th percentile,86.98
+136,10th percentile,87.20
+137,10th percentile,86.72
+138,10th percentile,86.36
+139,10th percentile,86.27
+140,10th percentile,86.42
+141,10th percentile,86.36
+142,10th percentile,86.35
+143,10th percentile,86.27
+144,10th percentile,86.17
+145,10th percentile,85.87
+146,10th percentile,86.06
+147,10th percentile,85.89
+148,10th percentile,85.98
+149,10th percentile,85.89
+150,10th percentile,85.94
+151,10th percentile,85.53
+152,10th percentile,86.09
+153,10th percentile,86.04
+154,10th percentile,86.11
+155,10th percentile,86.01
+156,10th percentile,85.67
+157,10th percentile,85.65
+158,10th percentile,85.44
+159,10th percentile,85.26
+160,10th percentile,84.79
+161,10th percentile,84.72
+162,10th percentile,84.80
+163,10th percentile,85.15
+164,10th percentile,84.88
+165,10th percentile,84.23
+166,10th percentile,84.85
+167,10th percentile,84.94
+168,10th percentile,84.57
+169,10th percentile,84.88
+170,10th percentile,84.57
+171,10th percentile,84.75
+172,10th percentile,84.70
+173,10th percentile,84.22
+174,10th percentile,84.18
+175,10th percentile,84.15
+176,10th percentile,84.04
+177,10th percentile,83.77
+178,10th percentile,83.75
+179,10th percentile,83.96
+180,10th percentile,83.62
+181,10th percentile,83.71
+182,10th percentile,83.19
+183,10th percentile,83.36
+184,10th percentile,82.91
+185,10th percentile,82.90
+186,10th percentile,83.02
+187,10th percentile,82.81
+188,10th percentile,83.21
+189,10th percentile,83.06
+190,10th percentile,82.61
+191,10th percentile,82.28
+192,10th percentile,82.39
+193,10th percentile,82.14
+194,10th percentile,82.53
+195,10th percentile,82.18
+196,10th percentile,81.94
+197,10th percentile,82.46
+198,10th percentile,82.22
+199,10th percentile,81.84
+200,10th percentile,81.88
+201,10th percentile,82.01
+202,10th percentile,81.94
+203,10th percentile,81.77
+204,10th percentile,82.15
+205,10th percentile,81.60
+206,10th percentile,81.51
+207,10th percentile,80.99
+208,10th percentile,81.64
+209,10th percentile,80.79
+210,10th percentile,80.94
+211,10th percentile,80.91
+212,10th percentile,80.62
+213,10th percentile,80.44
+214,10th percentile,80.92
+215,10th percentile,80.57
+216,10th percentile,80.87
+217,10th percentile,80.27
+218,10th percentile,81.27
+219,10th percentile,80.94
+220,10th percentile,80.90
+221,10th percentile,81.19
+222,10th percentile,81.43
+223,10th percentile,81.27
+224,10th percentile,81.41
+225,10th percentile,81.31
+226,10th percentile,81.15
+227,10th percentile,81.28
+228,10th percentile,81.23
+229,10th percentile,81.47
+230,10th percentile,81.09
+231,10th percentile,81.30
+232,10th percentile,80.94
+233,10th percentile,80.94
+234,10th percentile,80.97
+235,10th percentile,80.84
+236,10th percentile,80.64
+237,10th percentile,80.78
+238,10th percentile,81.00
+239,10th percentile,81.11
+240,10th percentile,80.80
+241,10th percentile,81.15
+242,10th percentile,80.75
+243,10th percentile,80.49
+244,10th percentile,80.55
+245,10th percentile,81.07
+246,10th percentile,81.26
+247,10th percentile,81.15
+248,10th percentile,80.72
+249,10th percentile,80.54
+250,10th percentile,80.86
+251,10th percentile,81.25
+252,10th percentile,80.80

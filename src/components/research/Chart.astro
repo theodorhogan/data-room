@@ -1,0 +1,48 @@
+---
+import path from 'node:path';
+import Exhibit from './Exhibit.astro';
+import DataTable from './DataTable.astro';
+import { chartOptions, prepareAnnotations, prepareChart, renderChartSvg } from '../../lib/chart';
+import { loadTable } from '../../lib/csv';
+import { contentDirectory } from '../../lib/packages';
+import { fileUrl, getPublication } from '../../lib/registry';
+
+interface Props {
+  src: string;
+  title: string;
+  yLabel?: string;
+  caption?: string;
+  annotations?: string;
+  sourceRefs?: string;
+  citeMap?: string;
+  exhibit: string;
+  pkg: string;
+  [option: string]: string | undefined;
+}
+const p = Astro.props;
+const local = (file: string) => path.join(contentDirectory(), p.pkg, ...file.split('/'));
+const table = loadTable(local(p.src));
+const options = chartOptions(p);
+const data = prepareChart(table, options);
+const notes = p.annotations ? prepareAnnotations(loadTable(local(p.annotations)), data, options) : [];
+// Two static renderings of the same data: desktop/print and small screens.
+const wide = renderChartSvg(data, options, { width: 680, height: 330 }, p.title, notes);
+const narrow = renderChartSvg(data, options, { width: 360, height: 280 }, p.title, notes);
+// The data view signs the value column exactly when the chart does.
+const signed = options.type === 'bar' ? data.series.length === 1 && data.signed : options.type === 'range' ? false : data.signed;
+const pub = getPublication(p.pkg);
+---
+
+<Exhibit exhibit={p.exhibit} title={p.title} unit={p.yLabel} caption={p.caption} sourceRefs={p.sourceRefs}>
+  <div class="chart" data-pagefind-ignore>
+    <div class="chart-wide" set:html={wide} />
+    <div class="chart-narrow" set:html={narrow} />
+  </div>
+  <div class="exhibit-tools" slot="tools" data-pagefind-ignore>
+    <details>
+      <summary>Show data</summary>
+      <DataTable table={table} citeMap={JSON.parse(p.citeMap || '{}')} signedColumns={signed ? [p.y ?? table.columns[1]] : []} />
+    </details>
+    {pub && <a href={fileUrl(pub, p.src)} download>Download data</a>}
+  </div>
+</Exhibit>

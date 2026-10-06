@@ -1,0 +1,17 @@
+flowchart LR
+    openai["OpenAI<br/>End customer<br/>Buys Oracle compute"]
+    oracle["Oracle<br/>Tenant, rated BBB-<br/>Must secure power"]
+    landlord["Jupiter landlord<br/>Stack, a Blue Owl unit<br/>~$3bn Blue Owl equity"]
+    banks["About 20 banks<br/>$18bn construction loan<br/>Quoted 89-91 cents"]
+    pipeline["Energy Transfer<br/>17-mile gas pipeline<br/>Now due Feb 1, 2027"]
+    fuelcells["Bloom fuel cells<br/>Up to 2.45GW on site<br/>Air permit pending"]
+    regulators["State regulators<br/>Land office denied route<br/>Air permit due Nov 23"]
+
+    openai -- "Pays for capacity" --> oracle
+    oracle -- "Rent; build-phase costs" --> landlord
+    landlord -- "Debt service" --> banks
+    oracle -. "Force majeure notice, Sept 24" .-> landlord
+    pipeline -. "Gas" .-> fuelcells
+    fuelcells -. "Power, owed by Oracle" .-> oracle
+    regulators -. "Air permit" .-> fuelcells
+    regulators -. "Pipeline right of way denied" .-> pipeline

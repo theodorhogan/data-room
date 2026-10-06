@@ -1,0 +1,111 @@
+---
+// Renders CSV/JSON rows with the brand table spec. Numeric columns are right-aligned with
+// fixed decimals and true minus signs; source_id(s) columns become citation links.
+import { SOURCE_ID_COLUMN, toNumber, type CsvTable } from '../../lib/csv';
+import { decimalsOf, escapeHtml, MINUS } from '../../lib/format';
+
+interface Props {
+  table: CsvTable;
+  citeMap?: Record<string, number>;
+  /** Columns of changes/deltas: printed with their sign and in the signal colors (brand rules 1 and 3). */
+  signedColumns?: string[];
+  /** Rows (by first-cell text) of changes/deltas. */
+  signedRows?: string[];
+  /** The one highlighted row (Lilac fill, bold label). */
+  highlightRow?: string;
+  /** Rows whose values are key values (weight 600). */
+  keyRows?: string[];
+  /** Estimate columns, shaded as a forecast period. */
+  forecastColumns?: string[];
+}
+const { table, citeMap = {}, signedColumns = [], signedRows = [], highlightRow, keyRows = [], forecastColumns = [] } = Astro.props;
+
+const numeric = table.columns.map((c) => {
+  const values = table.rows.map((r) => r[c]).filter((v) => v !== '');
+  return values.length > 0 && values.every((v) => toNumber(v) !== null);
+});
+// Without a numeric column, a mostly numeric column still aligns and formats its numbers (tables with a few "n/a" cells).
+const numberish = table.columns.map((c, i) => {
+  if (numeric[i] || i === 0) return numeric[i];
+  const values = table.rows.map((r) => r[c]).filter((v) => v !== '');
+  return values.filter((v) => toNumber(v) !== null).length >= Math.max(1, values.length * 0.6);
+});
+const cellDecimals = (r: Record<string, string>, c: string) => (toNumber(r[c]) === null ? undefined : decimalsOf(r[c]));
+const distinct = (values: (number | undefined)[]) => new Set(values.filter((v) => v !== undefined)).size;
+const valueColumns = table.columns.filter((c, i) => i > 0 && numberish[i] && !SOURCE_ID_COLUMN.test(c));
+// Fixed decimals per column; a table organised by rows (revenue, growth, EPS…) keeps each row's decimals instead.
+const byRow =
+  valueColumns.length > 1 &&
+  valueColumns.some((c) => distinct(table.rows.map((r) => cellDecimals(r, c))) > 1) &&
+  table.rows.every((r) => distinct(valueColumns.map((c) => cellDecimals(r, c))) <= 1);
+const decimals = table.columns.map((c, i) => (numberish[i] ? Math.max(0, ...table.rows.map((r) => cellDecimals(r, c) ?? 0)) : 0));
+const rowDecimals = table.rows.map((r) => Math.max(0, ...valueColumns.map((c) => cellDecimals(r, c) ?? 0)));
+// Thousands separators everywhere except in year-like columns.
+const grouped = table.columns.map((c, i) => numberish[i] && !table.rows.every((r) => r[c] === '' || toNumber(r[c]) === null || (/^\d{4}$/.test(r[c]) && +r[c] >= 1800 && +r[c] <= 2100)));
+
+function number(value: string, i: number, signed: boolean, row: number): string {
+  const n = toNumber(value);
+  if (n === null) return value;
+  const d = byRow && i > 0 ? rowDecimals[row] : decimals[i];
+  const body = grouped[i]
+    ? Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d })
+    : Math.abs(n).toFixed(d);
+  return (n < 0 ? MINUS : signed && n > 0 ? '+' : '') + body;
+}
+const signClass = (value: string) => {
+  const n = toNumber(value);
+  return n === null || n === 0 ? undefined : n > 0 ? 'pos' : 'neg';
+};
+// Short values (dates, names, 45–46%, $126M → $163M) stay on one line; a narrow screen scrolls the table instead.
+const longest = table.columns.map((c) => Math.max(0, ...table.rows.map((r) => r[c].length)));
+const nowrap = table.columns.map((_, i) => longest[i] <= 22);
+// Sentences keep a readable width instead of being crushed to a few characters per line; so do longer row labels.
+const prose = table.columns.map((_, i) => longest[i] > 40);
+const stub = table.columns.map((_, i) => i === 0 && longest[i] > 22 && !prose[i]);
+// Number-like text (61%, ~29%, 45–46%, 3.0x) aligns right like numbers, without reformatting.
+const NUMBER_LIKE = /^[~≈+−-]?[$€£]?\d[\d.,]*\s?(%|x|[kMB])?(\s?[–-]\s?[$€£]?\d[\d.,]*\s?(%|x|[kMB])?)?$/;
+const numberLike = table.columns.map((c, i) => i > 0 && !numberish[i] && table.rows.some((r) => r[c]) && table.rows.every((r) => !r[c] || NUMBER_LIKE.test(r[c])));
+const header = (c: string) => escapeHtml(c).replace(/_/g, '_<wbr>');
+const sourceIds = (value: string) => value.split(/\s+/).filter(Boolean);
+const first = table.columns[0];
+const forecast = new Set(forecastColumns);
+---
+
+<div class="table-scroll">
+  <table class:list={['data-table', { zebra: table.rows.length > 12, wide: table.columns.length > 10 }]}>
+    <thead>
+      <tr>{table.columns.map((c, i) => <th scope="col" class:list={{ num: numberish[i] || numberLike[i], fc: forecast.has(c) }} set:html={header(c)} />)}</tr>
+    </thead>
+    <tbody>
+      {
+        table.rows.map((row, r) => {
+          const label = row[first];
+          const signedRow = signedRows.includes(label);
+          return (
+            <tr class:list={{ hl: highlightRow !== undefined && label === highlightRow, key: keyRows.includes(label) }}>
+              {table.columns.map((c, i) => {
+                const fc = forecast.has(c);
+                if (SOURCE_ID_COLUMN.test(c)) {
+                  return (
+                    <td class="ids">
+                      {sourceIds(row[c]).map((id, j) => <>{j > 0 && ' '}{citeMap[id] ? <sup class="cite"><a href={`#ref-${id}`} title={id}>{citeMap[id]}</a></sup> : <span>{id}</span>}</>)}
+                    </td>
+                  );
+                }
+                if (numberish[i] && i > 0 && (signedRow || signedColumns.includes(c)) && toNumber(row[c]) !== null) {
+                  return <td class:list={['num', signClass(row[c]), { fc }]}>{number(row[c], i, true, r)}</td>;
+                }
+                if (numberish[i] && row[c] === '') return <td class:list={['num', 'empty', { fc }]} aria-label="no value">–</td>;
+                return (
+                  <td class:list={{ num: numberish[i] || numberLike[i], nowrap: nowrap[i], prose: prose[i], stub: stub[i], fc, label: i === 0 }}>
+                    {numberish[i] ? number(row[c], i, false, r) : row[c]}
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+</div>

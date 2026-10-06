@@ -1,0 +1,26 @@
+schema: 1
+
+id: 2026-04-14-proto-labs-prlb-two-pager
+title: Proto Labs (PRLB) equity two-pager
+date: 2026-04-14
+
+kind: research
+format: pdf
+primary: PRLB-two-pager.pdf
+
+summary: >
+  Two-page equity snapshot of Proto Labs, Inc. (PRLB) as of 14 April 2026. A
+  discounted cash flow valuation gives a fair value of $50.25 per share against a
+  $61.91 share price, 18.8% downside, with WACC and terminal-growth sensitivity
+  tables. It also shows six years of financial statements (FY2020–FY2025),
+  quarterly sales, margin and leverage trends, and peer comparisons on growth,
+  margins, P/E and EV/EBITDA. For illustration only, not investment advice.
+
+tags:
+  - report
+  - dcf
+  - cca
+  - equity-research
+
+tickers:
+  - PRLB

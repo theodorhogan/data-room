@@ -1,0 +1,33 @@
+---
+// The brand's Midnight key-figure panel. Everything inside uses the dark column, on screen and in print.
+import path from 'node:path';
+import { loadTable } from '../../lib/csv';
+import { contentDirectory } from '../../lib/packages';
+import { keyFigures } from '../../lib/tables';
+
+interface Props {
+  src: string;
+  title?: string;
+  pkg: string;
+}
+const p = Astro.props;
+const figures = keyFigures(loadTable(path.join(contentDirectory(), p.pkg, ...p.src.split('/'))));
+// Labels may wrap after a slash ("upside/downside"); a worded value ("Moderately bullish") is set smaller than a figure.
+const wrapSlash = (s: string) => s.replace(/\//g, '/\u200b');
+const worded = (v: string) => v.replace(/[^A-Za-z]/g, '').length > 8;
+---
+
+<aside class="key-figures" aria-label={p.title ?? 'Key figures'}>
+  {p.title && <p class="kf-title">{p.title}</p>}
+  <dl>
+    {
+      figures.map((f) => (
+        <div class="kf">
+          <dt>{wrapSlash(f.label)}</dt>
+          <dd class:list={['kf-value', f.sign, { 'kf-value--words': worded(f.value) }]}>{f.value}</dd>
+          {f.note && <dd class="kf-note">{f.note}</dd>}
+        </div>
+      ))
+    }
+  </dl>
+</aside>

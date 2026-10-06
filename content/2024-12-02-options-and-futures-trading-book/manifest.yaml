@@ -1,0 +1,16 @@
+schema: 1
+
+id: 2024-12-02-options-and-futures-trading-book
+title: Options and futures trading book
+date: 2024-12-02
+
+kind: artifact
+format: xlsx
+primary: Trading-Overview.xlsx
+
+summary: Course trading book of option spreads, commodity futures hedges and speculative trades on $200m of simulated buying power.
+authors:
+  - Theodor Hogan
+
+tags:
+  - trading

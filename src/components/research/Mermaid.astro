@@ -1,0 +1,42 @@
+---
+// Mermaid source ships in the page; the browser renders it with site tokens
+// (light and dark variants). The source text is the no-JS fallback.
+import fs from 'node:fs';
+import path from 'node:path';
+import Exhibit from './Exhibit.astro';
+import { contentDirectory } from '../../lib/packages';
+
+interface Props {
+  src: string;
+  title?: string;
+  caption?: string;
+  sourceRefs?: string;
+  exhibit: string;
+  pkg: string;
+}
+const p = Astro.props;
+const source = fs.readFileSync(path.join(contentDirectory(), p.pkg, ...p.src.split('/')), 'utf8');
+---
+
+<Exhibit exhibit={p.exhibit} title={p.title} caption={p.caption} sourceRefs={p.sourceRefs}>
+  <div
+    class="diagram"
+    data-mermaid
+    data-exhibit-title={p.title ? '' : undefined}
+    role="img"
+    aria-label={p.title ?? 'Diagram'}
+  >
+    <pre class="mermaid-source" data-pagefind-ignore>{source}</pre>
+  </div>
+  {/* The rendered SVG is one image to assistive technology; its text is offered here, as charts offer their data. */}
+  <div class="exhibit-tools" slot="tools" data-pagefind-ignore>
+    <details>
+      <summary>Show diagram text</summary>
+      <pre class="diagram-text">{source}</pre>
+    </details>
+  </div>
+</Exhibit>
+
+<script>
+  import '../../scripts/mermaid';
+</script>

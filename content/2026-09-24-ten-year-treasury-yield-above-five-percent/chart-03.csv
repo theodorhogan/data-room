@@ -1,0 +1,9 @@
+gauge,period,yoy_pct,source_ids
+CPI,A year earlier,2.9,bls-cpi-2025-08
+CPI,Latest,3.4,bls-cpi-2026-08
+Core CPI,A year earlier,3.1,bls-cpi-2025-08
+Core CPI,Latest,2.4,bls-cpi-2026-08
+PCE,A year earlier,2.6,bea-pio-2025-07
+PCE,Latest,3.7,bea-pio-2026-07
+Core PCE,A year earlier,2.9,bea-pio-2025-07
+Core PCE,Latest,3.3,bea-pio-2026-07

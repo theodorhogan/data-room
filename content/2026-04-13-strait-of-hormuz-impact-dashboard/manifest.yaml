@@ -1,0 +1,21 @@
+schema: 1
+
+id: 2026-04-13-strait-of-hormuz-impact-dashboard
+title: Strait of Hormuz hydrocarbon impact dashboard
+date: 2026-04-13
+
+kind: artifact
+format: jsx
+primary: artifact.jsx
+
+summary: >
+  Interactive dashboard of the Strait of Hormuz closure as of day 45 (13 April
+  2026): Gulf oil production by country before and after the war, Brent prices,
+  strait traffic, damaged energy infrastructure, attacks on shipping, economic
+  costs and a timeline of key events.
+
+tags:
+  - macro
+
+related:
+  - 2026-09-26-oracle-project-jupiter-force-majeure

@@ -1,0 +1,135 @@
+/*
+ * Meridian × Exhibit design tokens — the single source of truth for color and type.
+ * Values come from "Meridian × Exhibit — Color & Typography Spec.md".
+ * Components use the semantic tokens; publication packages never carry colors or fonts.
+ */
+:root,
+[data-theme='light'] {
+  /* Navy ramp */
+  --navy-900: #0f1e36; /* Midnight */
+  --navy-700: #274c77; /* Meridian */
+  --navy-500: #5c7ea3; /* Harbour */
+  --navy-300: #9bb2cb; /* Haze */
+  --navy-100: #d2dde8; /* Ice */
+
+  /* Neutrals */
+  --paper: #f5f7fa;
+  --mist: #e6ebf1;
+  --rule: #cbd3dd;
+  --grid: #dce2e9;
+  --slate: #5a6573;
+  --ink-soft: #3a4452;
+  --ink: #121821;
+
+  /* Signal layer */
+  --positive: #1e7a55;
+  --positive-fill: #ddefe5;
+  --positive-strong-fill: #9fd1b7;
+  --negative: #b4233c;
+  --negative-fill: #f7dee2;
+  --negative-strong-fill: #e7a3ae;
+  --highlight: #5b3fa0;
+  --highlight-fill: #d9ccf2;
+  --highlight-wash: #ece6f8;
+  --highlight-ink: #3e2a74;
+  --accent: #a5502a;
+  --on-signal: #ffffff;
+
+  /* Roles */
+  --text-heading: var(--navy-900);
+  --text-kicker: var(--navy-700);
+  --series-1: var(--navy-900);
+  --series-2: var(--navy-700);
+  --series-3: var(--navy-500);
+  --series-4: var(--navy-300);
+  --surface: #ffffff;
+  /* Quiet chart bands (eras, regimes): Ice in light mode */
+  --band: var(--navy-100);
+  /* Forecast columns on striped table rows */
+  --forecast-stripe: color-mix(in srgb, var(--navy-300) 32%, var(--mist));
+
+  color-scheme: light;
+}
+
+/* Dark counterparts for screen publishing; print always uses the light values. */
+@media screen {
+  [data-theme='dark'] {
+    --paper: #0b1526;
+    --mist: #14223a;
+    --rule: #2a3a55;
+    --grid: #1e2d47;
+    --slate: #9bb2cb;
+    --ink-soft: #c3d0de;
+    --ink: #f5f7fa;
+    --text-heading: #f5f7fa;
+    --text-kicker: #7fa3cc;
+    --series-1: #b7c9dd;
+    --series-2: #7fa3cc;
+    --series-3: #5c7ea3;
+    --series-4: #3e5a7e;
+    --positive: #6fc39a;
+    --positive-fill: #173a2e;
+    --negative: #f2808f;
+    --negative-fill: #4a1a24;
+    --highlight: #b9a4ee;
+    --highlight-fill: #3a2e63;
+    --highlight-wash: #231d42;
+    --highlight-ink: #e4dafb;
+    --accent: #e07a4a;
+    --surface: #101c31;
+    --band: #16263f;
+    --forecast-stripe: #1c3352;
+    color-scheme: dark;
+  }
+}
+
+/*
+ * Signed figures in tables sit on tinted cells (forecast columns, stripes, highlights). On screen they use a
+ * deeper green and red there to keep 4.5:1 contrast; print keeps the signal colours above.
+ */
+@media screen {
+  :root,
+  [data-theme='light'] {
+    --positive-text: #176647;
+    --negative-text: #a81f37;
+  }
+  [data-theme='dark'] {
+    --positive-text: var(--positive);
+    --negative-text: var(--negative);
+  }
+}
+
+:root {
+  /* Type */
+  --font-sans: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --width-expanded: 120%;
+  --width-label: 115%;
+  --width-meta: 90%;
+  --width-data: 85%;
+  --width-section-number: 80%;
+
+  /* Semantic aliases used across the site */
+  --color-text: var(--ink);
+  --color-muted: var(--slate);
+  --color-background: var(--paper);
+  --color-surface: var(--mist);
+  --color-primary: var(--text-heading);
+  --color-secondary: var(--text-kicker);
+  --color-accent: var(--accent);
+  --font-body: var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-data: var(--font-sans);
+
+  /* Measures (layout, not brand) */
+  --measure: 640px;
+  --measure-title: 860px;
+  --page: 1240px;
+  --gutter: clamp(16px, 4vw, 40px);
+}
+
+@media print {
+  :root {
+    --paper: #ffffff;
+    --surface: #ffffff;
+  }
+}

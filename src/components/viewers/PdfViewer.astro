@@ -1,0 +1,46 @@
+---
+// Standards-based inline PDF viewing with a download fallback for browsers without a PDF viewer.
+interface Props {
+  href: string;
+  title: string;
+}
+const { href, title } = Astro.props;
+---
+
+<section class="pdf-viewer" aria-label="Document viewer">
+  <object data={`${href}#view=FitH`} type="application/pdf" title={title}>
+    <div class="pdf-fallback">
+      <p>This browser cannot show the PDF inline.</p>
+      <p class="pdf-fallback-actions">
+        <a class="button" href={href}>Open PDF</a>
+        <a class="button button--quiet" href={href} download>Download</a>
+      </p>
+    </div>
+  </object>
+</section>
+
+<style>
+  .pdf-viewer {
+    margin-top: 32px;
+    border: 1px solid var(--rule);
+    background: var(--mist);
+  }
+  object {
+    display: block;
+    width: 100%;
+    height: max(560px, calc(100vh - 140px));
+  }
+  .pdf-fallback {
+    display: grid;
+    place-content: center;
+    gap: 16px;
+    min-height: 320px;
+    padding: 32px;
+    text-align: center;
+  }
+  .pdf-fallback-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+</style>

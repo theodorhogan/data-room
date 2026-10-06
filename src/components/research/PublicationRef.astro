@@ -1,0 +1,39 @@
+---
+// Cross-publication reference by ID; title, type and URL come from the registry.
+import { absoluteUrl, getPublication, url } from '../../lib/registry';
+import { formatDate } from '../../lib/format';
+
+interface Props {
+  id: string;
+  label?: string;
+  display?: 'block' | 'inline';
+}
+const { id, label, display = 'inline' } = Astro.props;
+const pub = getPublication(id);
+if (!pub) throw new Error(`<PublicationRef id="${id}">: no such publication`);
+const m = pub.manifest;
+const href = url(pub.path);
+const permanent = absoluteUrl(pub.path, Astro.site);
+const summary = m.summary && m.summary.length > 240 ? `${m.summary.slice(0, 237).replace(/\s+\S*$/, '')}…` : m.summary;
+---
+
+{
+  display === 'block' ? (
+    <a class="pubref-card" href={href}>
+      <span class="kicker">{pub.typeLabel}</span>
+      <span class="pubref-title">{label ?? m.title}</span>
+      {summary && <span class="pubref-summary">{summary}</span>}
+      <span class="meta">
+        {formatDate(m.date)} · {permanent}
+      </span>
+    </a>
+  ) : (
+    <span class="pubref-inline">
+      <a href={href}>{label ?? m.title}</a>{' '}
+      <span class="pubref-type">
+        ({pub.typeLabel}
+        <span class="print-inline">, {permanent}</span>)
+      </span>
+    </span>
+  )
+}

@@ -1,0 +1,170 @@
+# Alibaba initiation (AMSA, 31 Dec 2025): sources. The first block is the report's Appendix 22
+# reference list; the second holds the sources its exhibits name without a list entry.
+
+alibaba-seller-six-units:
+  title: Why does Alibaba split into six units?
+  publisher: Alibaba Seller
+  url: https://seller.alibaba.com/businessblogs/why-does-alibaba-split-into-6-units-px002amsj
+antom-latam-payments:
+  title: Latin America e-commerce payment trends report
+  publisher: Antom
+  url: https://knowledge.antom.com/latin-america-e-commerce-payment-trends-report-a-richer-e-commerce-opportunity-than-southeast-asia
+bloomberg-state-ownership-2024:
+  title: Alibaba discloses state ownership in more than 12 business units
+  publisher: Bloomberg
+  date: 2024-02-26
+  url: https://www.bloomberg.com/news/articles/2024-02-26/alibaba-discloses-state-ownership-in-more-than-12-business-units
+china-daily-2025-08-05:
+  title: Article
+  publisher: China Daily
+  date: 2025-08-05
+  url: https://www.chinadaily.com.cn/a/202508/05/WS68917078a31073015a870d2d.html
+chinatalk-freshippo:
+  title: Whatever happened to Alibaba’s Hema Freshippo?
+  publisher: ChinaTalk
+  url: https://www.chinatalk.nl/whatever-happened-to-alibabas-hema-freshippo/
+coherent-cross-border:
+  title: Cross-border e-commerce market report
+  publisher: Coherent Market Insights
+  url: https://www.coherentmarketinsights.com/industry-reports/cross-border-ecommerce-market
+conversion-brazil:
+  title: E-commerce in Brazil
+  publisher: Conversion
+  url: https://conversion.ag/blog/ecommerce-in-brazil/
+courthouse-aliexpress-dsa:
+  title: EU finds AliExpress violated digital safety rules
+  publisher: Courthouse News Service
+  url: https://courthousenews.com/eu-finds-aliexpress-violated-digital-safety-rules/
+dbs-alibaba:
+  title: Alibaba equity research report
+  publisher: DBS Bank
+  url: https://www.dbs.com.hk/treasures/aics/stock-coverage/templatedata/article/equity/data/en/DBSV/012014/9988_HK.xml
+dijitera-turkey:
+  title: Türkiye’de e-ticaret rakamları
+  publisher: Dijitera
+  url: https://dijitera.com.tr/turkiyede-e-ticaret-rakamlari/
+gartner-iaas-2024:
+  title: Gartner says worldwide IaaS public cloud services market grew 22.5% in 2024
+  publisher: Gartner
+  date: 2025-08-06
+  url: https://www.gartner.com/en/newsroom/press-releases/2025-08-06-gartner-says-worldwide-iaas-public-cloud-services-market-grew-22-point-5-percent-in-2024
+grandview-china-cloud-ai:
+  title: China cloud AI market size and outlook
+  publisher: Grand View Research
+  url: https://www.grandviewresearch.com/horizon/outlook/cloud-ai-market/china
+grandview-china-paas:
+  title: China platform as a service (PaaS) market outlook
+  publisher: Grand View Research
+  url: https://www.grandviewresearch.com/horizon/outlook/platform-as-a-service-paas-market/china
+grandview-paas:
+  title: Platform as a service (PaaS) market size report
+  publisher: Grand View Research
+  url: https://www.grandviewresearch.com/industry-analysis/paas-market-report
+ita-china-ecommerce:
+  title: China – E-commerce (Country Commercial Guide)
+  publisher: International Trade Administration, US Department of Commerce
+  url: https://www.trade.gov/country-commercial-guides/china-ecommerce
+investopedia-ai-capex:
+  title: Alibaba plans to invest $52B in AI, cloud over next three years
+  publisher: Investopedia
+  url: https://www.investopedia.com/alibaba-plans-to-invest-usd52b-in-ai-cloud-over-next-three-years-11684981
+lazada-press-release:
+  title: Press release
+  publisher: Lazada Group
+  url: https://lazada-com.oss-ap-southeast-1.aliyuncs.com/232-press-release.pdf
+mckinsey-sea-logistics:
+  title: 'E-commerce is entering a new phase in Southeast Asia: Are logistics players prepared?'
+  publisher: McKinsey & Company
+  url: https://www.mckinsey.com/~/media/mckinsey/industries/travel%20logistics%20and%20infrastructure/our%20insights/e%20commerce%20is%20entering%20a%20new%20phase%20in%20southeast%20asia%20are%20logistics%20players%20prepared/e-commerce-is-entering-a-new-phase
+mmlc-rectification:
+  title: China Alibaba rectification
+  publisher: MMLC Group
+  url: https://mmlcgroup.com/china-alibaba-rectification/
+mobileworldlive-ai-capex:
+  title: Alibaba plots AI capex hike
+  publisher: Mobile World Live
+  url: https://www.mobileworldlive.com/ai-cloud/alibaba-plots-ai-capex-hike/
+mordor-china-ecommerce:
+  title: China e-commerce market – Growth, trends, and forecasts
+  publisher: Mordor Intelligence
+  url: https://www.mordorintelligence.com/industry-reports/china-ecommerce-market
+mordor-cloud-ai:
+  title: Cloud AI market – Growth, trends, and forecasts
+  publisher: Mordor Intelligence
+  url: https://www.mordorintelligence.com/industry-reports/cloud-ai-market
+mordor-cloud-computing:
+  title: Cloud computing market – Growth, trends, and forecasts
+  publisher: Mordor Intelligence
+  url: https://www.mordorintelligence.com/industry-reports/cloud-computing-market
+mordor-global-ecommerce:
+  title: Global e-commerce market – Growth, trends, and forecasts
+  publisher: Mordor Intelligence
+  url: https://www.mordorintelligence.com/industry-reports/global-ecommerce-market
+nbs-china-2025-10-22:
+  title: Press release
+  publisher: National Bureau of Statistics of China
+  date: 2025-10-22
+  url: https://www.stats.gov.cn/english/PressRelease/202510/t20251022_1961664.html
+omdia-china-cloud-q2-2025:
+  title: Mainland China’s cloud infrastructure market returns to over 20% growth in Q2 2025
+  publisher: Omdia
+  date: 2025-11
+  url: https://omdia.tech.informa.com/pr/2025/nov/mainland-chinas-cloud-infrastructure-market-returns-to-over-20percent-growth-in-q2-2025
+paymentscmi-brazil:
+  title: Brazil e-commerce market insights
+  publisher: Payments CMI
+  url: https://paymentscmi.com/insights/brazil-e-commerce-market/
+reuters-apple-ai-2025:
+  title: Alibaba chairman confirms AI partnership with Apple for Chinese iPhones
+  publisher: Reuters
+  date: 2025-02-13
+  url: https://www.reuters.com/technology/artificial-intelligence/alibaba-chairman-confirms-ai-partnership-with-apple-chinese-iphones-2025-02-13/
+scmp-tech-crackdown:
+  title: 'Timeline: China’s 32-month big tech crackdown'
+  publisher: South China Morning Post
+  date: 2023
+  url: https://www.scmp.com/tech/big-tech/article/3227753/timeline-chinas-32-month-big-tech-crackdown-killed-worlds-largest-ipo-and-wiped-out-trillions-value
+samr:
+  title: State Administration for Market Regulation of China
+  publisher: State Administration for Market Regulation of China
+  url: https://www.samr.gov.cn/
+guardian-fine-2021:
+  title: China fines Alibaba billions for alleged market abuses
+  publisher: The Guardian
+  date: 2021-04-10
+  url: https://www.theguardian.com/business/2021/apr/10/china-fines-alibaba-billions-for-alleged-market-abuses
+guardian-aliexpress-2025:
+  title: EU accuses AliExpress of systemic failure on illegal goods
+  publisher: The Guardian
+  date: 2025-06-18
+  url: https://www.theguardian.com/business/2025/jun/18/eu-accuses-china-aliexpress-of-systemic-failure-illegal-goods
+verdict-aliexpress-dsa:
+  title: EU Commission launches DSA proceedings against Alibaba’s AliExpress
+  publisher: Verdict
+  url: https://www.verdict.co.uk/eu-commission-launches-dsa-proceedings-against-alibabas-aliexpress/
+
+# Sources named in exhibits and text without an entry in the reference list
+company-filings:
+  title: Annual reports, interim results and filings of Alibaba Group Holding Limited
+  publisher: Alibaba Group Holding Limited
+amsa-research:
+  title: AMSA Equity Research analysis and Alibaba financial model
+  publisher: Asset Management Study Association (AMSA)
+lseg:
+  title: Market data, estimates and peer financials
+  publisher: LSEG Data & Analytics
+factset:
+  title: Ownership, shareholder and market data
+  publisher: FactSet
+goldman-sachs:
+  title: Research cited in exhibit sources
+  publisher: Goldman Sachs
+sp-global:
+  title: ESG and market data
+  publisher: S&P Global
+yahoo-finance:
+  title: Market data
+  publisher: Yahoo Finance
+european-commission:
+  title: Digital Services Act proceedings against AliExpress
+  publisher: European Commission

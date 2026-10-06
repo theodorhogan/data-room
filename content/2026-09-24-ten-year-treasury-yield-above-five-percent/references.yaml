@@ -1,0 +1,391 @@
+ycharts-10y:
+  title: 10 Year Treasury Rate
+  publisher: YCharts (data from the U.S. Department of the Treasury)
+  date: 2026-09-23
+  url: https://ycharts.com/indicators/10_year_treasury_rate
+  note: Daily par yields; also the source for the Sept. 23 yield curve and the 10s-2s spread.
+
+ycharts-10y-real:
+  title: 10 Year Real Treasury Rate
+  publisher: YCharts (data from the U.S. Department of the Treasury)
+  date: 2026-09-22
+  url: https://ycharts.com/indicators/10_year_real_treasury_rate
+
+fred-gs10:
+  title: "Market Yield on U.S. Treasury Securities at 10-Year Constant Maturity, Quoted on an Investment Basis (GS10)"
+  publisher: Board of Governors of the Federal Reserve System, via FRED (Federal Reserve Bank of St. Louis)
+  date: 2026-09-01
+  url: https://fred.stlouisfed.org/data/GS10
+  note: Monthly averages, April 1953 to August 2026.
+
+fred-dfedtaru:
+  title: "Federal Funds Target Range - Upper Limit (DFEDTARU)"
+  publisher: Board of Governors of the Federal Reserve System, via FRED (Federal Reserve Bank of St. Louis)
+  date: 2026
+  url: https://fred.stlouisfed.org/series/DFEDTARU
+  note: Not opened for this package; used for the target-range history. The 2026 changes are confirmed by the Fed-decision sources cited.
+
+te-10y-2026-09-15:
+  title: US 10-Year Yield Hits Highest Since 2007
+  publisher: Trading Economics
+  author: Jam Kaimo Samonte
+  date: 2026-09-15
+  url: https://tradingeconomics.com/united-states/government-bond-yield/news/583731
+
+te-10y-2026-09-23:
+  title: US 10Y Bond Yield Hits 19-year High
+  publisher: Trading Economics
+  date: 2026-09-23
+  url: https://tradingeconomics.com/united-states/government-bond-yield/news/586168
+
+te-10y-2026-09-24:
+  title: US 10-Year Yield Hovers at 19-Year High
+  publisher: Trading Economics
+  author: Jam Kaimo Samonte
+  date: 2026-09-24
+  url: https://tradingeconomics.com/united-states/government-bond-yield/news/586294
+
+te-fed-2026-09-16:
+  title: Fed Raises Rates for 1st Time Since 2023
+  publisher: Trading Economics
+  author: Joana Taborda
+  date: 2026-09-16
+  url: https://tradingeconomics.com/united-states/interest-rate/news/584300
+
+schwab-fomc-2026-09:
+  title: "Fed Hikes in 12-0 Vote, Commits to Inflation Fight"
+  publisher: Charles Schwab
+  author: Collin Martin
+  date: 2026-09-16
+  url: https://www.schwab.com/learn/story/fomc-meeting
+
+euronews-fed-2026-09:
+  title: Fed raises rates for the first time since 2023 in unanimous vote defying Trump
+  publisher: Euronews
+  author: Quirino Mealha
+  date: 2026-09-16
+  url: https://euronews.com/business/2026/09/16/fed-raises-rates-for-the-first-time-since-2023-in-unanimous-vote-defying-trump
+
+bloomberg-fed-2026-09:
+  title: Federal Reserve Raises Interest Rates for First Time Since 2023
+  publisher: Bloomberg News, via CPA Practice Advisor
+  author: Andrew Ackerman
+  date: 2026-09-16
+  url: https://cpapracticeadvisor.com/2026/09/16/federal-reserve-raises-interest-rates-for-first-time-since-2023/190284
+  note: Bloomberg story republished through Tribune News Service.
+
+sbs-warsh-2026-06:
+  title: "Appointed to Lower Rates, but 'Warsh's Fed' Hints at Hike in First Meeting"
+  publisher: SBS
+  author: Yoo Younggyu
+  date: 2026-06-18
+  url: https://sbsstar.net/article/N1008615886/appointed-to-lower-rates-but-warshs-fed-hints-at-hike-in-first-meeting
+
+sa-trump-warsh-2026-02:
+  title: "Trump says he wouldn't have chosen Warsh for Fed chair if he wanted rate hikes"
+  publisher: Seeking Alpha
+  date: 2026-02-04
+  url: https://seekingalpha.com/news/4547404-trump-says-he-wouldnt-have-chosen-warsh-for-fed-chair-if-he-wanted-rate-hikes
+  note: Title taken from the article URL.
+
+crs-cook-2026:
+  title: Trump v. Cook and For-Cause Removal of Federal Reserve Governors
+  publisher: Congressional Research Service, via EveryCRSReport
+  date: 2026-07-06
+  url: https://www.everycrsreport.com/reports/LSB11449.html
+
+pwbm-tariffs-2026:
+  title: "Supreme Court Tariff Ruling: IEEPA Revenue and Potential Refunds"
+  publisher: Penn Wharton Budget Model
+  date: 2026-02-20
+  url: https://budgetmodel.wharton.upenn.edu/p/2026-02-20-supreme-court-tariff-ruling/
+
+reuters-tariffs-2026:
+  title: "Supreme Court tariff ruling 'opens the door' to refunds for over $175 billion, Penn-Wharton estimates"
+  publisher: Reuters
+  date: 2026-02-20
+  url: https://reuters.screenocean.com/record/2343289
+  note: Reuters video record with story text; source of the 6-3 vote.
+
+foxbiz-dividend-2026:
+  title: "Trump's $5,000 dividend proposal could add $1.2T to federal deficit, analysts say"
+  publisher: Fox Business
+  date: 2026
+  url: https://foxbusiness.com/politics/trumps-5000-dividend-proposal-could-add-1-2t-federal-deficit-analysts-say
+  note: Title taken from the article URL; reports the Committee for a Responsible Federal Budget estimate.
+
+spectrum-dividend-2026:
+  title: "Trump promises $5,000 checks if Republicans win"
+  publisher: Spectrum News 13
+  date: 2026-09-10
+  url: https://mynews13.com/fl/orlando/politics/2026/09/10/trump-promises--5-000-checks-if-republicans-win
+  note: Title taken from the article URL.
+
+cbo-mbr-2026-08:
+  title: "Monthly Budget Review: August 2026"
+  publisher: Congressional Budget Office
+  date: 2026
+  url: https://www.cbo.gov/publication/61984
+
+cbo-outlook-2026:
+  title: "The Budget and Economic Outlook: 2026 to 2036"
+  publisher: Congressional Budget Office
+  date: 2026
+  url: https://www.cbo.gov/publication/61882
+
+cbo-sensitivity-2026:
+  title: "How Changes in Economic Conditions Might Affect the Federal Budget: 2026 to 2036"
+  publisher: Congressional Budget Office
+  date: 2026
+  url: https://www.cbo.gov/publication/62257
+
+crfb-deficit-2026-09:
+  title: CBO Estimates $2.0 Trillion Deficit in First 11 Months of FY 2026
+  publisher: Committee for a Responsible Federal Budget
+  date: 2026
+  url: https://www.crfb.org/press-releases/cbo-estimates-20-trillion-deficit-first-11-months-fy-2026
+  note: Title taken from the URL.
+
+crfb-outlook-2026:
+  title: "Analysis of CBO's February 2026 Budget and Economic Outlook"
+  publisher: Committee for a Responsible Federal Budget
+  date: 2026
+  url: https://www.crfb.org/sites/default/files/media/documents/CRFB_CBO_February_2026_Budget_And_Economic_Outlook_4.pdf
+  note: Title inferred from the file name. Source of the year-by-year CBO deficit figures and the 4.1% 10-year assumption.
+
+pgpf-interest:
+  title: "Monthly Interest Tracker: National Debt"
+  publisher: Peter G. Peterson Foundation
+  date: 2026
+  url: https://www.pgpf.org/programs-and-projects/fiscal-policy/monthly-interest-tracker-national-debt/
+
+td-bond-yields-2026-09:
+  title: "Bond Yields: Higher for Longer, and for Fundamental Reasons"
+  publisher: TD Economics
+  date: 2026-09-10
+  url: https://economics.td.com/ca-bond-yields
+
+wolf-2026-09-23:
+  title: "Bond Bloodbath: Treasury 10-Year Yield Spikes 13 Basis Points, Breaks Out, Hits 5.10% after Hot PMIs with Inflation Written All Over"
+  publisher: Wolf Street
+  author: Wolf Richter
+  date: 2026-09-23
+  url: https://wolfstreet.com/2026/09/23/bond-bloodbath-treasury-10-year-yield-spikes-13-basis-points-breaks-out-hits-5-10-after-hot-pmis-with-inflation-written-all-over/
+  note: Title taken from the article URL.
+
+tipswatch-2026-09-17:
+  title: "10-year TIPS reopening gets real yield of 2.653%, highest in nearly 18 years"
+  publisher: Tipswatch
+  date: 2026-09-17
+  url: https://tipswatch.com/2026/09/17/10-year-tips-reopening-gets-real-yield-of-2-653-highest-in-nearly-18-years/
+  note: Title taken from the article URL.
+
+bls-cpi-2026-08:
+  title: Consumer Price Index – August 2026
+  publisher: U.S. Bureau of Labor Statistics
+  date: 2026-09-11
+  url: https://www.bls.gov/news.release/cpi.nr0.htm
+
+bls-cpi-2025-08:
+  title: Consumer Price Index – August 2025
+  publisher: U.S. Bureau of Labor Statistics
+  date: 2025-09-11
+  url: https://www.bls.gov/news.release/archives/cpi_09112025.htm
+
+bea-pio-2026-07:
+  title: Personal Income and Outlays, July 2026
+  publisher: U.S. Bureau of Economic Analysis
+  date: 2026
+  url: https://www.bea.gov/news/2026/personal-income-and-outlays-july-2026
+
+bea-pio-2025-07:
+  title: Personal Income and Outlays, July 2025
+  publisher: U.S. Bureau of Economic Analysis
+  date: 2025-08-29
+  url: https://www.bea.gov/news/2025/personal-income-and-outlays-july-2025
+
+bea-gdp-2026q2-second:
+  title: GDP (Second Estimate) and Corporate Profits (Preliminary), 2nd Quarter 2026
+  publisher: U.S. Bureau of Economic Analysis, via LegiStorm
+  date: 2026
+  url: https://www.legistorm.com/stormfeed/view_rss/8119488/organization/95833/title/gdp-second-estimate-and-corporate-profits-2nd-quarter-2026.html
+  note: BEA release as mirrored by LegiStorm; title taken from the URL.
+
+bea-gdp-2026q2-advance:
+  title: Gross Domestic Product, 2nd Quarter 2026 (Advance Estimate)
+  publisher: U.S. Bureau of Economic Analysis
+  date: 2026
+  url: https://bea.gov/news/2026/gdp-advance-estimate-2nd-quarter-2026
+  note: Title taken from the URL.
+
+firsttrust-payrolls-2026-08:
+  title: "Nonfarm Payrolls Increased 162,000 in August"
+  publisher: First Trust Portfolios
+  date: 2026-09-04
+  url: "https://www.ftportfolios.com/Commentary/EconomicResearch/2026/9/4/nonfarm-payrolls-increased-162,000-in-august"
+  note: Title taken from the URL.
+
+factset-ei-2026-09-11:
+  title: Earnings Insight
+  publisher: FactSet
+  date: 2026-09-11
+  url: https://advantage.factset.com/hubfs/Website/Resources%20Section/Research%20Desk/Earnings%20Insight/EarningsInsight_091126.pdf
+  note: Weekly report. Forward P/E readings for earlier dates come from prior editions of the same report, collected during research; they were not re-opened for this package.
+
+reuters-5pct-2026-09:
+  title: "As 5% Treasury yields lose shock value, investors start worrying about 6%"
+  publisher: Reuters, via Investing.com
+  date: 2026-09-23
+  url: https://www.investing.com/news/economy-news/analysisas-5-treasury-yields-lose-shock-value-investors-start-worrying-about-6-4913678
+
+ap-stocks-2026-09-23:
+  title: How major US stock indexes fared Wednesday, 9/23/2026
+  publisher: Associated Press, via ABC News
+  date: 2026-09-23
+  url: https://abcnews.com/Business/wireStory/major-us-stock-indexes-fared-wednesday-9232026-136697299
+
+riotimes-2026-09-24:
+  title: "Global Economy Briefing: September 24, 2026"
+  publisher: The Rio Times
+  date: 2026-09-24
+  url: https://www.riotimesonline.com/global-economy-briefing-september-24-2026/
+  note: Title taken from the URL.
+
+wiki-oil-chronology:
+  title: 2026–2028 world oil market chronology
+  publisher: Wikipedia
+  date: 2026
+  url: https://en.wikipedia.org/wiki/2026%E2%80%932028_world_oil_market_chronology
+  note: Tertiary source compiling Reuters and CNBC closing prices; accessed Sept. 24, 2026.
+
+wiki-fuel-crisis:
+  title: 2026 Iran war fuel crisis
+  publisher: Wikipedia
+  date: 2026
+  url: https://en.wikipedia.org/wiki/2026_Iran_war_fuel_crisis
+  note: Tertiary source; accessed Sept. 24, 2026.
+
+bnn-jgb-2026-09-01:
+  title: Global bond rout deepens as Japan yield hits key milestone
+  publisher: BNN Bloomberg
+  date: 2026-09-01
+  url: https://www.bnnbloomberg.ca/investing/2026/09/01/global-bond-rout-deepens-as-japan-yield-hits-key-milestone/
+  note: Title taken from the article URL.
+
+te-jgb-2026-09:
+  title: Japan 10-Year Government Bond Yield
+  publisher: Trading Economics
+  date: 2026-09-24
+  url: https://tradingeconomics.com/japan/government-bond-yield
+
+advisorperspectives-2025-09-19:
+  title: "Treasury Yields Snapshot: September 19, 2025"
+  publisher: Advisor Perspectives, via Seeking Alpha
+  date: 2025-09-19
+  url: https://seekingalpha.com/article/4824486-treasury-yields-snapshot-september-19-2025
+  note: Title taken from the article URL.
+
+mnd-freddie:
+  title: Freddie Mac Mortgage Rates
+  publisher: Mortgage News Daily
+  date: 2026-08-07
+  url: https://www.mortgagenewsdaily.com/mortgage-rates/freddie-mac
+  note: Table of Freddie Mac weekly survey results, June 18 to Aug. 6, 2026.
+
+freddie-2026-09-03:
+  title: Mortgage Rates Average 6.71%
+  publisher: Freddie Mac
+  date: 2026-09-03
+  url: https://freddiemac.gcs-web.com/news-releases/news-release-details/mortgage-rates-average-671
+
+freddie-2026-04-02:
+  title: The 30-Year Fixed-Rate Mortgage Averages 6.46%
+  publisher: Freddie Mac
+  date: 2026-04-02
+  url: https://freddiemac.gcs-web.com/news-releases/news-release-details/30-year-fixed-rate-mortgage-averages-646
+
+freddie-2026-03-19:
+  title: Average 30-Year Fixed-Rate Mortgage at 6.22%
+  publisher: Freddie Mac, via Barchart
+  date: 2026-03-19
+  url: https://www.barchart.com/story/news/36552754/average-30-year-fixed-rate-mortgage-at-6-22
+
+freddie-2026-03-05:
+  title: Mortgage Rates Hold Steady
+  publisher: Freddie Mac, via Barchart
+  date: 2026-03-05
+  url: https://www.barchart.com/story/news/588381/mortgage-rates-hold-steady
+  note: Title taken from the URL.
+
+freddie-2026-01-15:
+  title: The Average 30-Year Fixed-Rate Mortgage Hits Lowest Level in Over Three Years
+  publisher: Freddie Mac, via Barchart
+  date: 2026-01-15
+  url: https://www.barchart.com/story/news/37066078/the-average-30-year-fixed-rate-mortgage-hits-lowest-level-in-over-three-years
+
+npr-greenspan:
+  title: Alan Greenspan Timeline
+  publisher: NPR
+  date: 2006-01-27
+  url: https://www.npr.org/5175182
+
+nber-cycles:
+  title: US Business Cycle Expansions and Contractions
+  publisher: National Bureau of Economic Research
+  url: https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions
+
+abrams-2006:
+  title: "How Richard Nixon Pressured Arthur Burns: Evidence from the Nixon Tapes"
+  publisher: Journal of Economic Perspectives, via FRASER
+  author: Burton A. Abrams
+  date: 2006
+  url: https://fraser.stlouisfed.org/files/docs/meltzer/jep_2006_abrams_how_richard_nixon.pdf
+
+cme-1970s:
+  title: Oil Shocks, Inflation and Why the 1970s Playbook Has Its Limits
+  publisher: CME Group OpenMarkets
+  date: 2026
+  url: https://www.cmegroup.com/openmarkets/energy/2026/Oil-Shocks-Inflation-and-Why-the-1970s-Playbook-Has-Its-Limits.html
+  note: Title taken from the URL.
+
+delong-2026-06:
+  title: "So Far, Inflation's Return Limited to Energy"
+  publisher: Brad DeLong's Grasping Reality (Substack)
+  author: J. Bradford DeLong
+  date: 2026-06-11
+  url: https://braddelong.substack.com/p/so-far-inflations-return-limited
+  note: Title approximated from the URL.
+
+bs-wood-1987:
+  title: "Current market action looks similar to October 1987 crash: Chris Wood"
+  publisher: Business Standard
+  date: 2023-10-05
+  url: https://www.business-standard.com/markets/news/current-market-action-looks-similar-to-october-1987-crash-chris-wood-123100501117_1.html
+  note: Title taken from the URL.
+
+volcker-quotes:
+  title: Keeping At It Quotes by Paul A. Volcker
+  publisher: Goodreads
+  url: https://www.goodreads.com/work/quotes/63179741
+  note: Quotation from Volcker's memoir Keeping At It (2018), seen via Goodreads.
+
+sc-gulf-war:
+  title: The Gulf War playbook for today's markets
+  publisher: Standard Chartered
+  date: 2026
+  url: https://www.sc.com/EN/news/wealth-retail-banking/the-gulf-war-playbook-for-todays-markets/
+  note: Title taken from the URL.
+
+posen-247-2026-09:
+  title: "65 Months of Above-Target Inflation: Powell's Legacy May Echo Arthur Burns"
+  publisher: 24/7 Wall St.
+  date: 2026-09-03
+  url: https://247wallst.com/investing/2026/09/03/65-months-of-above-target-inflation-powells-legacy-may-echo-arthur-burns/
+  note: Title taken from the URL; source of Adam Posen's inflation view.
+
+vantage-2026-09-24:
+  title: US 10-Year Treasury Yield at 2007 High
+  publisher: Vantage Markets
+  date: 2026-09-24
+  url: https://www.vantagemarkets.com/market-news/us-10-year-treasury-yield-2007-high-september-24-2026/
+  note: Title reconstructed from the URL; used only for the Oct. 28 FOMC date.

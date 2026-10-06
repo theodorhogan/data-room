@@ -1,0 +1,26 @@
+schema: 1
+
+id: 2025-12-20-kion-recapitalization-model
+title: KION recapitalization model
+date: 2025-12-20
+
+kind: artifact
+format: xlsx
+primary: Group10_Financial_Policy_Model.xlsx
+
+summary: Group model of a debt-funded €2bn special dividend at KION, tested against peer leverage and coverage.
+
+authors:
+  - Jordy Dikken
+  - Jorick Stoel
+  - Rikus van der Vegt
+  - Theodor Hogan
+
+tags:
+  - financial-model
+
+tickers:
+  - KGX.DE
+
+related:
+  - 2025-11-27-renault-group-valuation-model

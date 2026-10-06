@@ -1,0 +1,28 @@
+schema: 1
+
+id: 2025-12-31-alibaba-initiating-coverage
+title: "Alibaba: Closing the China Discount with AI Growth"
+date: 2025-12-31
+
+kind: research
+format: mdx
+primary: index.mdx
+pdf: amsa-alibaba-initiating-coverage.pdf
+
+summary: Initiating coverage of Alibaba Group at BUY with a 12-month price target of RMB 175 (USD 200).
+authors:
+  - Robert Chrisnadi
+  - Laurens de Bont
+  - Theodor Hogan
+  - Jerónimo Javier Pereyra
+  - Nikolai Krog
+
+tags:
+  - deep-research
+  - equity-research
+  - dcf
+  - cca
+
+tickers:
+  - BABA
+  - 9988.HK

@@ -1,0 +1,60 @@
+---
+// Artifact host: the JSX runs in a sandboxed iframe (scripts only, opaque origin, strict CSP),
+// so it cannot reach the site shell, navigation, storage or publication metadata.
+interface Props {
+  src: string;
+  title: string;
+}
+const { src, title } = Astro.props;
+---
+
+<section class="artifact-stage" data-artifact>
+  <div class="artifact-bar">
+    <button type="button" class="button button--quiet" data-fullscreen hidden>Full screen</button>
+  </div>
+  <iframe src={src} title={`Interactive artifact: ${title}`} sandbox="allow-scripts" referrerpolicy="no-referrer" loading="eager"></iframe>
+</section>
+
+<style>
+  .artifact-stage {
+    margin-top: 32px;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+  .artifact-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  iframe {
+    display: block;
+    width: 100%;
+    height: max(600px, calc(100vh - 120px));
+    border: 0;
+    background: var(--paper);
+  }
+  .artifact-stage:fullscreen {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+  }
+  .artifact-stage:fullscreen iframe {
+    flex: 1;
+    height: auto;
+  }
+</style>
+
+<script>
+  for (const stage of document.querySelectorAll<HTMLElement>('[data-artifact]')) {
+    const button = stage.querySelector<HTMLButtonElement>('[data-fullscreen]');
+    if (!button || !document.fullscreenEnabled) continue;
+    button.hidden = false;
+    button.addEventListener('click', () => (document.fullscreenElement ? document.exitFullscreen() : stage.requestFullscreen()));
+    document.addEventListener('fullscreenchange', () => {
+      button.textContent = document.fullscreenElement === stage ? 'Exit full screen' : 'Full screen';
+    });
+  }
+</script>

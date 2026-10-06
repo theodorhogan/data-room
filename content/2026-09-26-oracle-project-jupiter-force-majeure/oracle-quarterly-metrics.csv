@@ -1,0 +1,6 @@
+fiscal_quarter,period_start,period_end,total_revenue_usd_m,cloud_revenue_usd_m,cloud_infrastructure_revenue_usd_m,remaining_performance_obligations_usd_bn,operating_cash_flow_usd_m,capital_expenditures_usd_m,free_cash_flow_usd_m,customer_prepayments_usd_m,net_capex_outlay_usd_m,total_borrowings_usd_m,interest_expense_usd_m,source_ids
+Q1 FY26,2025-06-01,2025-08-31,14926,7186,3347,455,8140,8502,-362,0,6544,,923,oracle-q1-fy27-8k-2026 oracle-q1-fy26-release-2025
+Q2 FY26,2025-09-01,2025-11-30,16058,7977,4079,523,2066,12033,-9967,0,12793,,,oracle-q1-fy27-8k-2026 roic-oracle-cds-2025
+Q3 FY26,2025-12-01,2026-02-28,17190,8914,4888,553,7151,18635,-11484,0,17166,,,oracle-q1-fy27-8k-2026 oracle-q3-fy26-8k-2026
+Q4 FY26,2026-03-01,2026-05-31,19184,9913,5787,638,14620,16493,-1873,4592,11223,129541,,oracle-q1-fy27-8k-2026 oracle-q4-fy26-8k-2026
+Q1 FY27,2026-06-01,2026-08-31,19345,11607,7388,664,23103,28499,-5396,11363,17966,125337,1428,oracle-q1-fy27-8k-2026

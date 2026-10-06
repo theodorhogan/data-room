@@ -1,0 +1,6 @@
+Impact (rows) / probability (columns),Probability 1 (low),Probability 2,Probability 3,Probability 4,Probability 5 (high)
+Impact 5 (high),F1,,R1,,
+Impact 4,,,"S1, R2",M1,
+Impact 3,,,"R3, O1","M2, M5",
+Impact 2,,,M3,M4,
+Impact 1 (low),,,,,

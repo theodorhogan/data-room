@@ -1,0 +1,9 @@
+---
+// Citation marker. remarkResearch injects `refs` (numbered by first appearance).
+interface Props {
+  refs?: string;
+}
+const refs: { id: string; n: number; label: string }[] = JSON.parse(Astro.props.refs ?? '[]');
+---
+
+<sup class="cite">{refs.map((r, i) => <>{i > 0 && <span class="cite-sep">,</span>}<a href={`#ref-${r.id}`} title={r.label} aria-label={`Source ${r.n}: ${r.label}`}>{r.n}</a></>)}</sup>

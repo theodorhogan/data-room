@@ -1,0 +1,43 @@
+---
+import path from 'node:path';
+import Exhibit from './Exhibit.astro';
+import DataTable from './DataTable.astro';
+import { loadTable } from '../../lib/csv';
+import { contentDirectory } from '../../lib/packages';
+import { fileUrl, getPublication } from '../../lib/registry';
+import { tableHooks } from '../../lib/tables';
+
+interface Props {
+  src: string;
+  title: string;
+  unit?: string;
+  caption?: string;
+  highlight?: string;
+  keyRows?: string;
+  changes?: string;
+  forecast?: string;
+  sourceRefs?: string;
+  citeMap?: string;
+  exhibit: string;
+  pkg: string;
+}
+const p = Astro.props;
+const table = loadTable(path.join(contentDirectory(), p.pkg, ...p.src.split('/')));
+const hooks = tableHooks(table, { ...p, key: p.keyRows });
+const pub = getPublication(p.pkg);
+---
+
+<Exhibit exhibit={p.exhibit} title={p.title} unit={p.unit} caption={p.caption} sourceRefs={p.sourceRefs}>
+  <DataTable
+    table={table}
+    citeMap={JSON.parse(p.citeMap || '{}')}
+    highlightRow={hooks.highlight}
+    keyRows={hooks.key}
+    signedColumns={hooks.changeColumns}
+    signedRows={hooks.changeRows}
+    forecastColumns={hooks.forecast}
+  />
+  <div class="exhibit-tools" slot="tools" data-pagefind-ignore>
+    {pub && <a href={fileUrl(pub, p.src)} download>Download data</a>}
+  </div>
+</Exhibit>

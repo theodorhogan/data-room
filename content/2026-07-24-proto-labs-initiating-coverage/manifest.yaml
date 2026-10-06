@@ -1,0 +1,23 @@
+schema: 1
+
+id: 2026-07-24-proto-labs-initiating-coverage
+title: "Proto Labs: Best-In-Class Execution, Fully Priced"
+date: 2026-07-24
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: Initiating coverage at HOLD with a $71 price target, built on all 57 quarterly releases and 14 years of 10-K filings.
+authors:
+  - AMSA Equity Research
+tags:
+  - deep-research
+  - dcf
+  - cca
+  - equity-research
+
+tickers:
+  - PRLB
+related:
+  - 2026-04-14-proto-labs-prlb-two-pager

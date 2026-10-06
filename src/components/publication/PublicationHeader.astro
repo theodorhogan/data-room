@@ -1,0 +1,65 @@
+---
+import { absoluteUrl, url, type Publication } from '../../lib/registry';
+import { formatDate } from '../../lib/format';
+import { sortTags, tagLabel } from '../../lib/manifest';
+
+interface Props {
+  pub: Publication;
+}
+const { pub } = Astro.props;
+const m = pub.manifest;
+const permanent = absoluteUrl(pub.path, Astro.site);
+const byline = (names: string[]) => (names.length < 3 ? names.join(' and ') : `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`);
+---
+
+<header class="wrap pub-header">
+  <p class="kicker">{pub.typeLabel}</p>
+  <h1 class="title">{m.title}</h1>
+  {m.summary && <p class="standfirst">{m.summary}</p>}
+  <p class="pub-meta meta" data-pagefind-ignore>
+    {m.authors.length > 0 && <span class="byline">By {byline(m.authors)}</span>}
+    <time datetime={m.date}>{formatDate(m.date)}</time>
+    {pub.readingMinutes && <span>{pub.readingMinutes} min read</span>}
+  </p>
+  <p class="print-only meta" data-pagefind-ignore>{permanent}</p>
+  <div class="pub-actions" data-pagefind-ignore>
+    <slot name="actions" />
+    <button type="button" class="button button--quiet" data-copy-link hidden>Copy link</button>
+  </div>
+  {
+    (m.tags.length > 0 || m.tickers.length > 0) && (
+      <div class="pub-labels" data-pagefind-ignore>
+        {m.tickers.length > 0 && (
+          <ul class="ticker-list" aria-label="Companies">
+            {m.tickers.map((t) => (
+              <li>
+                <a href={`${url('/')}?ticker=${encodeURIComponent(t)}`}>{t}</a>
+              </li>
+            ))}
+          </ul>
+        )}
+        {m.tags.length > 0 && (
+          <ul class="tag-list" aria-label="Tags">
+            {sortTags(m.tags).map((t) => (
+              <li>
+                <a href={`${url('/')}?tag=${encodeURIComponent(t)}`}>{tagLabel(t)}</a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    )
+  }
+</header>
+
+<script>
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy-link]')) {
+    if (!navigator.clipboard) continue;
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(location.href.split('#')[0]);
+      button.textContent = 'Link copied';
+      setTimeout(() => (button.textContent = 'Copy link'), 2000);
+    });
+  }
+</script>

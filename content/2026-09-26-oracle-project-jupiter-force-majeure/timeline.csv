@@ -1,0 +1,39 @@
+date,date_precision,status,category,event,source_ids,note
+2025-01-21,day,past,announcement,Stargate unveiled at the White House,wikipedia-stargate-llc,
+2025-02-25,day,past,approval,Governor announces a digital infrastructure campus in Santa Teresa with BorderPlex Digital Assets,searchlight-jupiter-timeline-2026,
+2025-08-28,day,past,developer,"Stack Infrastructure, owned by Blue Owl, announces its role in the project",searchlight-jupiter-timeline-2026,
+2025-09-19,day,past,approval,"Doña Ana County approves $165bn of industrial revenue bonds, 4–1, after a closed session",searchlight-jupiter-timeline-2026,
+2025-09-23,day,past,announcement,"OpenAI, Oracle and SoftBank name Doña Ana County a Stargate site",openai-five-stargate-sites-2025,
+2025-10-02,day,past,construction,"County grading permit issued; earthworks begin on about 1,400 acres",searchlight-jupiter-timeline-2026,
+2025-12-17,day,past,permit,Environment Department finds the gas-turbine air-permit applications incomplete,searchlight-jupiter-timeline-2026,
+2025,approx,past,finance,About 20 banks lend $18bn for construction,reuters-ft-jupiter-loans-2026 bloomberg-oracle-force-majeure-2026,Reported as late 2025; closing date undisclosed
+2026-01,month,past,tenancy,"Oracle confirmed as tenant, to host OpenAI capacity in four buildings",dcd-oracle-force-majeure-2026,
+2026-03-20,day,past,pipeline,State land commissioner denies the pipeline a 0.6-mile crossing of state trust land,searchlight-jupiter-timeline-2026,
+2026-04-27,day,past,power,Power plan switches from gas turbines to up to 2.45GW of Bloom Energy fuel cells,searchlight-jupiter-timeline-2026,
+2026-05-06,day,past,pipeline,Bureau of Land Management approves a roughly 18-mile pipeline after a 14-day emergency review,searchlight-jupiter-timeline-2026,
+2026-07-02,day,past,politics,Four Democratic state legislators propose a statewide data-center moratorium,searchlight-jupiter-timeline-2026,
+2026-07-09,day,past,credit,"S&P cuts Oracle to BBB-, one notch above junk",investing-oracle-sp-downgrade-2026 reuters-ft-jupiter-loans-2026,
+2026-07-09,day,past,politics,State Department of Justice opens a probe into fraudulent pro-Jupiter public comments,searchlight-jupiter-timeline-2026,
+2026-07-14,day,past,pipeline,Land commissioner rejects Energy Transfer's request to reconsider the trust-land route,searchlight-jupiter-timeline-2026,
+2026-08,month,past,pipeline,"Energy Transfer tells federal regulators the pipeline's in-service date moves from August 2026 to Feb. 1, 2027",dailycaller-jupiter-air-permit-2026,
+2026-08-23,day,past,legal,State Supreme Court pauses the water-use permit and the air-permit proceeding,searchlight-jupiter-timeline-2026,
+2026-08-24,day,past,permit,Air-permit hearing officer recuses himself,searchlight-jupiter-timeline-2026,
+2026-09,month,past,power,Oracle issues an RFP for 2GW of new renewable capacity in New Mexico,dcd-oracle-force-majeure-2026,Early September
+2026-09,month,past,construction,"Oracle says construction is 26% complete, up 17 points since July",searchlight-jupiter-construction-2026,Reported Sept. 16
+2026-09-10,day,past,company,Oracle reports a $664bn backlog; its CFO says no New Mexico delay is known,oracle-q1-fy27-8k-2026 cnbc-oracle-q1-fy27-2026,
+2026-09-17,day,past,legal,State Supreme Court lifts its stay; permit proceedings resume,searchlight-jupiter-timeline-2026,
+2026-09-18,day,past,finance,FT reports the $18bn loan quoted at 89–91 cents; syndication stalled,reuters-ft-jupiter-loans-2026,
+2026-09-24,day,past,contract,Bloomberg reports Oracle's force majeure notice; Oracle closes 3.5% lower and its CDS hits a record,bloomberg-oracle-force-majeure-2026 stockanalysis-orcl-history-2026,
+2026-09-24,day,past,contract,A Reuters source says the programme is being delayed by a year,reuters-ai-financing-ripples-2026,Anonymously sourced
+2026-09-25,day,past,developer,WSJ reports Oracle has removed co-developer BorderPlex Digital Assets,dailycaller-jupiter-air-permit-2026 wsj-oracle-new-mexico-cracks-2026,Second-hand; not confirmed by the companies
+,tbd,expected,permit,"Environment Department names a new air-permit hearing officer, who sets the hearing schedule",dailycaller-jupiter-air-permit-2026,No date set
+2026-10-27,day,scheduled,macro,Federal Reserve meeting (Oct. 27–28),chicagofed-fomc-calendar-2026,
+2026-10,approx,expected,company,Blue Owl third-quarter results,,Our estimate: late October to early November
+2026-11-03,day,scheduled,politics,US midterms; New Mexico elects a governor and an open-seat land commissioner,sourcenm-land-commissioner-2026 dailycaller-jupiter-air-permit-2026,
+2026-11-23,day,scheduled,permit,Deadline for the Environment Department's air-permit decision,dailycaller-jupiter-air-permit-2026,
+2026-12-08,day,scheduled,macro,Federal Reserve meeting with new projections (Dec. 8–9),chicagofed-fomc-calendar-2026,
+2026-12,approx,expected,company,Oracle fiscal second-quarter results (Sept.–Nov. 2026),,Our estimate: mid-December
+2027-01-01,approx,expected,politics,New land commissioner takes office,,Our estimate
+2027-01-19,approx,expected,politics,New Mexico legislative session opens,,Our estimate
+2027-02-01,day,target,pipeline,Gas pipeline in-service target,bloomberg-oracle-force-majeure-2026,
+2028,year,target,construction,Project Jupiter first-capacity target,bloomberg-oracle-force-majeure-2026,

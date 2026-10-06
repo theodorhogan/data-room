@@ -1,0 +1,63 @@
+---
+// Table of contents generated from h2/h3 headings; the scrollspy lives in scripts/toc.ts.
+// The desktop index lists chapters (h2) and opens the sections (h3) of the chapter being read,
+// so it fits beside the text without a scroll area of its own.
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+interface Props {
+  headings: Heading[];
+  variant: 'desktop' | 'mobile';
+}
+const { headings, variant } = Astro.props;
+const items = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+const chapters: { heading: Heading; sections: Heading[] }[] = [];
+for (const h of items) {
+  if (h.depth === 2 || !chapters.length) chapters.push({ heading: h, sections: [] });
+  else chapters[chapters.length - 1].sections.push(h);
+}
+---
+
+{
+  variant === 'desktop' ? (
+    <nav class="toc" aria-label="Contents" data-toc data-pagefind-ignore>
+      <p class="section-label">Contents</p>
+      <ol>
+        {chapters.map(({ heading, sections }) => (
+          <li class={`depth-${heading.depth}`} data-chapter>
+            <a href={`#${heading.slug}`}>{heading.text}</a>
+            {sections.length > 0 && (
+              <ol class="toc-sections">
+                {sections.map((h) => (
+                  <li class="depth-3">
+                    <a href={`#${h.slug}`}>{h.text}</a>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  ) : (
+    <details class="toc-mobile" data-toc data-pagefind-ignore>
+      <summary class="section-label">Contents</summary>
+      <nav class="toc-list" aria-label="Contents">
+        <ol>
+          {items.map((h) => (
+            <li class={`depth-${h.depth}`}>
+              <a href={`#${h.slug}`}>{h.text}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </details>
+  )
+}
+
+<script>
+  import '../../scripts/toc';
+</script>

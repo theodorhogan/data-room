@@ -1,0 +1,11 @@
+market,maturity,change_bp
+US,2-year,100
+US,10-year,80
+Japan,2-year,100
+Japan,10-year,80
+UK,2-year,100
+UK,10-year,80
+Canada,2-year,70
+Canada,10-year,60
+Germany,2-year,70
+Germany,10-year,46

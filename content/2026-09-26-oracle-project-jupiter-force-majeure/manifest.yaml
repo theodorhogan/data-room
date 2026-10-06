@@ -1,0 +1,25 @@
+schema: 1
+
+id: 2026-09-26-oracle-project-jupiter-force-majeure
+title: "Oracle, Blue Owl and the Jupiter notice"
+date: 2026-09-26
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  Oracle's force majeure notice on Project Jupiter, a Stargate data-center
+  campus in New Mexico, is a hedge rather than an exit. The report checks the
+  early reporting, explains the contract mechanics and precedents, and assesses
+  the implications for Oracle, Blue Owl, OpenAI, suppliers and AI-infrastructure
+  financing, with historical parallels, scenarios and a catalyst calendar.
+  Appendices hold the full event timeline and Oracle's quarterly figures.
+
+tags:
+  - deep-research
+  - equity-research
+
+tickers:
+  - ORCL
+  - OWL

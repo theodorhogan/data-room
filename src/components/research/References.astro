@@ -1,0 +1,30 @@
+---
+import type { Citation } from '../../lib/research-mdx';
+import { formatDate } from '../../lib/format';
+
+interface Props {
+  citations: Citation[];
+}
+const { citations } = Astro.props;
+---
+
+<section class="references" aria-labelledby="publication-references">
+  <h2 id="publication-references">References</h2>
+  <ol class="reference-list">
+    {
+      citations.map((c) => (
+        <li id={`ref-${c.id}`}>
+          <span class="ref-n">{c.n}</span>
+          <span>
+            {c.author && <>{c.author.replace(/\.$/, '')}. </>}
+            {c.publisher && <>{c.publisher.replace(/\.$/, '')}. </>}
+            <span class="ref-title">“{c.title}”</span>
+            {c.date && <>, {formatDate(c.date)}</>}.{' '}
+            {c.url && <a class="ref-url" href={c.url} rel="noopener noreferrer">{c.url}</a>}
+            {c.note && <span class="ref-note">{c.note}</span>}
+          </span>
+        </li>
+      ))
+    }
+  </ol>
+</section>

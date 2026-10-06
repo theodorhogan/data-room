@@ -1,0 +1,22 @@
+schema: 1
+
+id: 2025-06-29-meta-platforms-dcf-model
+title: Meta Platforms DCF model
+date: 2025-06-29
+
+kind: artifact
+format: xlsx
+primary: META-US.xlsx
+
+summary: Three-scenario DCF of Meta Platforms with a WACC and bond-level cost-of-debt build.
+
+authors:
+  - Theodor Hogan
+
+tags:
+  - financial-model
+  - dcf
+  - equity-research
+
+tickers:
+  - META
