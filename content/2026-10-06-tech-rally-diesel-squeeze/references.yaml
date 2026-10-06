@@ -1,0 +1,54 @@
+ism-services:
+  title: "Services PMI® at 54.9%; September 2026 ISM® Services PMI® Report"
+  publisher: "Institute for Supply Management"
+  date: "2026-10-05"
+  url: "https://www.prnewswire.com/news-releases/services-pmi-at-54-9-september-2026-ism-services-pmi-report-302898421.html"
+
+diesel-order:
+  title: "Emergency Tax Relief on Diesel Fuel"
+  publisher: "The White House"
+  date: "2026-10-05"
+  url: "https://www.whitehouse.gov/presidential-actions/2026/10/emergency-tax-relief-on-diesel-fuel"
+
+treasury-yields:
+  title: "Treasury yields fall as investors anticipate FOMC minutes"
+  publisher: "CNBC"
+  date: "2026-10-06"
+  url: "https://www.cnbc.com/2026/10/06/treasury-yields-fed-fomc-minutes.html"
+
+tech-close:
+  title: "Nvidia weiter gefragt: KI-Euphorie treibt Nasdaq auf neue Bestmarke"
+  publisher: "ntv / Reuters"
+  date: "2026-10-05"
+  url: "https://www.n-tv.de/wirtschaft/KI-Euphorie-treibt-Nasdaq-auf-neue-Bestmarke-id31384460.html"
+
+ecb-lane:
+  title: "Philip R. Lane: Interview with Ansa"
+  publisher: "European Central Bank"
+  date: "2026-10-06"
+  url: "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261006~bc94400297.en.html"
+
+diesel-prices:
+  title: "Trump allows cheaper, dyed diesel on highways to blunt historic fuel-cost spike ahead of midterms"
+  publisher: "CNBC"
+  date: "2026-10-06"
+  url: "https://www.cnbc.com/2026/10/06/us-diesel-fuel-prices-iran-ukraine-energy-crisis-.html"
+
+gulf-flows:
+  title: "Gulf Oil Exports Recover to 81% of Pre-War Levels"
+  publisher: "Oilprice / Reuters, citing Vortexa"
+  date: "2026-10-06"
+  url: "https://oilprice.com/Latest-Energy-News/World-News/Gulf-Oil-Exports-Recover-to-81-of-Pre-War-Levels.html"
+  note: "Vortexa aggregate recovery ratios as reported by Oilprice via Reuters; no direct access to the underlying shipping dataset."
+
+china-fuel:
+  title: "Why China is holding back fuel exports - and what it means for Asia’s diesel supplies"
+  publisher: "CNA"
+  date: "2026-10-06"
+  url: "https://www.channelnewsasia.com/east-asia/china-suspend-fuel-export-diesel-asia-impact-6435161"
+
+german-orders:
+  title: "New orders in manufacturing in August 2026: -10.6% on the previous month"
+  publisher: "German Federal Statistical Office (Destatis)"
+  date: "2026-10-06"
+  url: "https://www.destatis.de/EN/Press/2026/10/PE26_354_421.html"
