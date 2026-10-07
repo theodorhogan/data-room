@@ -1,0 +1,28 @@
+schema: 1
+
+id: 2026-10-07-paramount-skydance-merger
+title: "How the Ellisons won Paramount, then Warner Bros."
+date: 2026-10-07
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  The Ellisons' takeover of Paramount took a year to negotiate, because
+  National Amusements' control premium split the Redstones from minority
+  holders, and another year to clear, because the FCC review became political
+  after the 2024 election and ended only after a $16m Trump settlement and
+  Skydance's CBS News pledges. The Warner Bros. Discovery purchase then closed
+  in 221 days on price, Larry Ellison's guarantee and a state consent decree,
+  leaving Skydance with about $80bn of debt.
+
+tags:
+  - deep-research
+  - equity-research
+
+tickers:
+  - SKYD
+
+related:
+  - 2026-09-26-oracle-project-jupiter-force-majeure

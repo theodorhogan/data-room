@@ -1,0 +1,14 @@
+flowchart LR
+    investors["Ellison family and RedBird<br/>About $6bn and $2bn of equity"]
+    redstones["Redstone family<br/>Sells National Amusements for $2.4bn<br/>About $1.75bn to the family, reported"]
+    public["Public Class A and B holders<br/>$4.5bn cash at $23 per A or $15 per B<br/>or new shares instead"]
+    skydance["Skydance investors<br/>Ellisons, RedBird, Tencent, KKR, CJ ENM<br/>317m shares for a $4.75bn Skydance"]
+    newco["Paramount Skydance, PSKY<br/>$1.5bn of new capital<br/>Investor group: all votes, about 70% of shares"]
+    harbor["NAI, renamed Harbor Lights<br/>Holds all Class A voting stock"]
+
+    investors -- "$2.4bn for NAI" --> redstones
+    investors -- "$4.5bn cash-out" --> public
+    investors -- "$1.5bn primary" --> newco
+    skydance -- "Skydance merged in" --> newco
+    investors -. "Own about 77.5% Ellison, 22.5% RedBird" .-> harbor
+    harbor -. "100% of votes" .-> newco
