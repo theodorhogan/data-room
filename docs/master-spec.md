@@ -1,6 +1,6 @@
 # Tido’s Data Room: master spec for research agents
 
-You produce publications for Tido’s Data Room (https://theodorhogan.github.io/data-room/), a research website. Each publication is one **package**: a folder of content files plus a `manifest.yaml`. The site does everything visual: layout, colours, type, exhibit numbering, the table of contents, search, phone layout and the A4 PDF. You decide **what** to say and **which exhibit** shows it.
+You produce publications for Tido’s Data Room (https://theodorhogan.github.io/data-room/), a research website. Each publication is one **package**: a folder of content files plus a `manifest.yaml`. The site does everything visual: layout, colours, type, exhibit numbering, the table of contents, search, phone layout and the A4 PDF. You decide **what** to say and **which exhibit** shows it. Your headings also decide whether the table of contents fits beside the text (section 2).
 
 Part 1 is the framework. Read it before you start. Part 2 is the exact package format. Look things up there while you build.
 
@@ -26,7 +26,14 @@ Choose by what the task produces, not by its topic.
 
 ## 2. Structure a research report
 
-Open with the conclusion. Use `##` for sections and `###` for subsections; the table of contents is built from them. A heading states the section's finding, not its topic: "Inflation is an energy shock on top of sticky services", not "Inflation".
+Open with the conclusion. Use `##` for sections and `###` for subsections; the table of contents is built from them. A heading states the section's finding, not its topic: "Energy, not wages, drives inflation", not "Inflation".
+
+Keep the table of contents within **22 lines**. On a desktop, it sits in a narrow column beside the text. It stays pinned there, with only the current section's `###` headings open, as long as the whole list fits in the reader's window. If it does not fit, it scrolls away with the page and shows every `###` heading at once. Count its lines like this:
+
+- A `##` heading takes one line for every 36 characters, rounded up. A `###` heading takes one line for every 32 characters.
+- Add up the lines of all `##` headings, one line for the References entry that the site adds, and the lines of the `###` headings in the section that has the most.
+
+Within 22 lines, the table of contents stays pinned in a window as small as 1280×720. One-line headings are the easiest way to stay within the limit: put the detail in the section's first sentence, not in its heading. In an appendix, give each table a `title` instead of its own `###` heading.
 
 Start from the closest archetype and adapt it. The section names below are roles, not headings: write each heading as its finding ("Bottom line: a hedge, not an exit"). Only `## Sources and method` keeps its name. `<KeyFigures>` and one opening `<Callout>` may come before the first heading.
 
@@ -107,7 +114,8 @@ The package is done when:
 - [ ] every `<Cite>` and `sources` ID is in `references.yaml`, and every referenced file exists with exactly that name and case
 - [ ] the manifest has a valid ID and date, a one-sentence summary and a few tags from the list, plus `authors`, `tickers` and `related` where they apply
 - [ ] the package holds no personal data, and only data you may redistribute
-- [ ] with access to the repository: `npm run publication:add -- <zip>` passes, and the page looks right in `npm run dev` on a desktop and at phone width
+- [ ] the table of contents is within 22 lines, counted as in section 2
+- [ ] with access to the repository: `npm run publication:add -- <zip>` passes, and the page looks right in `npm run dev` on a desktop and at phone width. On the desktop, scroll from top to bottom: the table of contents must stay pinned beside the text and open the `###` headings of each section in turn
 
 ---
 
@@ -179,7 +187,7 @@ related:              # optional, IDs of other publications
 
 ## Research reports (MDX)
 
-Write ordinary Markdown: headings, paragraphs, lists, tables, emphasis and links. A `# Title` may only be the first line, and it is dropped because the title comes from the manifest. Links go to `http`, `https` or `mailto` addresses, to `#headings`, or to files in the package. Link other publications with `<PublicationRef>`, never with a site path such as `/research/…`.
+Write ordinary Markdown: headings, paragraphs, lists, tables, emphasis and links. A `# Title` may only be the first line, and it is dropped because the title comes from the manifest. `##` and `###` headings build the table of contents; keep it within the 22-line limit in section 2. Links go to `http`, `https` or `mailto` addresses, to `#headings`, or to files in the package. Link other publications with `<PublicationRef>`, never with a site path such as `/research/…`.
 
 Besides Markdown, only these components exist. Every prop is a quoted string.
 
