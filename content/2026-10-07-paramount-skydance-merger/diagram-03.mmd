@@ -1,0 +1,21 @@
+flowchart TD
+    complaint["Oct 16, 2024<br/>Conservative group files a news-distortion<br/>complaint over a 60 Minutes edit"]
+    suit["Oct 31, 2024<br/>Trump sues CBS for $10bn<br/>raised to $20bn in Feb 2025"]
+    election["Nov 2024<br/>Trump wins and names Carr FCC chair<br/>Carr says complaint likely to arise in review"]
+    dismissed["Jan 16, 2025<br/>Outgoing chair dismisses complaint"]
+    reinstated["About Jan 22, 2025<br/>Carr reinstates complaint"]
+    transcript["Feb 3 to 5, 2025<br/>CBS hands over raw transcript<br/>FCC publishes it and opens a docket"]
+    dei["Feb to Mar 2025<br/>Paramount drops diversity targets<br/>Carr tells merging firms to end DEI"]
+    newsroom["Apr to May 2025<br/>60 Minutes producer and CBS News CEO resign"]
+    settle["Jul 1, 2025<br/>Paramount settles for $16m"]
+    letter["Jul 22, 2025<br/>Skydance letters to Carr<br/>Ombudsman, viewpoint diversity, no DEI"]
+    vote["Jul 24, 2025<br/>FCC approves 2-1<br/>Complaint left open"]
+
+    complaint --> dismissed --> reinstated --> transcript --> newsroom
+    election --> reinstated
+    suit --> settle
+    newsroom -.-> settle
+    dei --> letter
+    settle --> vote
+    letter --> vote
+    reinstated -. "Open docket" .-> vote
