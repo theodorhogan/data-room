@@ -1,0 +1,14 @@
+flowchart LR
+    subgraph C["Commoditised: bundled into suites"]
+        direction TB
+        S1[Sourcing search] --> S2[Interview scheduling]
+        S2 --> S3[First-round screening]
+        S3 --> S4[Interview notes]
+    end
+    subgraph D["Defensible: scarce and still bought"]
+        direction TB
+        D1[Identity and liveness checks] --> D2[Validated skills assessment]
+        D2 --> D3[Explainable scoring]
+        D3 --> D4[Owned outcome data]
+    end
+    C --> D

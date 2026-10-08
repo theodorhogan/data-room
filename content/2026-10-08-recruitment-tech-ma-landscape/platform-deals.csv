@@ -1,0 +1,22 @@
+Date,Buyer,Target,Value,Capability,Notes,source_ids
+2026-09-22,Harver (Rubicon-backed),Symphony Talent,Undisclosed,"Recruitment marketing, CRM","1,500+ combined clients",worktech-harver
+2026-08,Deel,Clarity,Undisclosed,"Identity verification, deepfake detection",Deel has made 15 acquisitions in total,frenchweb-deel
+2026-09-01,Korn Ferry,AMS,~$1.1bn (£850m),Tech-enabled RPO,"Announced 29 Jun; ~11x EBITDA, ~1.7x fee revenue (our calc.)",kornferry-ams kornferry-ams-close
+2026-05-27,Greenhouse,Ezra AI Labs,Undisclosed,Voice AI interviewer,Signed 5 May,greenhouse-ezra
+2026-04-28,Phenom,Plum,Undisclosed,Psychometric assessment,Second Phenom assessment deal in 10 weeks; candidate-fraud rationale,phenom-plum
+2026-03,Findem,Glider AI,Undisclosed,"Skills validation, AI interviews, ID checks",Signed; follows Getro (2025),longboard-march
+2026-03-03,HireVue,Hireguide,Undisclosed,Structured and voice-AI interviewing,Tuck-in,longboard-march
+2026-02-10,Phenom,Be Applied,Undisclosed,Cognitive and situational assessment,Follows Included AI (Jan 2026),privsource-beapplied
+2026-02-04,Thoma Bravo,Dayforce,~$12.3bn,HCM suite take-private,"~6.6x LTM revenue, ~23x EBITDA",thoma-dayforce hl-2025-review
+2026-01-20,Docebo,365Talents,$54.6m + $5.1m earn-out,Skills engine,~6x revenue (secondary source),hrflow-ma-q1
+2025-11-19,Workday,Pipedream,Undisclosed,3000+ agent connectors,Signed; agent integration layer,wday-pipedream
+2025-11-13,Zoom,BrightHire,Undisclosed,Interview intelligence,Zoom invested in 2021,zoom-brighthire
+2025-11-04,Workday,Sana,~$1.1bn,"Agent builder, AI front door, learning",Closed; ~2% of Workday's market cap,wday-sana futurum-sana
+2025-11,UKG,Chattr,Undisclosed,Frontline conversational hiring,Relaunched as Rapid Hire,ukg-rapid-hire
+2025-09,Workday,Paradox,"$1,063m total consideration","Conversational screening, scheduling",Closed; $781m goodwill; ~33% below 2021 valuation,wday-10q threesixty-paradox
+2025-09-11,SAP,SmartRecruiters,Undisclosed (~$1.8bn adviser estimate),AI-native ATS,Closed; replaces SuccessFactors Recruiting,sap-smartrecruiters siliconangle-sap goldenhill
+2025-09-11,iCIMS (Vista-owned),Apli,Undisclosed,Latin American frontline conversational AI,Tuck-in,brandonhall-apli
+2025-08-14,Workday,Flowise,Undisclosed,Low-code agent builder,Open source,wday-flowise
+2025-04-14,Paychex,Paycor,~$4.1bn EV,SMB and mid-market HCM,"Closed; 6.1x revenue, 18.5x EBITDA",paychex-paycor hl-2025-review
+2025-03,Employ (K1-backed),Pillar,Undisclosed,Interview intelligence,"Parent of Lever, Jobvite, JazzHR",sia-pillar
+2024-02-26,Workday,HiredScore,Undisclosed,"Matching, screening, internal mobility",Announced; now inside the Mobley collective,wday-hiredscore clearinghouse-mobley

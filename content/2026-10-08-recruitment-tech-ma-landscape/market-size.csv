@@ -1,0 +1,7 @@
+Source,Scope,Base year,Base size ($bn),Forecast year,Forecast ($bn),CAGR (%),source_ids
+Fortune Business Insights,"HR technology, incl. payroll and WFM",2025,43.4,2034,86.1,8.1,fbi-hr-tech
+Gartner,HCM software end-user spend,,,2030,78.0,13.6,gartner-hcm-2026 gartner-hcm-2024
+MarketsandMarkets,HCM software and services,,,2029,41.3,8.5,mnm-hcm
+Global Market Insights,Talent acquisition software,2025,11.5,2034,24.0,8.5,gmi-ta
+Mordor Intelligence,Recruitment software (ATS about 54%),2025,3.6,2031,5.5,7.9,mordor-recruitment
+SNS Insider,AI in recruitment,2025,0.6,2035,1.4,8.1,sns-ai-recruitment
