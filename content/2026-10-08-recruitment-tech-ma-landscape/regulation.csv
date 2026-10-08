@@ -1,0 +1,13 @@
+Rule or case,Jurisdiction,Status and effective date,What it means for vendors,source_ids
+"EU AI Act, Annex III 4(a)",EU,Digital Omnibus (Reg. 2026/1744) in force 27 Jul 2026; high-risk duties apply from 2 Dec 2027,"Vendor as provider: quality management, conformity assessment, logs, registration; fines up to €15m or 3% of turnover",cooley-omnibus lewissilkin-omnibus aiact-art99
+Connecticut SB 5,Connecticut,Signed 2 Jun 2026; employment rules from 1 Oct 2027,Notice duties; using a vendor tool is no defence,covington-admt
+California CCPA ADMT regulations,California,Compliance from 1 Jan 2027,"Pre-use notice, opt-out and risk assessment for hiring decisions",cppa-regs covington-admt
+Colorado SB 26-189,Colorado,Signed 14 May 2026; effective 1 Jan 2027; rulemaking hearing 26 Oct 2026,Developer documentation to deployers; fault-based liability; indemnities for a party's own liability void,mcdermott-colorado
+UK GDPR as amended by the DUAA 2025,UK,Fully in force 19 Jun 2026,Wider lawful bases for automated decisions with safeguards; ICO audits of recruitment AI made ~300 recommendations,ico-duaa ico-recruitment
+Illinois HB 3773,Illinois,Effective 1 Jan 2026; notice rules withdrawn 2 Jun 2026,AI-use notice; zip codes banned as proxies,covington-admt
+Texas TRAIGA,Texas,Effective 1 Jan 2026,Intent standard; attorney-general enforcement only; NIST AI RMF defence,mondaq-traiga
+California FEHA ADS regulations,California,Effective 1 Oct 2025,A vendor can be the employer's agent; 4-year record retention,crd-ads
+NYC Local Law 144,New York City,In force; Dec 2025 state audit found enforcement ineffective,Annual bias audits; penalties per violation per day; tighter enforcement likely,dlapiper-nyc
+EO 14365 and EEOC retreat,US federal,EO signed 11 Dec 2025; EEOC closed disparate-impact charges by 30 Sep 2025,No preemption of state law without Congress; private suits fill the gap,whitecase-eo seyfarth-eeoc
+Mobley v. Workday,N.D. Cal.,ADEA collective preliminarily certified 16 May 2025; FEHA agent claims survive 22 Jun 2026,Direct vendor liability across every customer's applicants,clearinghouse-mobley duanemorris-mobley
+Kistler v. Eightfold,N.D. Cal.,Filed early 2026; removed to federal court; motion to dismiss pending,Undisclosed compiling of applicant data may trigger FCRA duties,akingump-eightfold
