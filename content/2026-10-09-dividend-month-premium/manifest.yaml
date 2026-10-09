@@ -1,0 +1,21 @@
+schema: 1
+
+id: 2026-10-09-dividend-month-premium
+title: "Is predictable dividend demand priced?"
+date: 2026-10-09
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  The dividend-month premium in the 500 largest US stocks was large from 1965
+  to 1999, faded to about 0.1% a month after 2009, and does not survive
+  trading costs.
+
+authors:
+  - Theodor E. Hogan
+
+tags:
+  - trading
+  - report

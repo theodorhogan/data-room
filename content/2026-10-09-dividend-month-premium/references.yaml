@@ -1,0 +1,65 @@
+baker-wurgler-2004:
+  title: A catering theory of dividends
+  publisher: The Journal of Finance
+  author: [Malcolm Baker, Jeffrey Wurgler]
+  date: 2004
+  url: https://doi.org/10.1111/j.1540-6261.2004.00658.x
+baker-wurgler-2006:
+  title: Investor sentiment and the cross-section of stock returns
+  publisher: The Journal of Finance
+  author: [Malcolm Baker, Jeffrey Wurgler]
+  date: 2006
+  url: https://doi.org/10.1111/j.1540-6261.2006.00885.x
+elton-gruber-1970:
+  title: Marginal stockholder tax rates and the clientele effect
+  publisher: The Review of Economics and Statistics
+  author: [Edwin J. Elton, Martin J. Gruber]
+  date: 1970
+  url: https://doi.org/10.2307/1927599
+hartzmark-solomon-2013:
+  title: The dividend month premium
+  publisher: Journal of Financial Economics
+  author: [Samuel M. Hartzmark, David H. Solomon]
+  date: 2013
+  url: https://doi.org/10.1016/j.jfineco.2013.02.015
+hartzmark-solomon-2019:
+  title: The dividend disconnect
+  publisher: The Journal of Finance
+  author: [Samuel M. Hartzmark, David H. Solomon]
+  date: 2019
+  url: https://doi.org/10.1111/jofi.12785
+jones-2002:
+  title: A century of stock market liquidity and trading costs
+  publisher: Columbia University (working paper)
+  author: Charles M. Jones
+  date: 2002
+  url: https://doi.org/10.2139/ssrn.313681
+mclean-pontiff-2016:
+  title: Does academic research destroy stock return predictability?
+  publisher: The Journal of Finance
+  author: [R. David McLean, Jeffrey Pontiff]
+  date: 2016
+  url: https://doi.org/10.1111/jofi.12365
+crsp:
+  title: CRSP US stock database (daily and monthly stock files, dividends), accessed through WRDS
+  publisher: Center for Research in Security Prices
+  date: 2026-10-09
+  note: Licensed data; only derived and aggregated results are published.
+compustat:
+  title: Compustat fundamentals (earnings report dates), accessed through WRDS
+  publisher: S&P Global Market Intelligence
+  date: 2026-10-09
+  note: Licensed data; only derived and aggregated results are published.
+french-library:
+  title: Fama-French factors and momentum
+  publisher: Kenneth R. French Data Library
+  url: https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+baker-wurgler-data:
+  title: Investor sentiment data
+  publisher: Jeffrey Wurgler (NYU Stern)
+  url: https://pages.stern.nyu.edu/~jwurgler/
+yahoo-finance:
+  title: Daily prices for top-500 dividend payers (488 of 498 stocks, 1999-01-04 to 2026-09-30)
+  publisher: Yahoo Finance
+  date: 2026-09-30
+  url: https://finance.yahoo.com/
