@@ -1,0 +1,7 @@
+Case,Period,Return (% per month)
+Gross,1965-2009,0.34
+Gross,2010-2025,0.10
+Net of 5 bp,1965-2009,0.19
+Net of 5 bp,2010-2025,-0.05
+Long-only,1965-2009,0.23
+Long-only,2010-2025,0.00

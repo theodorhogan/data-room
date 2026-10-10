@@ -1,0 +1,7 @@
+flowchart TD
+    A["1. All US common stocks at end of month t-1"] --> B["2. Keep the 500 largest by market value"]
+    B --> C["3. List ordinary cash dividends by ex-date month"]
+    C --> D["4. Flag predicted dividend months (PDM) for month t"]
+    D --> E["5. Keep payers, drop monthly payers"]
+    E --> F["6. Long PDM stocks, short other payers, value-weighted"]
+    F --> G["7. Hold for month t, earn CRSP total return, repeat"]

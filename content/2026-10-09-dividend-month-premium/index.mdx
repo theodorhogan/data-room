@@ -1,0 +1,129 @@
+<KeyFigures src="./key-figures.csv" title="The dividend-month premium at a glance" />
+
+<Callout type="important" title="Bottom line">
+Not in this form. What is left after 2009 is about 0.1% per month and not distinguishable from zero, and costs are larger than that.
+</Callout>
+
+## Thesis: dividend demand is predictable
+
+Some investors want dividends for their own sake. Retirees and income funds need cash, and many private investors see a dividend as free income instead of a payment out of the share price <Cite id="hartzmark-solomon-2019" />. To get a dividend you must own the stock before the ex-dividend day, so these investors buy in the weeks before it. Most large US firms pay quarterly on a fixed calendar, so this demand arrives at predictable times. If arbitrageurs do not offset it, prices rise before ex-dates and stocks earn more in their *predicted dividend months* (PDM), as Hartzmark and Solomon find for 1927-2009 <Cite id="hartzmark-solomon-2013" />. Arbitrage is costly, because it means turning over the whole portfolio every month for a few basis points per trade.
+
+The link to investor sentiment is the catering theory of Baker and Wurgler: demand for dividend payers rises and falls over time <Cite id="baker-wurgler-2004" />, and their dividend premium is one of the five inputs of their sentiment index <Cite id="baker-wurgler-2006" />. If dividend seekers drive the premium, it should be larger when this demand is high. Published anomalies shrink by 58% on average after publication <Cite id="mclean-pontiff-2016" />, so I ask: was the dividend month priced in large, liquid stocks, and is it still?
+
+## Signal: long dividend months
+
+Data come from CRSP and Compustat, Kenneth French's website, the Baker-Wurgler file and Yahoo Finance <Cite id="crsp" /> <Cite id="compustat" /> <Cite id="french-library" /> <Cite id="baker-wurgler-data" /> <Cite id="yahoo-finance" />. The backtest runs from 1965 to 2025, with a live check for January to September 2026. The strategy:
+
+<Mermaid
+  src="./signal.mmd"
+  title="The strategy is a seven-step monthly rule"
+  caption="t is the holding month. A stock is a predicted dividend month (PDM) stock if it paid a dividend 3, 6, 9 or 12 months earlier (quarterly or unknown frequency), 6 or 12 months earlier (semi-annual) or 12 months earlier (annual). Full rules are listed below."
+/>
+
+1. At the end of month t-1, take all CRSP common stocks of US companies (share type NS, security type EQTY, subtype COM, US-incorporated, issuer type ACOR or CORP). This excludes ETFs, funds, REITs and ADRs. Each share class counts as a stock.
+2. Keep the 500 largest by market value at the end of month t-1.
+3. List each stock's ordinary cash dividends by the calendar month of the ex-dividend date. Use only ex-dates up to month t-1.
+4. The stock is in a predicted dividend month for month t if it had an ex-date with frequency code quarterly or unknown in month t-3, t-6, t-9 or t-12, semi-annual in t-6 or t-12, or annual in t-12. If a month has two dividends, use the first one's code.
+5. Payers are stocks with any ex-date in months t-12 to t-1. Drop those with ex-dates in 6 or more of these months (monthly payers).
+6. Buy all PDM stocks and sell short all other payers. Weight both legs by market value at the end of month t-1.
+7. Hold for month t and earn the CRSP total return. Drop missing returns and rescale. Repeat every month.
+
+Both legs hold dividend payers, so the test isolates timing. On average 162 stocks a month are PDM (35% of the universe by value), and 80% of them go ex in the month, against 1% of the other payers.
+
+## Priced until 1999, then it faded
+
+<Table
+  src="./performance-windows.csv"
+  title="The premium was 0.41% a month to 1999 and 0.10% since 2010"
+  unit="% per month unless stated"
+  caption="Long PDM stocks, short other payers, value-weighted, top 500. Returns in % per month, Newey-West t-statistics. The last column shows the S&P 500 for comparison (return above T-bills). The first three windows were fixed in advance, the last two were added after looking at Exhibit 4."
+  sources="crsp french-library"
+  highlight="2010-2025 (out of sample)"
+/>
+
+For a long time the answer is yes. From 1965 to 1999, PDM stocks beat other payers by 0.41% per month with a Sharpe ratio of 1.1, more than twice the 0.43 of the S&P 500 over the same years, and with no correlation to the market (-0.01). The factor alpha is as large and the loadings are small (the largest, size, is -0.06), so known factors do not explain it. Firm-level Fama-MacBeth regressions, which weight stocks equally and control for earnings months, size, past returns and the same month a year earlier, give 0.30% per month (t = 6.6) for 1976-2009.
+
+<Chart
+  src="./sharpe.csv"
+  type="bar"
+  x="Window"
+  y="Sharpe ratio"
+  series="Series"
+  measure="level"
+  title="The strategy's Sharpe ratio fell below the S&P 500's after 2009"
+  yLabel="Sharpe ratio"
+  caption="Strategy: long PDM stocks, short other payers, value-weighted, top 500. S&P 500 return above T-bills over the same window."
+  sources="crsp french-library"
+/>
+
+Then it faded. The test compares 2010-2025 with 1965-2009: the premium falls to 0.10% (t = 1.0) with a Sharpe ratio of 0.24, while simply holding the S&P 500 earned 0.92. The drop is 0.25 points (t = -2.4, 95% interval -0.45 to -0.04), and the Fama-MacBeth slope falls by 0.23 (t = -3.7). Exhibit 4 shows that the decline started earlier. The 10-year average peaks at 0.6% in 2000, and 2010-2025 is no different from 2000-2009 (t = -0.2). The premium faded a decade before publication, around the move to decimal prices in 2001 that cut trading costs, as the limits-to-arbitrage story predicts. A leftover of up to 0.28% per month after 2009 cannot be ruled out.
+
+<Figure
+  src="./fig1_cumulative_and_rolling.png"
+  alt="Two charts. Top: growth of $1 in the long-short portfolio, value-weighted and equal-weighted, on a log scale from 1965 to 2025; both rise steadily until about 2000 and then flatten. Bottom: average monthly return over the previous 10 years with a 95% band, peaking near 0.6% in 2000 and falling to about zero by 2025."
+  title="The 10-year average premium peaked near 0.6% in 2000"
+  caption="Top: growth of $1 in the long-short portfolio, value- and equal-weighted (log scale). Bottom: average monthly return over the previous 10 years with a 95% band."
+  sources="crsp"
+/>
+
+## Price pressure stays, the premium does not
+
+Exhibit 5 shows daily returns of top-500 stocks around their ex-dates, relative to the market and to each stock's normal return. In both 2000-2009 and 2010-2026 prices rise about 15 to 18 basis points in the ten days before the ex-date (t = 2.3 and 2.5) and partly fall back afterwards, so the predicted price pressure is still there. What disappeared is the small ex-day gain (5 to 0 basis points), the part usually linked to taxes <Cite id="elton-gruber-1970" />. The monthly strategy misses much of the run-up, because many ex-dates fall early in the month and the run-up then sits in the previous month.
+
+<Figure
+  src="./fig2_event_time.png"
+  alt="Line chart of cumulative abnormal return in basis points from 10 trading days before to 10 days after the ex-dividend day, for 2000-2009 and 2010-2026. Both periods rise into the ex-date; the 2000-2009 line peaks at about 22 basis points on the ex-date, the 2010-2026 line at about 15 basis points two days before it."
+  title="Prices rise before the ex-date, but the ex-day gain is gone"
+  caption="Cumulative abnormal return around ex-dividend days in basis points, relative to SPY and each stock's normal return. Top-500 payers, Yahoo data."
+  sources="yahoo-finance crsp"
+/>
+
+Exhibit 6 repeats the test with nine variations and the factor alpha. Before 2010 every version with data earns 0.26% to 0.39% per month (t of 4.7 or more). After 2009 all are positive but small (0.01% to 0.20%). Two reach t of about 2 (without earnings months, without the ten largest stocks), which is weak evidence among ten related variations, and net of 5 basis points per trade both are about zero.
+
+<Figure
+  src="./fig3_robustness.png"
+  alt="Dot-and-whisker chart of the average monthly long-short return with 95% confidence intervals for eleven variations. The 1965-2009 estimates sit between 0.26% and 0.39% and clear zero; the 2010-2025 estimates sit between 0.01% and 0.20% and most intervals include zero."
+  title="Every variation is positive after 2009, but small"
+  caption="Average monthly long-short return with 95% confidence intervals for each variation, 1965-2009 and 2010-2025."
+  sources="crsp compustat french-library"
+/>
+
+Sentiment does not rescue it. With the Baker-Wurgler index rebuilt each month from past data only, the premium is larger after low sentiment (0.35% against 0.24% per month), as catering theory predicts, but not significantly (t = -1.1), also after 2009. The dividend premium itself does not predict it (t = 0.3).
+
+## Not tradeable with real capital
+
+Not in this form. What is left after 2009 is about 0.1% per month and not distinguishable from zero, and costs are larger than that.
+
+<Chart
+  src="./costs-chart.csv"
+  type="bar"
+  x="Case"
+  y="Return (% per month)"
+  series="Period"
+  measure="level"
+  title="Net of costs, the premium is zero or negative after 2009"
+  yLabel="% per month"
+  caption="Long-only: PDM stocks minus the top 500, gross. Net: after 5 basis points per trade. The Swiss-bank case (-0.58% per month, 2010-2025) is shown in the table below."
+  sources="crsp"
+/>
+
+<Table
+  src="./costs.csv"
+  title="The break-even cost fell from 11.4 to 3.2 basis points"
+  unit="% per month unless stated"
+  caption="Costs, in % per month. Turnover adds up purchases and sales of both legs."
+  sources="crsp"
+  highlight="Break-even one-way cost (bp)"
+/>
+
+1. The three payment cohorts take turns, so the strategy trades three times its size every month. After 2009 a cost of 3 basis points per trade wipes it out, and borrowing the short leg alone costs about that much. A long-only version hedged with an index future earned nothing after 2009 either.
+2. Through a Swiss bank the 0.15% stamp duty costs 0.45% per month. The long leg also receives about 0.49% per month in dividends, which lose 15% US withholding tax and are taxed as income for a Swiss private investor, unlike capital gains.
+3. From January to September 2026 the frozen rule lost 0.66% per month (t = -0.8). Nine months say little, but nothing points to a comeback.
+
+The 5 basis point cost is today's. Before 2001 costs for large stocks were several times higher <Cite id="jones-2002" />, above the 11 basis point break-even, so the old premium was probably never tradeable either. What we keep is an execution rule for stocks the club trades anyway: sell shortly before an ex-date rather than after it, and avoid buying in the two weeks before one. Since 2010 that is worth roughly 5 to 10 basis points per trade, small and noisy.
+
+## Sources and method
+
+Data were downloaded from WRDS on 9 October 2026. CRSP dividends and returns end on 31 December 2025, daily Yahoo prices run to 30 September 2026, and the live check covers January to September 2026. CRSP and Compustat are licensed, so this report publishes only aggregated results.
+
+**Limitations.** CRSP ends in December 2025, the daily analysis uses Yahoo survivors from 2000 on, the value-weighted legs are concentrated (the five largest names hold about a quarter of each leg), and sentiment moves too slowly for many independent episodes.

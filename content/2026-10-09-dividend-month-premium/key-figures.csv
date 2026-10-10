@@ -1,0 +1,7 @@
+label,value,note
+Premium 1965-1999,0.41% per month,"t = 7.2; Sharpe ratio 1.11"
+Premium 2010-2025,0.10% per month,"t = 1.0; Sharpe ratio 0.24"
+S&P 500 Sharpe ratio 2010-2025,0.92,"Return above T-bills"
+Break-even one-way cost 2010-2025,3.2 bp,"11.4 bp in 1965-2009"
+Net of 5 bp per trade 2010-2025,-0.05% per month,"t = -0.6"
+Live check Jan-Sep 2026,-0.66% per month,"t = -0.8"
