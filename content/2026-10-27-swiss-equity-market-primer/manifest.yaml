@@ -1,0 +1,17 @@
+schema: 1
+
+id: 2026-10-27-swiss-equity-market-primer
+title: "A Primer on the Swiss Equity Market: A Foundation for Further Analysis"
+date: 2026-10-27
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  Swiss equities are a concentrated, defensive basket of global multinationals
+  priced in francs, not a proxy for the Swiss economy.
+
+tags:
+  - deep-research
+  - equity-research

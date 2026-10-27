@@ -1,0 +1,6 @@
+kind,from,to,value,label
+band,2000-12-31,2002-12-31,,Dot-com bust
+band,2007-12-31,2009-03-09,,Financial crisis
+band,2021-12-31,2022-12-31,,2022
+line,2015-01-15,,,Floor ends
+note,2008-12-31,,,2008: -34.8%
