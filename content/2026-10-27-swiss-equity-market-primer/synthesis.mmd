@@ -1,0 +1,23 @@
+flowchart LR
+    subgraph D["Economic drivers"]
+        direction TB
+        D1["Pharma: 41% of goods exports"]
+        D2["Wealth hub: CHF 9.7trn of bank client assets"]
+        D3["Head-office location: tax, talent, low rates"]
+        D4["Commodity trading: 2.3% of GDP"]
+    end
+    subgraph M["Listed market: MSCI Switzerland weights"]
+        direction TB
+        M1["Health care 39%: Roche, Novartis, Lonza"]
+        M2["Financials 20%: UBS, Zurich, Swiss Re"]
+        M3["Staples and luxury 20%: Nestlé, Richemont"]
+        M4["Industrials and materials 19%: ABB, Holcim"]
+    end
+    X1["Outside the market: traders, cantonal banks, Migros, Coop, Rolex"]
+    F["Franc and SNB policy"]
+    D1 --> M1
+    D2 --> M2
+    D3 --> M3
+    D3 --> M4
+    D4 --> X1
+    F -.-> M

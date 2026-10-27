@@ -1,0 +1,10 @@
+Index,Members,Selection,Weighting and cap,Return versions,Typical use
+SMI,20,"Selection list: 50% free-float cap, 50% order-book turnover over 12 months; ranks 1-18 in, 19-22 buffer",Free-float cap; issuer capped at 18%,Price (headline) and gross return,"Blue-chip benchmark, futures, options, UCITS funds"
+SPI 20,20,Always the SMI members,Free-float cap; uncapped,Price and return,Uncapped view of the blue chips
+SLI,30,"Selection list; ranks 1-27 in, 28-33 buffer","Four largest capped at 9%, others at 4.5%",Price and return,Diversified blue-chip benchmark
+SMI Expanded,50,"Selection list; ranks 1-47 in, 48-53 buffer",Free-float cap,Price and return,Large and mid caps
+SMIM,30,SMI Expanded members not in the SMI,Free-float cap; no cap,Price and return,Mid-cap benchmark
+SPI,About 200,All primary SIX listings with free float of 20% or more; investment companies excluded,Free-float cap; uncapped,Total return (headline) and price,Whole-market benchmark
+SPI Extra,About 180,SPI minus the SMI members,Free-float cap,Price and return,Small and mid caps
+MSCI Switzerland,40,About 85% of free-float market cap under MSCI rules,Free-float cap,Price and net or gross return,International portfolios
+MSCI Switzerland IMI,108,About 99% of free-float market cap,Free-float cap,Price and net or gross return,Broad international benchmark
