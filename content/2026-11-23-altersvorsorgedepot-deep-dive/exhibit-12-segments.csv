@@ -1,5 +1,5 @@
-Segment,People (m),Take-up Low (%),Take-up Base (%),Take-up High (%),Contribution Low (EUR),Contribution Base (EUR),Contribution High (EUR),"Long-run savers, Base (m)"
-1. Active Riester savers,8.4,15,30,50,888,1000,1200,2.5
-2. Investors without Riester,7.2,20,35,50,1200,1500,2172,2.5
-3. Other eligible people,24.7,3,7,12,400,600,900,1.7
-All eligible,40.3,,,,,,,6.8
+Segment,People (m),Take-up (%),Contribution (EUR a year),New-saving share (%),Long-run savers (m)
+1. Active Riester savers,8.4,30,1000,30,2.5
+2. Investors without Riester,7.2,35,1500,15,2.5
+3. Other eligible people,24.7,7,600,30,1.7
+All eligible,40.3,,,,6.8

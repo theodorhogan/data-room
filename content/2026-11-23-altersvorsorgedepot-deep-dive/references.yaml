@@ -10,7 +10,7 @@ bt-drs-21-4996:
   publisher: "Deutscher Bundestag"
   date: "2026-03-25"
   url: "https://dserver.bundestag.de/btd/21/049/2104996.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bmf-statistische-auswertungen-riester-2026:
   title: "Statistische Auswertungen zur Riester-Förderung"
@@ -25,12 +25,18 @@ ipe-providers-position-eur:
   url: "https://www.ipe.com/news/providers-position-for-56bn-opportunity-in-germanys-private-pensions-overhaul/10137310.article"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
+bmf-faq-reform:
+  title: "Fragen und Antworten zur Reform der geförderten privaten Altersvorsorge"
+  publisher: "Bundesministerium der Finanzen"
+  url: "https://www.bundesfinanzministerium.de/Content/DE/FAQ/reform-der-privaten-altersvorsorge.html"
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
+
 bt-drs-21-4088:
   title: "BT-Drs. 21/4088 - Gesetzentwurf der Bundesregierung: Altersvorsorgereformgesetz"
   publisher: "Deutscher Bundestag"
   date: "2026-02-11"
   url: "https://dserver.bundestag.de/btd/21/040/2104088.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 traderepublic-altersvorsorge-press-release-2026:
   title: "Altersvorsorgedepot (press release, EN version)"
@@ -39,19 +45,18 @@ traderepublic-altersvorsorge-press-release-2026:
   url: "https://assets.traderepublic.com/assets/files/PressRelease_AVD_DE_EN.pdf"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
-zukunftsrechner-union-investment-altersvorsorge:
-  title: "Union Investment Altersvorsorgedepot 2027"
-  publisher: "zukunftsrechner.de"
-  date: "2026-09-24"
-  url: "https://zukunftsrechner.de/anbieter/union-investment"
-  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+warentest-trade-republic-scalable:
+  title: "Trade Republic, Scalable, Deka & Co – Preiskampf ums Altersvorsorgedepot ist eröffnet"
+  publisher: "Stiftung Warentest (test.de)"
+  url: "https://www.test.de/Altersvorsorgedepot-Preiskampf-der-Anbieter-ING-Trade-Republic-Smartbroker-6335719-0/"
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 finanzwende-riester-rueruprenten-leider-2026:
   title: "Riester- und Rüruprenten: Leider teuer (Finanzwende-Studie 2026)"
   publisher: "Bürgerbewegung Finanzwende"
   date: "2026"
   url: "https://www.finanzwende.de/themen/verbraucherschutz/riester-rente/riester-und-rueruprenten-leider-teuer"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bundesregierung-empfehlungen-alterssicherun-beri:
   title: "Empfehlungen der Alterssicherungskommission (Bericht, 24.06.2026)"
@@ -72,7 +77,7 @@ bmf-private-altersvorsorge-alle-2025:
   publisher: "Bundesministerium der Finanzen"
   date: "2025-12-17"
   url: "https://www.bundesfinanzministerium.de/Content/DE/Pressemitteilungen/Finanzpolitik/2025/12/2025-12-17-private-altersvorsorge.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bundestag-beschliesst-altersvorsorge-textarchiv:
   title: "Bundestag beschließt das Altersvorsorgedepot (Textarchiv KW 13/2026)"
@@ -102,12 +107,6 @@ drv-reform-privaten-altersvorsorge-2026:
   url: "https://www.deutsche-rentenversicherung.de/DRV/DE/Ueber-uns-und-Presse/Presse/Meldungen/2026/260508-bundesrat-reform-private-altersvorsorge.html"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-bmf-faq-reform:
-  title: "Fragen und Antworten zur Reform der geförderten privaten Altersvorsorge"
-  publisher: "Bundesministerium der Finanzen"
-  url: "https://www.bundesfinanzministerium.de/Content/DE/FAQ/reform-der-privaten-altersvorsorge.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
-
 bundestag-beschliesst-fruehstartrent-2026:
   title: "Bundestag beschliesst die Fruehstartrente"
   publisher: "Deutscher Bundestag"
@@ -127,7 +126,7 @@ bt-drs-21-7864:
   publisher: "Deutscher Bundestag"
   date: "2026-09-07"
   url: "https://dserver.bundestag.de/btd/21/078/2107864.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bundesregierung-damit-rente-stabil-2025:
   title: "Damit die Rente stabil, verlaesslich und gerecht bleibt (Rentenpaket 2025)"
@@ -141,14 +140,14 @@ ivfp-renditechancen-fondsgebundene-riester-2018:
   publisher: "Institut für Vorsorge und Finanzplanung (IVFP); study also hosted by DIA with DWS in the file name"
   date: "2018-04"
   url: "https://ivfp.de/wp-content/uploads/2018/04/Studie-zur-Riesterrente-2018_IVFP.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 svr-15-jahre-riester-2016:
   title: "15 Jahre Riester - eine Bilanz (Arbeitspapier 12/2016)"
   publisher: "Sachverständigenrat Wirtschaft (working paper; estimate linked in the search to Olaf Stotz, Frankfurt School)"
   date: "2016"
   url: "https://www.sachverstaendigenrat-wirtschaft.de/fileadmin/dateiablage/gutachten/jg201617/arbeitspapiere/arbeitspapier_12_2016.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 lrfinanzkonzepte-welche-anlagen-sind:
   title: "Welche Anlagen sind im Altersvorsorgedepot erlaubt?"
@@ -219,14 +218,14 @@ deutscherentenve-staatliche-foerderung-sie-2026:
   publisher: "Deutsche Rentenversicherung"
   date: "2026"
   url: "https://riester.deutsche-rentenversicherung.de/DE/Lohnt-sich-Riester/Staatliche-Foerderung-fuer-Sie/staatliche-foerderung-fuer-sie_node"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 deutscherentenve-82-estg-altersvorsorge-2027:
   title: "§ 82 EStG: Altersvorsorgebeiträge (Fassung ab 01.01.2027)"
   publisher: "Deutsche Rentenversicherung (rvRecht)"
   date: "2027-01-01"
   url: "https://rvrecht.deutsche-rentenversicherung.de/SharedDocs/rvRecht/05_Normen_und_Vertraege/02_C-K/EStG/0082/0082_2027_01_01.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 netztrends-altersvorsorge-statt-riester:
   title: "Altersvorsorgedepot statt Riester: Zulage und Bestandsschutz"
@@ -346,20 +345,41 @@ warentest-riester-rente-ueberblick-2017:
   publisher: "Stiftung Warentest (test.de)"
   date: "2017"
   url: "https://www.test.de/Riester-Rente-im-Vergleich-Versicherung-Sparplan-Fondspolice-4910361-5229681/detail/2017926000-3!101/?origin=List"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
+
+bundestag-antwort-bundesregierun-kleine-2024:
+  title: "Antwort der Bundesregierung auf die Kleine Anfrage (AfD), BT-Drucksache 20/12064"
+  publisher: "Deutscher Bundestag"
+  date: "2024-07-01"
+  url: "https://dserver.bundestag.de/btd/20/120/2012064.pdf"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 unioninvestment-rendite-rentenhoehe-riester-2024:
   title: "Rendite und Rentenhöhe von Riester-Produkten"
   publisher: "IVFP for Union Investment"
   date: "2024"
   url: "https://cdn.dam.union-investment.de/442234_Gutachten_Union-Riester_220817.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 fundresearch-wie-altersvorsorge-eltif-2026:
   title: "Wie das Altersvorsorgedepot den ELTIF-Markt beflügeln könnte"
   publisher: "fundresearch.de (reporting Scope)"
   date: "2026"
   url: "https://www.fundresearch.de/eltif/wie-das-altersvorsorgedepot-den-eltif-markt-befluegeln-koennte.php"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+
+versicherungsbote-riester-rente-lebensversiche-2:
+  title: "Riester-Rente: Lebensversicherern drohen massive Kapitalabflüsse / Großes Interesse: Altersvorsorgedepot bedroht Riester-Verträge"
+  publisher: "Versicherungsbote / Das Investment (reporting Sirius Campus with Aeiforia)"
+  date: "2026"
+  url: "https://www.versicherungsbote.de/id/4949940/Riester-Rente-Lebensversicherern-drohen-massive-Kapitalabfluesse/"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+
+boersenzeitung-scalable-capital-lockt-2026:
+  title: "Scalable Capital lockt wechselbereite Riester-Sparer"
+  publisher: "Börsen-Zeitung"
+  date: "2026"
+  url: "https://www.boersen-zeitung.de/banken-finanzen/scalable-capital-lockt-wechselbereite-riester-sparer"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 pfefferminzia-versicherern-droht-milliardenabfl:
@@ -369,33 +389,25 @@ pfefferminzia-versicherern-droht-milliardenabfl:
   url: "https://www.pfefferminzia.de/vorsorge/versicherern-droht-milliardenabfluss-aus-riester-vertraegen/"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-bundestag-antwort-bundesregierun-kleine-2024:
-  title: "Antwort der Bundesregierung auf die Kleine Anfrage (AfD), BT-Drucksache 20/12064"
-  publisher: "Deutscher Bundestag"
-  date: "2024-07-01"
-  url: "https://dserver.bundestag.de/btd/20/120/2012064.pdf"
-  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
-
 bvi-jahrbuch-2026-daten-2026:
   title: "BVI Jahrbuch 2026 - Daten. Fakten. Perspektiven."
   publisher: "BVI Bundesverband Investment und Asset Management"
   date: "2026-06"
   url: "https://www.bvi.de/fileadmin/user_upload/2026_06_BVI_8363_2026_Jahrbuch_2026_RZ_Webversion.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 gdv-deutsche-lebensversiche-zahlen-2025:
   title: "Die deutsche Lebensversicherung in Zahlen 2025"
   publisher: "Gesamtverband der Deutschen Versicherungswirtschaft (GDV)"
   date: "2025"
   url: "https://www.gdv.de/resource/blob/188374/dde4d81192e583ac43e7e80a84aa6ac6/die-deutsche-lebensversicherung-in-zahlen-2025-publikation-pdf-data.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
-gdv-statistiken-deutschen-versicherungsw-2026:
-  title: "Statistiken zur deutschen Versicherungswirtschaft 2026 (GDV overview; exact document not pinned)"
+gdv-zahl-neu-abgeschlossene:
+  title: "Zahl der neu abgeschlossenen Riester-Renten im Jahr 2025 steigt stark"
   publisher: "GDV"
-  date: "2026"
-  url: "https://www.gdv.de/resource/blob/215380/7c86eab9b3f0dd744669a41342ff8aaf/statistiken-zur-deutschen-versicherungswirtschaft-2026-pdf-data.pdf"
-  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+  url: "https://www.gdv.de/gdv/statistik/altersvorsorge-in-zahlen/zahl-der-neu-abgeschlossenen-riester-renten-im-jahr-2025-steigt-stark--200070"
+  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
 bca-faq-riesterausstie-berater-2021:
   title: "FAQ Riesterausstieg (Berater), 07.06.2021"
@@ -409,14 +421,14 @@ dai-aktionaerszahl-2025-aktienanlage-2026:
   publisher: "Deutsches Aktieninstitut (DAI)"
   date: "2026-01-13"
   url: "https://www.dai.de/fileadmin/user_upload/260113_Aktionaerszahlen_2025_Deutsches_Aktieninstitut.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 extraetf-etf-retail-marktreport-2026:
   title: "ETF-Retail-Marktreport März 2026"
   publisher: "extraETF"
   date: "2026-03"
   url: "https://cdn.extraetf.com/downloads/research/2026/extraETF-Studie-ETF-Marktstatistik-Maerz-2026.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 dai-aktionaerszahl-2025-aktienanlage-2026-2:
   title: "Aktionärszahlen 2025: Aktienanlage im Aufwind - Rückenwind für mutige Reformen"
@@ -437,40 +449,35 @@ bundesbank-statistische-fachreihe-finanzierungsr:
   publisher: "Deutsche Bundesbank"
   date: "2026"
   url: "https://www.bundesbank.de/resource/blob/804172/e220edc2c7131f2fe5d28d0d8f471d76/472B63F073F071307366337C94F8C870/0-finanzierungsrechnung-data.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
-destatis-genesis-online-table-2016:
+destatis-genesis-online-table:
   title: "GENESIS-Online table 81000-0009: VGR des Bundes - Verfügbares Einkommen, Sparen der privaten Haushalte: Deutschland, Jahre"
   publisher: "Statistisches Bundesamt (Destatis)"
-  date: "2016"
   url: "https://genesis.destatis.de/datenbank/online/statistic/81*/table/81000-0009"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
-govuk-workplace-pension-participation-2009:
+govuk-workplace-pension-participation:
   title: "Workplace pension participation and savings trends of eligible employees: 2009 to 2022"
   publisher: "Department for Work and Pensions (GOV.UK)"
-  date: "2009"
   url: "https://www.gov.uk/government/statistics/workplace-pension-participation-and-savings-trends-2009-to-2022/workplace-pension-participation-and-savings-trends-of-eligible-employees-2009-to-2022"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
-govuk-workplace-pension-participation-2009-3:
+govuk-workplace-pension-participation-3:
   title: "Workplace pension participation and savings trends of eligible employees: 2009 to 2024"
   publisher: "Department for Work and Pensions (GOV.UK)"
-  date: "2009"
   url: "https://www.gov.uk/government/statistics/workplace-pension-participation-and-savings-trends-2009-to-2024/workplace-pension-participation-and-savings-trends-of-eligible-employees-2009-to-2024"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
-govuk-ten-years-automatic-2022:
+govuk-ten-years-automatic:
   title: "Ten years of Automatic Enrolment in Workplace Pensions: statistics and analysis"
   publisher: "Department for Work and Pensions (GOV.UK)"
-  date: "2022"
   url: "https://www.gov.uk/government/statistics/ten-years-of-automatic-enrolment-in-workplace-pensions/ten-years-of-automatic-enrolment-in-workplace-pensions-statistics-and-analysis"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
-wbj-participation-ppk-increases-2026:
+wbj-participation-ppk-increases:
   title: "Participation in PPK increases by almost 62% at end of July"
   publisher: "Warsaw Business Journal"
-  date: "2026"
   url: "https://wbj.pl/participation-in-ppk-increases-by-almost-62procent-at-end-of-july/post/150948"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
@@ -507,14 +514,14 @@ eiopa-staff-paper-future-2024:
   publisher: "EIOPA"
   date: "2024-09-11"
   url: "https://www.eiopa.europa.eu/publications/eiopa-staff-paper-future-pan-european-pension-product-pepp_en"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 svr-jahresgutachte-2025-26-2025:
   title: "Jahresgutachten 2025/26, Kapitel 5: Vermoegensaufbau staerken, Erbschaften und Schenkungen gleichmaessiger besteuern"
   publisher: "Sachverstaendigenrat Wirtschaft"
   date: "2025"
   url: "https://www.sachverstaendigenrat-wirtschaft.de/fileadmin/dateiablage/gutachten/jg202526/JG202526_Kapitel_5.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 diamond-nisa-2024-17:
   title: "NISA買付額は2024年に年間17.4兆円まで急拡大 政府が掲げた「資産所得倍増プラン」の目標が達成圏内に"
@@ -543,6 +550,12 @@ destatis-eckzahlen-arbeitsmarkt-deutschland-2026:
   url: "https://www.destatis.de/DE/Themen/Arbeit/Arbeitsmarkt/Erwerbstaetigkeit/Tabellen/eckwerttabelle.html"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
+dasinvestment-avd-wie-sich:
+  title: "AVD: Wie sich Fondshäuser, ETF-Anbieter, Neobroker und Banken positionieren (source not pinned)"
+  publisher: "DAS INVESTMENT / ad-hoc-news (not pinned)"
+  url: "https://www.dasinvestment.com/altersvorsorgedepot-etf-anbieter-fondshaueser-banken-neobroker/"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+
 pfefferminzia-jeder-fuenfte-riester-2026:
   title: "Jeder fünfte Riester-Sparer will ins Altersvorsorgedepot wechseln"
   publisher: "Pfefferminzia (reporting Sirius Campus / Aeiforia)"
@@ -550,12 +563,18 @@ pfefferminzia-jeder-fuenfte-riester-2026:
   url: "https://www.pfefferminzia.de/vorsorge/jeder-fuenfte-riester-sparer-will-ins-altersvorsorgedepot-wechseln/"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-extraetf-european-saving-plan-2026:
-  title: "European Saving Plan Study 2025 / Der ETF-Sparplan-Markt in Kontinentaleuropa"
-  publisher: "extraETF (Isarvest GmbH)"
-  date: "2026"
-  url: "https://cdn.extraetf.com/downloads/research/2026/European_Saving_Plan_Study-DE.pdf"
+scalable-viele-riester-sparer:
+  title: "Viele Riester-Sparer bleiben nur aus Unsicherheit"
+  publisher: "Scalable Capital (newsroom)"
+  url: "https://de.scalable.capital/newsroom/riester-wechsel-kampagne"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+
+cashonline-altersvorsorge-depot-studie-2026:
+  title: "Altersvorsorge-Depot: Studie erwartet 2,9 Millionen Vertraege zum Marktstart"
+  publisher: "cash-online.de (reporting Sirius Campus / Aeiforia; DIA evaluation)"
+  date: "2026"
+  url: "https://www.cash-online.de/a/altersvorsorge-depot-studie-erwartet-29-millionen-vertraege-zum-marktstart-727091/"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 sparkasse-vermoegensbaro-2026-2026:
   title: "Vermögensbarometer 2026"
@@ -652,7 +671,7 @@ fuberlin-erhoeht-riester-foerderung:
   title: "Erhöht die Riester-Förderung die Sparneigung von Geringverdienern?"
   publisher: "Freie Universität Berlin (Refubium)"
   url: "https://refubium.fu-berlin.de/handle/fub188/19627"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 nber-riester-pensions-germany-2012:
   title: "Riester Pensions in Germany: Design, Dynamics, Targetting Success and Crowding-In (NBER Working Paper 18014)"
@@ -685,7 +704,7 @@ apollo-german-pension-fund-2026:
   publisher: "Apollo Global Management"
   date: "2026-10-18"
   url: "https://www.apollo.com/content/dam/apolloaem/pdf/daily-spark/2026/oct/18/dailyspark-2026-10-18-German%20pension%20fund%20reform_new.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 apollo-germany-pension-reform-2026:
   title: "Germany's Pension Reform Could Generate €90 Billion of Annual Inflows (The Daily Spark)"
@@ -693,13 +712,6 @@ apollo-germany-pension-reform-2026:
   date: "2026-10-18"
   url: "https://www.apollo.com/wealth/insights-news/insights/daily-spark/germany-pension-reform-could-generate-90-billion-of-annual-inflows"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
-
-cashonline-altersvorsorge-depot-studie-2026:
-  title: "Altersvorsorge-Depot: Studie erwartet 2,9 Millionen Vertraege zum Marktstart"
-  publisher: "cash-online.de (reporting Sirius Campus / Aeiforia; DIA evaluation)"
-  date: "2026"
-  url: "https://www.cash-online.de/a/altersvorsorge-depot-studie-erwartet-29-millionen-vertraege-zum-marktstart-727091/"
-  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 bbh-industry-races-german-2026:
   title: "The Industry Races for German Opportunity"
@@ -720,11 +732,19 @@ deutscheam-saving-investing-cio:
   url: "https://www.deutsche-am.com/en-us/insights/cio-view/macro/from-saving-to-investing/"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-dasinvestment-avd-wie-sich:
-  title: "AVD: Wie sich Fondshäuser, ETF-Anbieter, Neobroker und Banken positionieren (source not pinned)"
-  publisher: "DAS INVESTMENT / ad-hoc-news (not pinned)"
-  url: "https://www.dasinvestment.com/altersvorsorgedepot-etf-anbieter-fondshaueser-banken-neobroker/"
-  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
+br-drs-768-25:
+  title: "BR-Drs. 768/25 - Gesetzentwurf der Bundesregierung: Altersvorsorgereformgesetz"
+  publisher: "Bundesrat"
+  date: "2025-12-19"
+  url: "https://dserver.bundestag.de/brd/2025/0768-25.pdf"
+  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+
+bt-drs-21-4997:
+  title: "BT-Drs. 21/4997 - Bericht (Haushaltsausschuss) zum Altersvorsorgereformgesetz"
+  publisher: "Deutscher Bundestag"
+  date: "2026-03-25"
+  url: "https://dserver.bundestag.de/btd/21/049/2104997.pdf"
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 handelsblatt-consorsbank-altersvorsorge-standard:
   title: "Consorsbank Altersvorsorgedepot: Standarddepot, Fokus oder flexibel"
@@ -745,7 +765,14 @@ deutschebank-deutsche-bank-startet-2026:
   publisher: "Deutsche Bank (press release)"
   date: "2026-09-28"
   url: "https://www.db.com/news/detail/20260928-deutsche-bank-startet-mit-breitem-vorsorgeangebot-zum-altersvorsorgedepot?language_id=3"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
+
+zukunftsrechner-union-investment-altersvorsorge:
+  title: "Union Investment Altersvorsorgedepot 2027"
+  publisher: "zukunftsrechner.de"
+  date: "2026-09-24"
+  url: "https://zukunftsrechner.de/anbieter/union-investment"
+  note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
 drv-zahlen-tabellen-gesetzlichen-2026:
   title: "Zahlen und Tabellen der gesetzlichen Rentenversicherung (Stand 18.6.2026)"
@@ -766,7 +793,7 @@ verbraucherzentr-neues-altersvorsorge-depot-2026:
   publisher: "Verbraucherzentrale"
   date: "2026"
   url: "https://www.verbraucherzentrale.de/wissen/geld-versicherungen/altersvorsorge/neues-altersvorsorgedepot-rentenchance-oder-teure-verkaufsfalle-118178"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bmas-alterssicherun-2024-ergaenzender-2024:
   title: "Alterssicherungsbericht 2024 - Ergänzender Bericht der Bundesregierung"
@@ -780,14 +807,14 @@ diw-20-jahre-riester-2021:
   publisher: "DIW Berlin"
   date: "2021"
   url: "https://www.diw.de/de/diw_01.c.826232.de/publikationen/wochenberichte/2021_40_1/20_jahre_riester-rente_____private_altersvorsorge_braucht_einen_neustart.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 diw-riester-rente-profitieren-2015:
   title: "Von Riester-Rente profitieren insbesondere Bezieher höherer Einkommen (press release)"
   publisher: "DIW Berlin"
   date: "2015"
   url: "https://www.diw.de/de/diw_01.c.510294.de/von_riester-rente_profitieren_insbesondere_bezieher_hoeherer_einkommen.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 diw-wochenbericht-16-17-2026:
   title: "DIW Wochenbericht 16+17/2026: Private und betriebliche Altersvorsorge ist zwischen den Einkommensgruppen ungleich verbreitet"
@@ -829,7 +856,7 @@ bundesbank-geldvermoegens-aussenfinanzie-deutsch:
   publisher: "Deutsche Bundesbank"
   date: "2026-10-20"
   url: "https://www.bundesbank.de/de/presse/pressemitteilungen/geldvermoegensbildung-und-aussenfinanzierung-in-deutschland-im-zweiten-quartal-2026-1012260"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 destatis-wichtige-gesamtwirtscha-groessen-2026:
   title: "Wichtige gesamtwirtschaftliche Größen in Milliarden Euro"
@@ -906,7 +933,7 @@ worldbank-market-capitalization-listed-2026:
   publisher: "World Bank (WDI, WFE data)"
   date: "2026"
   url: "https://data.worldbank.org/indicator/CM.MKT.LCAP.GD.ZS"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 statranker-countries-stock-market-2026:
   title: "Countries by Stock Market Capitalization to GDP 2026"
@@ -970,7 +997,7 @@ scalable-capital-launches-fixed:
   title: "Scalable Capital launches Fixed-term accounts at 3.00% and raises Overnight interest rate to 2.60%"
   publisher: "Scalable Capital (newsroom)"
   url: "https://de.scalable.capital/en/newsroom/fixed-term"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 eqsnews-flatexdegiro-setzt-neue-2026:
   title: "flatexDEGIRO setzt neue Kostenmaßstäbe für das Altersvorsorgedepot"
@@ -983,7 +1010,7 @@ flatex-altersvorsorge-2027-staatlich:
   title: "Altersvorsorgedepot 2027: Staatlich gefördert investieren"
   publisher: "flatex (flatexDEGIRO)"
   url: "https://www.flatex.de/altersvorsorgedepot/"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 procontraonline-deutsche-bank-steigt-2026:
   title: "Deutsche Bank steigt in Preiskampf ums Altersvorsorgedepot ein"
@@ -1017,7 +1044,7 @@ ing-altersvorsorge-depot-bietet-2026:
   publisher: "ING Deutschland (press release)"
   date: "2026-10-26"
   url: "https://www.ing.de/ueber-uns/presse/pressemitteilungen/ing-altersvorsorge-depot-bietet-orientierung-und-flexibilitat-zu-attraktiven-preisen/"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 procontraonline-altersvorsorge-ab-2027:
   title: "Altersvorsorgedepot ab 2027: DEVK positioniert sich mit niedrigen Effektivkosten und Versicherungsmantel"
@@ -1025,24 +1052,12 @@ procontraonline-altersvorsorge-ab-2027:
   url: "https://www.procontra-online.de/altersvorsorge/artikel/altersvorsorgedepot-ab-2027-devk-positioniert-sich-mit-niedrigen-effektivkosten-und-versicherungsmantel"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-warentest-trade-republic-scalable:
-  title: "Trade Republic, Scalable, Deka & Co – Preiskampf ums Altersvorsorgedepot ist eröffnet"
-  publisher: "Stiftung Warentest (test.de)"
-  url: "https://www.test.de/Altersvorsorgedepot-Preiskampf-der-Anbieter-ING-Trade-Republic-Smartbroker-6335719-0/"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
-
 scalable-capital-stellt-gebuehrenfreie-2026:
   title: "Scalable Capital stellt gebührenfreies Altersvorsorgedepot für Selbstentscheider vor: 0 % TER für mehr Rente"
   publisher: "Scalable Capital (newsroom)"
   date: "2026-10-09"
   url: "https://de.scalable.capital/en/newsroom/altersvorsorgedepot"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
-
-scalable-viele-riester-sparer:
-  title: "Viele Riester-Sparer bleiben nur aus Unsicherheit"
-  publisher: "Scalable Capital (newsroom)"
-  url: "https://de.scalable.capital/newsroom/riester-wechsel-kampagne"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 telepolis-trade-republic-macht-2026:
   title: "Trade Republic macht das Altersvorsorgedepot kostenlos"
@@ -1055,7 +1070,7 @@ smartbrokerplus-guenstiger-geht-fast:
   title: "Günstiger geht fast nicht mehr: Das SMARTBROKER+ Altersvorsorgedepot"
   publisher: "SMARTBROKER+ (blog)"
   url: "https://www.smartbrokerplus.de/de-de/blog/altersvorsorgedepot-konditionen/"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 extraetf-ing-altersvorsorge-gebuehrenfrei-2026:
   title: "ING Altersvorsorgedepot: Gebührenfrei, aber ohne ETF-Erstattung"
@@ -1083,7 +1098,7 @@ bzst-liste-zertifizierten-altersvorsorge-2026:
   publisher: "Bundeszentralamt für Steuern"
   date: "2026"
   url: "https://www.bzst.de/SharedDocs/Downloads/DE/Zertifizierungsstelle/liste_aller_erteilten_zertifikate_PDF.pdf?__blob=publicationFile&v=82"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bafin-frischer-wind-system-2026:
   title: "„Frischer Wind für das System“ (interview)"
@@ -1138,7 +1153,7 @@ dws-q3-2026-quarterly-2026:
   publisher: "DWS Group"
   date: "2026-10-28"
   url: "https://download.dws.com/download/asset/4e139451-ba5b-47a7-8d00-ebf9cfc55be8"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 boersenzeitung-beim-neuen-riester:
   title: "Beim neuen Riester sind jetzt auch alle Broker dabei"
@@ -1157,7 +1172,7 @@ union-riester-rente-abschliessen:
   title: "Riester-Rente abschließen bis Ende 2026"
   publisher: "Union Investment"
   url: "https://www.union-investment.de/familien-und-altersvorsorge/fuers-alter-vorsorgen/riester-produkte"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 deka-gruppe-ueberblick-30-2026:
   title: "Deka-Gruppe im Überblick 30.06.2026"
@@ -1185,7 +1200,7 @@ gdv-zahl-riester-renten-2026:
   publisher: "Gesamtverband der Deutschen Versicherungswirtschaft (GDV)"
   date: "2026"
   url: "https://www.gdv.de/gdv/statistik/altersvorsorge-in-zahlen/zahl-der-riester-renten-im-jahr-2025-geht-zurueck-200040"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 cashonline-marktueberblic-altersvorsorge-29-2026:
   title: "F&B-Marktüberblick Altersvorsorgedepot: 29 von 38 Lebensversicherern wollen ein gefördertes Vorsorgeprodukt anbieten"
@@ -1296,14 +1311,14 @@ bundestag-fragen-gesetzlichen-kapitalrente-2026:
   publisher: "Deutscher Bundestag, Wissenschaftliche Dienste"
   date: "2026"
   url: "https://www.bundestag.de/resource/blob/1217944/WD-6-0012-0022_fragen_gesetzl_kapitalrente.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 svr-arbeitspapier-04-2025-2025:
   title: "Arbeitspapier 04/2025: Neustart fuer die private Altersvorsorge: Ein renditestarkes Vorsorgedepot fuer Deutschland"
   publisher: "Sachverstaendigenrat Wirtschaft"
   date: "2025"
   url: "https://www.sachverstaendigenrat-wirtschaft.de/fileadmin/dateiablage/Arbeitspapiere/Arbeitspapier_04_2025.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 destatis-daten-lebendgeborene-totgeborenen-2026:
   title: "Daten der Lebendgeborenen, Totgeborenen, Gestorbenen und der Gestorbenen im 1. Lebensjahr"
@@ -1380,10 +1395,9 @@ realtid-premiepensione-fylls-pa:
   url: "https://www.realtid.se/spara-placera/premiepensionen-fylls-pa-med-138-miljarder/"
   note: "Read as a search-engine extract on 23 November 2026. Figures used from it are graded B (confirmed by a second source) or C (single secondary source) in the workbook."
 
-govuk-pension-charges-survey-2020:
+govuk-pension-charges-survey:
   title: "Pension charges survey 2020: charges in defined contribution pension schemes"
   publisher: "Department for Work and Pensions (GOV.UK)"
-  date: "2020"
   url: "https://www.gov.uk/government/publications/pension-charges-survey-2020-charges-in-defined-contribution-pension-schemes/pension-charges-survey-2020-charges-in-defined-contribution-pension-schemes"
   note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
 
@@ -1391,13 +1405,13 @@ govuk-government-response-review:
   title: "Government response: Review of the Default Fund Charge Cap and Standardised Cost Disclosure"
   publisher: "Department for Work and Pensions (GOV.UK)"
   url: "https://www.gov.uk/government/consultations/review-of-the-default-fund-charge-cap-and-standardised-cost-disclosure/outcome/government-response-review-of-the-default-fund-charge-cap-and-standardised-cost-disclosure"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bmf-fragen-antworten-fruehstartrent:
   title: "Fragen und Antworten zur Frühstartrente"
   publisher: "Bundesministerium der Finanzen"
   url: "https://www.bundesfinanzministerium.de/Content/DE/FAQ/fruehstart-rente.html"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bundestag-bt-drs-21:
   title: "BT-Drs. 21/8296 (zu Drucksache 21/7864)"
@@ -1416,7 +1430,7 @@ bundestag-bt-drs-21-2026-3:
   publisher: "Deutscher Bundestag"
   date: "2026-10-14"
   url: "https://dserver.bundestag.de/btd/21/086/2108606.pdf"
-  note: "Read as a search-engine extract of the publisher's own page on 23 November 2026."
+  note: "Read through a search engine on 23 November 2026; the figures used were attributed to the publisher's own page, in part without a verbatim quote (grade A- in the workbook)."
 
 bmf-stellungnahme-verbands-oeffentlicher-2025:
   title: "Stellungnahme des Verbands öffentlicher Versicherer zum Referentenentwurf"
