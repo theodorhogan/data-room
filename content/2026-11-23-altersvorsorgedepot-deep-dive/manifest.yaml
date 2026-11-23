@@ -1,0 +1,26 @@
+schema: 1
+
+id: 2026-11-23-altersvorsorgedepot-deep-dive
+title: "A Deep Dive on the Impact of Germany's Altersvorsorgedepot on Economic Development and the Asset Management Industry"
+date: 2026-11-23
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  Against a no-reform baseline, Germany's subsidised retirement account draws about EUR 9bn a year by 2030, half of it re-labelled Riester and fund saving and only EUR 1bn new household saving; savers gain from lower costs, providers lose margin, and the larger pool of capital is the proposed Kapitalrente, not the depot.
+
+tags:
+  - deep-research
+  - macro
+  - equity-research
+
+tickers:
+  - DWS.DE
+  - ALV.DE
+  - DBK.DE
+  - FTK.DE
+
+related:
+  - 2026-11-23-altersvorsorgedepot-model

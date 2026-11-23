@@ -1,0 +1,19 @@
+schema: 1
+
+id: 2026-11-23-altersvorsorgedepot-model
+title: "Altersvorsorgedepot impact model"
+date: 2026-11-23
+
+kind: artifact
+format: xlsx
+primary: altersvorsorgedepot-model.xlsx
+
+summary: >
+  Scenario model of Germany's Altersvorsorgedepot against a no-reform baseline, 2026-2040: take-up, origin of the money, public cost, assets and provider revenue, with all source data and the table behind each report exhibit.
+
+tags:
+  - financial-model
+  - macro
+
+related:
+  - 2026-11-23-altersvorsorgedepot-deep-dive

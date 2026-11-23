@@ -1,0 +1,9 @@
+Study,Scheme,Finding,Data IDs
+Chetty et al. (2014),"Denmark, pension subsidies",1 cent of extra saving per unit of subsidy; 15% of people respond,"int-chetty-subsidy-cent, int-chetty-active-share"
+Attanasio and DeLeire (2002),"US, IRAs",At most 9% of contributions are new national saving,int-attdel-9pct
+OECD (2018),Review of studies,25% to 33% of saving in tax-favoured plans is new; studies range from 9% to 100%,"int-oecd-newsaving-low, int-oecd-newsaving-high, int-oecd-range-min, int-oecd-range-max"
+"Law, Meehan and Scobie (2011)","New Zealand, KiwiSaver",About 33% of members' contributions is additional saving,int-nz-lms2011-third
+Benjamin (2003),"US, 401(k)","About 50% of balances are new private saving, 25% new national saving","int-benjamin-private, int-benjamin-national"
+Connolly (2007),"Australia, compulsory superannuation",Each dollar adds 70 to 90 cents to household wealth,"int-connolly-wealth-low, int-connolly-wealth-high"
+"Corneo, Keese and Schröder (2009)","Germany, Riester",Effect on household saving small at best; none for low earners,"rec-cks-2009-main, rec-cks-low-income"
+"Börsch-Supan, Coppola and Reil-Held (2012)","Germany, Riester","Displacement of other saving, with some crowding-in among pension products",rec-bcr-2012-crowding

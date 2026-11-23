@@ -1,0 +1,15 @@
+Assumption,Low,Base,High
+Take-up reached in year one (%),25,40,50
+Riester savers who switch (%),15,30,50
+Remaining Riester savers who opt into the new allowance (%),30,50,70
+"Take-up, investors without Riester (%)",20,35,50
+"Take-up, other eligible people (%)",3,7,12
+"Contribution, former Riester savers (EUR a year)",888,1000,1200
+"Contribution, investors (EUR a year)",1200,1500,2172
+"Contribution, other eligible people (EUR a year)",400,600,900
+"New-saving share, investors (%)",5,15,25
+"New-saving share, others and extra Riester contributions (%)",20,35,50
+Equity share of depot assets (%),70,80,90
+German share of the equity allocation (%),1.8,3.0,6.4
+Riester capital transferred by 2031 (%),5,12,27
+Average product cost on depot assets (% a year),0.39,0.40,0.41
