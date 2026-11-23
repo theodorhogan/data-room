@@ -1,0 +1,16 @@
+flowchart LR
+    S["Saver: up to EUR 1,800 a year subsidised"]
+    Z["Allowance office: up to EUR 540 plus EUR 300 per child"]
+    P["Platform: broker, bank or insurer"]
+    D["Contract: Standarddepot, free depot or guarantee product"]
+    F["Funds and ETFs"]
+    M["Global equity and bond markets"]
+    O["Payout from 65: plan to 85 or annuity"]
+    C["Certification office"]
+    S --> P
+    Z --> P
+    P --> D
+    D --> F
+    F --> M
+    D --> O
+    C -.-> D

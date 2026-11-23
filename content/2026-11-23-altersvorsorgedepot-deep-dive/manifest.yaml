@@ -1,0 +1,19 @@
+schema: 1
+
+id: 2026-11-23-altersvorsorgedepot-deep-dive
+title: "A Deep Dive on the Impact of Germany's Altersvorsorgedepot on Economic Development and the Asset Management Industry"
+date: 2026-11-23
+
+kind: research
+format: mdx
+primary: index.mdx
+
+summary: >
+  Germany's new subsidised retirement account mostly re-labels existing saving: of about EUR 9bn a year flowing in by 2030, about EUR 1bn is new household saving, while savers gain and providers lose margin.
+
+tags:
+  - deep-research
+  - macro
+
+related:
+  - 2026-11-23-altersvorsorgedepot-model
